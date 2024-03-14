@@ -194,7 +194,7 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Hệ thống 7";
+            this.ribbonPage1.Text = "Hệ thống";
             // 
             // ribbonPageGroup1
             // 
