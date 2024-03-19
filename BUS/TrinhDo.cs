@@ -13,8 +13,8 @@ namespace BUS
         QLNSEntities db = new QLNSEntities();
         public List<TRINHDO> getList()
         {
-            return db.TRINHDO.ToList();
-
+            return db.TRINHDOes.ToList();
+            
         }
     }
 }

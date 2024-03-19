@@ -38,6 +38,8 @@ namespace DAO
         public Nullable<int> IDBP { get; set; }
         public Nullable<int> IDCV { get; set; }
         public Nullable<int> IDTD { get; set; }
+        public Nullable<int> IDDT { get; set; }
+        public Nullable<int> IDTG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BANGCHAMCONG> BANGCHAMCONGs { get; set; }
@@ -45,6 +47,7 @@ namespace DAO
         public virtual ICollection<BAOHIEM> BAOHIEMs { get; set; }
         public virtual BOPHAN BOPHAN { get; set; }
         public virtual CHUCVU CHUCVU { get; set; }
+        public virtual DANTOC DANTOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -52,6 +55,7 @@ namespace DAO
         public virtual PHONGBAN PHONGBAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN_PHUCAP> NHANVIEN_PHUCAP { get; set; }
+        public virtual TonGiao TONGIAO { get; set; }
         public virtual TRINHDO TRINHDO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TANGCA> TANGCAs { get; set; }

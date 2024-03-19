@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DAO;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,31 +9,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
 using BUS;
 
 namespace GUI
 {
-    public partial class frmDanToc : DevExpress.XtraEditors.XtraForm
+    public partial class frmTonGiao : DevExpress.XtraEditors.XtraForm
     {
-        public frmDanToc()
+        public frmTonGiao()
         {
             InitializeComponent();
         }
 
-        DanToc _dantoc;
+        DAO.TonGiao _tongiao;
         bool _them;
         int _id;
-
-        private void frmDanToc_Load(object sender, EventArgs e)
+        private void frmTonGiao_Load(object sender, EventArgs e)
         {
             _them = false;
-            _dantoc = new DanToc();
+            _tongiao = new TonGiao();
             ShowHide(true);
             LoadData();
         }
 
-        void ShowHide (bool kt)
+        void ShowHide(bool kt)
         {
             btnLuu.Enabled = !kt;
             btnHuy.Enabled = !kt;
@@ -43,48 +42,34 @@ namespace GUI
             btnDong.Enabled = kt;
             btnIn.Enabled = kt;
         }
-
-
-        void LoadData ()
+        void LoadData()
         {
-            gcDanhSach.DataSource = _dantoc.getList();
+            gcDanhSach.DataSource = _tongiao.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowHide(false);
-            _them = true;   
-            txtTen.Text = string.Empty;
+
         }
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            _them = false;
-            ShowHide(false);
+
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)==DialogResult.Yes)
-            {
-                _dantoc.Delete(_id);
-                LoadData();
-            }    
-            
+
         }
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            _them = false;
-            ShowHide(true);
+
         }
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -95,28 +80,6 @@ namespace GUI
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
-        }
-
-        void SaveData()
-        {
-            if (_them)
-            {
-                DANTOC dt = new DANTOC();
-                dt.TENDT = txtTen.Text;
-                _dantoc.Add(dt);
-            }
-            else
-            {
-                var dt = _dantoc.getItem(_id);
-                dt.TENDT = txtTen.Text;
-                _dantoc.Update(dt);
-            }    
-        }
-
-        private void gvDanhSach_Click(object sender, EventArgs e)
-        {
-            _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("ID").ToString());
-            txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENDT").ToString();
         }
     }
 }
