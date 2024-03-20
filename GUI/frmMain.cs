@@ -30,11 +30,7 @@ namespace GUI
             f.MdiParent = this;
             f.Show();
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            ribbonControl1.SelectedPage = rbpNhanSu;
-        }
-
+       
         private void btnDanToc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm (typeof(frmDanToc));
@@ -43,6 +39,11 @@ namespace GUI
         private void btnTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(typeof(frmTonGiao));
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            ribbonControl1.SelectedPage = rbpNhanSu;
         }
     }
 }

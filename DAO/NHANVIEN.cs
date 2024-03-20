@@ -55,7 +55,7 @@ namespace DAO
         public virtual PHONGBAN PHONGBAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN_PHUCAP> NHANVIEN_PHUCAP { get; set; }
-        public virtual TonGiao TONGIAO { get; set; }
+        public virtual TONGIAO TONGIAO { get; set; }
         public virtual TRINHDO TRINHDO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TANGCA> TANGCAs { get; set; }

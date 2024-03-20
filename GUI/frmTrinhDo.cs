@@ -8,21 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
 
 namespace GUI
 {
-    public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
+    public partial class frmTrinhDo : DevExpress.XtraEditors.XtraForm
     {
-        public XtraForm1()
+        public frmTrinhDo()
         {
             InitializeComponent();
-        }
-
-        private void XtraForm1_Load(object sender, EventArgs e)
-        {
-            TrinhDo td = new TrinhDo();
-            gridControl1.DataSource = td.getList();
         }
     }
 }

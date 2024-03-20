@@ -39,7 +39,7 @@ namespace DAO
         public virtual DbSet<PHONGBAN> PHONGBANs { get; set; }
         public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
         public virtual DbSet<TANGCA> TANGCAs { get; set; }
-        public virtual DbSet<TonGiao> TONGIAOs { get; set; }
+        public virtual DbSet<TONGIAO> TONGIAOs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
     }
