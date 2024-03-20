@@ -45,5 +45,10 @@ namespace GUI
         {
             ribbonControl1.SelectedPage = rbpNhanSu;
         }
+
+        private void btnTrinhDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof (frmTrinhDo));
+        }
     }
 }

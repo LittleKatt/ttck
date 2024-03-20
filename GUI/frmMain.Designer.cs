@@ -131,6 +131,7 @@
             this.btnTrinhDo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTrinhDo.ImageOptions.SvgImage")));
             this.btnTrinhDo.Name = "btnTrinhDo";
             this.btnTrinhDo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnTrinhDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTrinhDo_ItemClick);
             // 
             // btnNhanVien
             // 
