@@ -50,5 +50,25 @@ namespace GUI
         {
             openForm(typeof (frmTrinhDo));
         }
+
+        private void btnPhongBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof( frmPhongBan));
+        }
+
+        private void btnBoPhan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmBoPhan));
+        }
+
+        private void btnChucVu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmChucVu));
+        }
+
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmNhanVien));
+        }
     }
 }

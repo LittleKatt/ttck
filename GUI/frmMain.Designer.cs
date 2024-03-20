@@ -51,6 +51,8 @@
             this.btnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
             this.rbpHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpNhanSu = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -93,10 +95,12 @@
             this.btnDoiMK,
             this.btnSaoLuu,
             this.btnPhucHoi,
-            this.btnThoat});
+            this.btnThoat,
+            this.btnBoPhan,
+            this.btnChucVu});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 22;
+            this.ribbonControl1.MaxItemId = 24;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -140,6 +144,7 @@
             this.btnNhanVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNhanVien.ImageOptions.SvgImage")));
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhanVien_ItemClick);
             // 
             // btnPhongBan
             // 
@@ -148,6 +153,7 @@
             this.btnPhongBan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhongBan.ImageOptions.SvgImage")));
             this.btnPhongBan.Name = "btnPhongBan";
             this.btnPhongBan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPhongBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhongBan_ItemClick);
             // 
             // btnHopDong
             // 
@@ -266,6 +272,24 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // btnBoPhan
+            // 
+            this.btnBoPhan.Caption = "Bộ Phận";
+            this.btnBoPhan.Id = 22;
+            this.btnBoPhan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBoPhan.ImageOptions.SvgImage")));
+            this.btnBoPhan.Name = "btnBoPhan";
+            this.btnBoPhan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
+            // 
+            // btnChucVu
+            // 
+            this.btnChucVu.Caption = "Chức Vụ";
+            this.btnChucVu.Id = 23;
+            this.btnChucVu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChucVu.ImageOptions.SvgImage")));
+            this.btnChucVu.Name = "btnChucVu";
+            this.btnChucVu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnChucVu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChucVu_ItemClick);
+            // 
             // rbpHeThong
             // 
             this.rbpHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -296,6 +320,8 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTonGiao, true);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTrinhDo, true);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnPhongBan, true);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnBoPhan, true);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnChucVu, true);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnNhanVien, true);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Danh mục dùng chung";
@@ -403,6 +429,8 @@
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.BarButtonItem btnBoPhan;
+        private DevExpress.XtraBars.BarButtonItem btnChucVu;
     }
 }
 

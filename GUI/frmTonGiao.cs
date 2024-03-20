@@ -113,8 +113,12 @@ namespace GUI
 
         private void gvDanhSach_Click(object sender, EventArgs e)
         {
-            _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("ID").ToString());
-            txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENTG").ToString();
+            if (gvDanhSach.RowCount > 0)
+            {
+                _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("ID").ToString());
+                txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENTG").ToString();
+            }
+            
         }
     }
 }

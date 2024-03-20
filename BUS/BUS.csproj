@@ -48,7 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoPhan.cs" />
+    <Compile Include="ChucVu.cs" />
     <Compile Include="DanToc.cs" />
+    <Compile Include="PhongBan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TonGiao.cs" />
     <Compile Include="TrinhDo.cs" />

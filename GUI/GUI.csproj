@@ -64,6 +64,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBoPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBoPhan.Designer.cs">
+      <DependentUpon>frmBoPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChucVu.Designer.cs">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDanToc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +87,18 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTonGiao.cs">
       <SubType>Form</SubType>
@@ -90,11 +114,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBoPhan.resx">
+      <DependentUpon>frmBoPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChucVu.resx">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDanToc.resx">
       <DependentUpon>frmDanToc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTonGiao.resx">
       <DependentUpon>frmTonGiao.cs</DependentUpon>

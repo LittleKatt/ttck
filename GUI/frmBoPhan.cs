@@ -8,31 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
 using BUS;
+using DAO;
 
 namespace GUI
 {
-    public partial class frmDanToc : DevExpress.XtraEditors.XtraForm
+    public partial class frmBoPhan : DevExpress.XtraEditors.XtraForm
     {
-        public frmDanToc()
+        public frmBoPhan()
         {
             InitializeComponent();
         }
 
-        DanToc _dantoc;
+        BoPhan _bophan;
         bool _them;
         int _id;
 
-        private void frmDanToc_Load(object sender, EventArgs e)
+        private void frmBoPhan_Load(object sender, EventArgs e)
         {
             _them = false;
-            _dantoc = new DanToc();
+            _bophan = new BoPhan();
             ShowHide(true);
             LoadData();
         }
 
-        void ShowHide (bool kt)
+        void ShowHide(bool kt)
         {
             btnLuu.Enabled = !kt;
             btnHuy.Enabled = !kt;
@@ -45,15 +45,15 @@ namespace GUI
         }
 
 
-        void LoadData ()
+        void LoadData()
         {
-            gcDanhSach.DataSource = _dantoc.getList();
+            gcDanhSach.DataSource = _bophan.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowHide(false);
-            _them = true;   
+            _them = true;
             txtTen.Text = string.Empty;
         }
 
@@ -65,12 +65,11 @@ namespace GUI
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)==DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc chắn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _dantoc.Delete(_id);
+                _bophan.Delete(_id);
                 LoadData();
-            }    
-            
+            }
         }
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -101,24 +100,24 @@ namespace GUI
         {
             if (_them)
             {
-                DANTOC dt = new DANTOC();
-                dt.TENDT = txtTen.Text;
-                _dantoc.Add(dt);
+                BOPHAN bp = new BOPHAN();
+                bp.TENBP = txtTen.Text;
+                _bophan.Add(bp);
             }
             else
             {
-                var dt = _dantoc.getItem(_id);
-                dt.TENDT = txtTen.Text;
-                _dantoc.Update(dt);
-            }    
+                var bp = _bophan.getItem(_id);
+                bp.TENBP = txtTen.Text;
+                _bophan.Update(bp);
+            }
         }
 
         private void gvDanhSach_Click(object sender, EventArgs e)
         {
-            if(gvDanhSach.RowCount > 0)
+            if (gvDanhSach.RowCount > 0)
             {
-                _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("ID").ToString());
-                txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENDT").ToString();
+                _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDBP").ToString());
+                txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENBP").ToString();
             }
             
         }
