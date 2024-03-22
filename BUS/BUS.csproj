@@ -51,6 +51,7 @@
     <Compile Include="BoPhan.cs" />
     <Compile Include="ChucVu.cs" />
     <Compile Include="DanToc.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="PhongBan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TonGiao.cs" />
