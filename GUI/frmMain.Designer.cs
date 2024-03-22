@@ -108,7 +108,7 @@
             this.rbpNhanSu,
             this.rbpChamCong,
             this.rbpBaoBieu});
-            this.ribbonControl1.Size = new System.Drawing.Size(884, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(1164, 193);
             // 
             // btnDanToc
             // 
@@ -378,7 +378,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 443);
+            this.ClientSize = new System.Drawing.Size(1164, 608);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);

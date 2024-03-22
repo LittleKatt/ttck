@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using DAO;
 using BUS;
 using System.IO;
+using GUI.Reports;
+using BUS.DTO;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -30,6 +33,7 @@ namespace GUI
         TonGiao _tongiao;
         bool _them;
         int _id;
+        List<NhanVien_DTO> _lstNVDTO;
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
@@ -105,6 +109,7 @@ namespace GUI
         {
             gcDanhSach.DataSource = _nhanvien.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstNVDTO = _nhanvien.getListFull();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -148,7 +153,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptDSNV rpt = new rptDSNV(_lstNVDTO);
+            rpt.ShowPreview();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
