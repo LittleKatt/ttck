@@ -103,7 +103,7 @@ namespace GUI
         }
         void LoadData()
         {
-            gcDanhSach.DataSource = _nhanvien.getList();
+            gcDanhSach.DataSource = _nhanvien.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

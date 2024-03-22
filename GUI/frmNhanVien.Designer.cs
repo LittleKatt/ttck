@@ -602,7 +602,7 @@
             this.HOTEN.MinWidth = 200;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.Visible = true;
-            this.HOTEN.VisibleIndex = 2;
+            this.HOTEN.VisibleIndex = 1;
             this.HOTEN.Width = 200;
             // 
             // GIOITINH
@@ -613,7 +613,7 @@
             this.GIOITINH.MinWidth = 120;
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.Visible = true;
-            this.GIOITINH.VisibleIndex = 3;
+            this.GIOITINH.VisibleIndex = 2;
             this.GIOITINH.Width = 120;
             // 
             // NGAYSINH
@@ -626,7 +626,7 @@
             this.NGAYSINH.MinWidth = 120;
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.Visible = true;
-            this.NGAYSINH.VisibleIndex = 4;
+            this.NGAYSINH.VisibleIndex = 3;
             this.NGAYSINH.Width = 120;
             // 
             // CCCD
@@ -639,7 +639,7 @@
             this.CCCD.MinWidth = 120;
             this.CCCD.Name = "CCCD";
             this.CCCD.Visible = true;
-            this.CCCD.VisibleIndex = 5;
+            this.CCCD.VisibleIndex = 4;
             this.CCCD.Width = 120;
             // 
             // DIENTHOAI
@@ -652,7 +652,7 @@
             this.DIENTHOAI.MinWidth = 120;
             this.DIENTHOAI.Name = "DIENTHOAI";
             this.DIENTHOAI.Visible = true;
-            this.DIENTHOAI.VisibleIndex = 6;
+            this.DIENTHOAI.VisibleIndex = 5;
             this.DIENTHOAI.Width = 120;
             // 
             // DIACHI
@@ -665,7 +665,7 @@
             this.DIACHI.MinWidth = 300;
             this.DIACHI.Name = "DIACHI";
             this.DIACHI.Visible = true;
-            this.DIACHI.VisibleIndex = 7;
+            this.DIACHI.VisibleIndex = 6;
             this.DIACHI.Width = 300;
             // 
             // HINHANH
@@ -678,7 +678,7 @@
             this.HINHANH.MinWidth = 120;
             this.HINHANH.Name = "HINHANH";
             this.HINHANH.Visible = true;
-            this.HINHANH.VisibleIndex = 8;
+            this.HINHANH.VisibleIndex = 7;
             this.HINHANH.Width = 120;
             // 
             // IDPB
@@ -699,7 +699,7 @@
             this.TENPB.MinWidth = 120;
             this.TENPB.Name = "TENPB";
             this.TENPB.Visible = true;
-            this.TENPB.VisibleIndex = 9;
+            this.TENPB.VisibleIndex = 8;
             this.TENPB.Width = 120;
             // 
             // IDBP
@@ -720,7 +720,7 @@
             this.TENBP.MinWidth = 120;
             this.TENBP.Name = "TENBP";
             this.TENBP.Visible = true;
-            this.TENBP.VisibleIndex = 10;
+            this.TENBP.VisibleIndex = 9;
             this.TENBP.Width = 120;
             // 
             // IDCV
@@ -741,7 +741,7 @@
             this.TENCV.MinWidth = 120;
             this.TENCV.Name = "TENCV";
             this.TENCV.Visible = true;
-            this.TENCV.VisibleIndex = 11;
+            this.TENCV.VisibleIndex = 10;
             this.TENCV.Width = 120;
             // 
             // IDTD
@@ -762,7 +762,7 @@
             this.TENTD.MinWidth = 120;
             this.TENTD.Name = "TENTD";
             this.TENTD.Visible = true;
-            this.TENTD.VisibleIndex = 12;
+            this.TENTD.VisibleIndex = 11;
             this.TENTD.Width = 120;
             // 
             // IDDT
@@ -783,7 +783,7 @@
             this.TENDT.MinWidth = 120;
             this.TENDT.Name = "TENDT";
             this.TENDT.Visible = true;
-            this.TENDT.VisibleIndex = 13;
+            this.TENDT.VisibleIndex = 12;
             this.TENDT.Width = 120;
             // 
             // IDTG
@@ -792,8 +792,6 @@
             this.IDTG.FieldName = "ID";
             this.IDTG.MinWidth = 25;
             this.IDTG.Name = "IDTG";
-            this.IDTG.Visible = true;
-            this.IDTG.VisibleIndex = 1;
             this.IDTG.Width = 47;
             // 
             // TENTG
@@ -806,7 +804,7 @@
             this.TENTG.MinWidth = 120;
             this.TENTG.Name = "TENTG";
             this.TENTG.Visible = true;
-            this.TENTG.VisibleIndex = 14;
+            this.TENTG.VisibleIndex = 13;
             this.TENTG.Width = 120;
             // 
             // barDockControl1
