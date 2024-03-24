@@ -53,6 +53,7 @@
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
             this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoa = new DevExpress.XtraBars.BarButtonItem();
             this.rbpHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpNhanSu = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -97,10 +98,11 @@
             this.btnPhucHoi,
             this.btnThoat,
             this.btnBoPhan,
-            this.btnChucVu});
+            this.btnChucVu,
+            this.btnThoa});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 24;
+            this.ribbonControl1.MaxItemId = 25;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -162,6 +164,7 @@
             this.btnHopDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHopDong.ImageOptions.SvgImage")));
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnHopDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHopDong_ItemClick);
             // 
             // btnKTKL
             // 
@@ -289,6 +292,12 @@
             this.btnChucVu.Name = "btnChucVu";
             this.btnChucVu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnChucVu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChucVu_ItemClick);
+            // 
+            // btnThoa
+            // 
+            this.btnThoa.Caption = "Thoát";
+            this.btnThoa.Id = 24;
+            this.btnThoa.Name = "btnThoa";
             // 
             // rbpHeThong
             // 
@@ -431,6 +440,7 @@
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private DevExpress.XtraBars.BarButtonItem btnBoPhan;
         private DevExpress.XtraBars.BarButtonItem btnChucVu;
+        private DevExpress.XtraBars.BarButtonItem btnThoa;
     }
 }
 

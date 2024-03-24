@@ -52,6 +52,7 @@
     <Compile Include="ChucVu.cs" />
     <Compile Include="DanToc.cs" />
     <Compile Include="DTO\NhanVien_DTO.cs" />
+    <Compile Include="HopDongLD.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="PhongBan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

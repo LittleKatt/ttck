@@ -30,7 +30,6 @@ namespace DAO
         public virtual DbSet<BOPHAN> BOPHANs { get; set; }
         public virtual DbSet<CHUCVU> CHUCVUs { get; set; }
         public virtual DbSet<DANTOC> DANTOCs { get; set; }
-        public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
         public virtual DbSet<KHENTHUONG_KYLUAT> KHENTHUONG_KYLUAT { get; set; }
         public virtual DbSet<LOAICA> LOAICAs { get; set; }
         public virtual DbSet<LOAICONG> LOAICONGs { get; set; }
@@ -42,5 +41,6 @@ namespace DAO
         public virtual DbSet<TONGIAO> TONGIAOs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
+        public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
     }
 }

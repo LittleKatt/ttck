@@ -14,7 +14,7 @@ namespace DAO
     
     public partial class HOPDONG
     {
-        public int SOHD { get; set; }
+        public string SOHD { get; set; }
         public Nullable<System.DateTime> NGAYBATDAU { get; set; }
         public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
         public Nullable<System.DateTime> NGAYKY { get; set; }
@@ -23,6 +23,12 @@ namespace DAO
         public string THOIHAN { get; set; }
         public Nullable<double> HESOLUONG { get; set; }
         public Nullable<int> IDNV { get; set; }
+        public Nullable<int> DELETE_BY { get; set; }
+        public Nullable<System.DateTime> DELETE_DATE { get; set; }
+        public Nullable<int> UPDATED_BY { get; set; }
+        public Nullable<System.DateTime> UPDATED_DATE { get; set; }
+        public Nullable<int> CREATED_BY { get; set; }
+        public Nullable<System.DateTime> CREATED_DATE { get; set; }
     
         public virtual NHANVIEN NHANVIEN { get; set; }
     }

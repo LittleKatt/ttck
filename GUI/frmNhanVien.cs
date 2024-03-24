@@ -24,15 +24,16 @@ namespace GUI
             InitializeComponent();
         }
 
-        NhanVien _nhanvien;
-        PhongBan _phongban;
-        BoPhan _bophan;
-        ChucVu _chucvu;
-        TrinhDo _trinhdo;
-        DanToc _dantoc;
-        TonGiao _tongiao;
-        bool _them;
-        int _id;
+        private NhanVien _nhanvien;
+        private PhongBan _phongban;
+        private BoPhan _bophan;
+        private ChucVu _chucvu;
+        private TrinhDo _trinhdo;
+        private DanToc _dantoc;
+        private TonGiao _tongiao;
+        private bool _them;
+        private int _id;
+        private Image _hinh;
         List<NhanVien_DTO> _lstNVDTO;
 
         private void frmNhanVien_Load(object sender, EventArgs e)
@@ -95,6 +96,8 @@ namespace GUI
             cbbTonGiao.Enabled = !kt;
             cbbTrinhDo.Enabled = !kt;
             btnHinhAnh.Enabled = !kt;
+            ptbHinhAnh.Image = Properties.Resources.noimg;
+            gcDanhSach.Enabled = kt;
         }
 
         void _reset ()
@@ -104,6 +107,13 @@ namespace GUI
             txtCCCD.Text = string.Empty;
             txtDiaChi.Text = string.Empty;
             cbGioiTinh.Checked = false;
+            cbbPhongBan.Text = string.Empty;
+            cbbBoPhan.Text = string.Empty;
+            cbbChucVu.Text = string.Empty;
+            cbbTrinhDo.Text = string.Empty;
+            cbbDanToc.Text = string.Empty;
+            cbbTonGiao.Text = string.Empty;
+            dtNgaySinh.Value = DateTime.Now;
         }
         void LoadData()
         {
@@ -123,7 +133,9 @@ namespace GUI
         {
             _them = false;
             ShowHide(false);
+            ptbHinhAnh.Image = _hinh;
             splitContainer1.Panel1Collapsed = false;
+            gcDanhSach.Enabled = true;
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
