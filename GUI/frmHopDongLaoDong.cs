@@ -35,7 +35,7 @@ namespace GUI
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
         }
-        void ShowHide(bool kt)
+        private void ShowHide(bool kt)
         {
             btnLuu.Enabled = !kt;
             btnHuy.Enabled = !kt;
@@ -54,7 +54,7 @@ namespace GUI
             gcDanhSach.Enabled = kt;
         }
 
-        void _reset()
+        private void _reset()
         {
             txtSoHD.Text = string.Empty;
             spLanKy.Text = "1";
@@ -73,9 +73,10 @@ namespace GUI
             slkNhanVien.Properties.ValueMember = "IDNV";
             slkNhanVien.Properties.DisplayMember = "HOTEN";
         }
-        void LoadData()
+        private void LoadData()
         {
             gcDanhSach.DataSource = _hdld.getListFull();
+            //gcDanhSach.DataSource = _hdld.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -128,7 +129,7 @@ namespace GUI
         {
             this.Close();
         }
-        private void SaveData()
+        void SaveData()
         {
             if (_them)
             {
@@ -143,7 +144,7 @@ namespace GUI
                 hd.NGAYKY = dtNgayKy.Value;
                 hd.THOIHAN = cbbThoiHan.Text;
                 hd.HESOLUONG = double.Parse(spHeSL.EditValue.ToString());
-                hd.LANKY = int.Parse (spLanKy.EditValue.ToString());
+                hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
                 hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
                 hd.NOIDUNG = txtNoiDung.RtfText;
                 hd.CREATED_BY = 1;
@@ -162,7 +163,7 @@ namespace GUI
                 hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
                 hd.NOIDUNG = txtNoiDung.RtfText;
                 hd.UPDATED_BY = 1;
-                hd.CREATED_DATE = DateTime.Now;
+                hd.UPDATED_DATE = DateTime.Now;
                 _hdld.Update(hd);
             }
         }

@@ -60,7 +60,7 @@
           <Property Name="NGAYBATDAU" Type="datetime" />
           <Property Name="NGAYKETTHUC" Type="datetime" />
           <Property Name="NGAYKY" Type="datetime" />
-          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOIDUNG" Type="nvarchar(max)" />
           <Property Name="LANKY" Type="int" />
           <Property Name="THOIHAN" Type="nvarchar" MaxLength="50" />
           <Property Name="HESOLUONG" Type="float" />
@@ -920,7 +920,7 @@
           <Property Name="NGAYBATDAU" Type="DateTime" Precision="3" />
           <Property Name="NGAYKETTHUC" Type="DateTime" Precision="3" />
           <Property Name="NGAYKY" Type="DateTime" Precision="3" />
-          <Property Name="NOIDUNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LANKY" Type="Int32" />
           <Property Name="THOIHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HESOLUONG" Type="Double" />

@@ -31,12 +31,12 @@ namespace BUS
                 hd.NGAYBATDAU = item.NGAYBATDAU;
                 hd.NGAYKETTHUC = item.NGAYKETTHUC;
                 hd.NGAYKY = item.NGAYKY;
-                hd.LANKY = item.LANKY;
+                hd.THOIHAN = item.THOIHAN;
                 hd.HESOLUONG = item.HESOLUONG;
+                hd.LANKY = item.LANKY;
                 hd.NOIDUNG = item.NOIDUNG;
                 hd.IDNV = item.IDNV;
-                hd.THOIHAN = item.THOIHAN;
-                var nv =db.NHANVIENs.FirstOrDefault(n=>n.IDNV == item.IDNV);
+                var nv = db.NHANVIENs.FirstOrDefault(n => n.IDNV == item.IDNV);
                 hd.HOTEN = nv.HOTEN;
                 hd.CREATED_BY = item.CREATED_BY;
                 hd.CREATED_DATE = item.CREATED_DATE;
@@ -58,9 +58,9 @@ namespace BUS
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Lỗi: " + ex.Message);
             }
+
         }
         public HOPDONG Update(HOPDONG hd)
         {

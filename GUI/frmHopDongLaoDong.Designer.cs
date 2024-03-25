@@ -333,21 +333,29 @@
             // 
             // COLIDNV
             // 
+            this.COLIDNV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.COLIDNV.AppearanceHeader.Options.UseFont = true;
             this.COLIDNV.Caption = "IDNV";
             this.COLIDNV.FieldName = "IDNV";
-            this.COLIDNV.MaxWidth = 75;
-            this.COLIDNV.MinWidth = 75;
+            this.COLIDNV.MaxWidth = 80;
+            this.COLIDNV.MinWidth = 80;
             this.COLIDNV.Name = "COLIDNV";
             this.COLIDNV.Visible = true;
             this.COLIDNV.VisibleIndex = 0;
+            this.COLIDNV.Width = 80;
             // 
             // COLHOTEN
             // 
+            this.COLHOTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.COLHOTEN.AppearanceHeader.Options.UseFont = true;
             this.COLHOTEN.Caption = "HỌ TÊN";
             this.COLHOTEN.FieldName = "HOTEN";
+            this.COLHOTEN.MaxWidth = 200;
+            this.COLHOTEN.MinWidth = 200;
             this.COLHOTEN.Name = "COLHOTEN";
             this.COLHOTEN.Visible = true;
             this.COLHOTEN.VisibleIndex = 1;
+            this.COLHOTEN.Width = 200;
             // 
             // spHeSL
             // 
@@ -608,7 +616,7 @@
             this.LANKY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.LANKY.AppearanceHeader.Options.UseFont = true;
             this.LANKY.Caption = "LẦN KÝ";
-            this.LANKY.FieldName = "LẦN KÝ";
+            this.LANKY.FieldName = "LANKY";
             this.LANKY.MaxWidth = 100;
             this.LANKY.MinWidth = 100;
             this.LANKY.Name = "LANKY";
