@@ -21,13 +21,17 @@ namespace GUI
         }
 
         HopDongLD _hdld;
+        NhanVien _nhanvien;
         bool _them;
         string _sohd;
+        string _maxsohd;
         private void frmHopDongLaoDong_Load(object sender, EventArgs e)
         {
             _hdld = new HopDongLD();
+            _nhanvien = new NhanVien();
             _them = false;
             LoadData();
+            LoadNhanVien();
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
         }
@@ -56,13 +60,22 @@ namespace GUI
             spLanKy.Text = "1";
             spHeSL.Text = "1";
             dtNgayBD.Value = DateTime.Now;
-            dtNgayKT.Value = dtNgayBD.Value.AddMonths(6);
+            dtNgayKT.Value = DateTime.Now;
+            dtNgayKT.Value = DateTime.Now;
             dtNgayKy.Value = DateTime.Now;
             slkNhanVien.Text = string.Empty;
+            
+        }
+
+        void LoadNhanVien()
+        {
+            slkNhanVien.Properties.DataSource = _nhanvien.getList();
+            slkNhanVien.Properties.ValueMember = "IDNV";
+            slkNhanVien.Properties.DisplayMember = "HOTEN";
         }
         void LoadData()
         {
-            gcDanhSach.DataSource = _hdld.getList();
+            gcDanhSach.DataSource = _hdld.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -119,11 +132,38 @@ namespace GUI
         {
             if (_them)
             {
-               
+                //số hđ có dạng 0001/2024/HĐLĐ
+                var maxsohd = _hdld.MaxSoHopDong();
+                int so = int.Parse(maxsohd.Substring(0, 4)) + 1;
+
+                HOPDONG hd = new HOPDONG();
+                hd.SOHD = so.ToString("0000") + @"2024/HĐLĐ";
+                hd.NGAYBATDAU = dtNgayBD.Value;
+                hd.NGAYKETTHUC = dtNgayKT.Value;
+                hd.NGAYKY = dtNgayKy.Value;
+                hd.THOIHAN = cbbThoiHan.Text;
+                hd.HESOLUONG = double.Parse(spHeSL.EditValue.ToString());
+                hd.LANKY = int.Parse (spLanKy.EditValue.ToString());
+                hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
+                hd.NOIDUNG = txtNoiDung.RtfText;
+                hd.CREATED_BY = 1;
+                hd.CREATED_DATE = DateTime.Now;
+                _hdld.Add(hd);
             }
             else
             {
-                
+                var hd = _hdld.getItem(_sohd);
+                hd.NGAYBATDAU = dtNgayBD.Value;
+                hd.NGAYKETTHUC = dtNgayKT.Value;
+                hd.NGAYKY = dtNgayKy.Value;
+                hd.THOIHAN = cbbThoiHan.Text;
+                hd.HESOLUONG = double.Parse(spHeSL.EditValue.ToString());
+                hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
+                hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
+                hd.NOIDUNG = txtNoiDung.RtfText;
+                hd.CREATED_BY = 1;
+                hd.CREATED_DATE = DateTime.Now;
+                _hdld.Add(hd);
             }
         }
 
@@ -132,6 +172,32 @@ namespace GUI
             if (gvDanhSach.RowCount > 0)
             {
                 _sohd = gvDanhSach.GetFocusedRowCellValue("SOHD").ToString();
+                var hd = _hdld.getItem(_sohd);
+                txtSoHD.Text = _sohd;
+                dtNgayBD.Value = hd.NGAYBATDAU.Value;
+                dtNgayKT.Value = hd.NGAYKETTHUC.Value;
+                dtNgayKy.Value = hd.NGAYKY.Value;
+                cbbThoiHan.Text = hd.THOIHAN;
+                spHeSL.Text = hd.HESOLUONG.ToString();
+                spLanKy.Text = hd.LANKY.ToString();
+                slkNhanVien.EditValue = hd.IDNV;
+                txtNoiDung.RtfText = hd.NOIDUNG;
+            }
+        }
+
+        private void cbbThoiHan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbThoiHan.Text == "03 tháng")
+            {
+                dtNgayKT.Value = dtNgayBD.Value.AddMonths(3);
+            }
+            else if (cbbThoiHan.Text == "06 tháng")
+            {
+                dtNgayKT.Value = dtNgayBD.Value.AddMonths(6);
+            }
+            else
+            {
+                dtNgayKT.Value = dtNgayBD.Value.AddMonths(12);
             }
         }
     }
