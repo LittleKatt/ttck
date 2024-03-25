@@ -33,7 +33,7 @@ namespace GUI
         private TonGiao _tongiao;
         private bool _them;
         private int _id;
-        private Image _hinh;
+        //private Image _hinh;
         List<NhanVien_DTO> _lstNVDTO;
 
         private void frmNhanVien_Load(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace GUI
         {
             _them = false;
             ShowHide(false);
-            ptbHinhAnh.Image = _hinh;
+            //ptbHinhAnh.Image = _hinh;
             splitContainer1.Panel1Collapsed = false;
             gcDanhSach.Enabled = true;
         }

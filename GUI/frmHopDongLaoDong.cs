@@ -24,7 +24,7 @@ namespace GUI
         NhanVien _nhanvien;
         bool _them;
         string _sohd;
-        string _maxsohd;
+        //string _maxsohd;
         private void frmHopDongLaoDong_Load(object sender, EventArgs e)
         {
             _hdld = new HopDongLD();
@@ -128,7 +128,7 @@ namespace GUI
         {
             this.Close();
         }
-        void SaveData()
+        private void SaveData()
         {
             if (_them)
             {
@@ -137,7 +137,7 @@ namespace GUI
                 int so = int.Parse(maxsohd.Substring(0, 4)) + 1;
 
                 HOPDONG hd = new HOPDONG();
-                hd.SOHD = so.ToString("0000") + @"2024/HĐLĐ";
+                hd.SOHD = so.ToString("0000") + @"/2024/HĐLĐ";
                 hd.NGAYBATDAU = dtNgayBD.Value;
                 hd.NGAYKETTHUC = dtNgayKT.Value;
                 hd.NGAYKY = dtNgayKy.Value;
@@ -161,9 +161,9 @@ namespace GUI
                 hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
                 hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
                 hd.NOIDUNG = txtNoiDung.RtfText;
-                hd.CREATED_BY = 1;
+                hd.UPDATED_BY = 1;
                 hd.CREATED_DATE = DateTime.Now;
-                _hdld.Add(hd);
+                _hdld.Update(hd);
             }
         }
 

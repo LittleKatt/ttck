@@ -59,7 +59,7 @@ namespace BUS
             catch (Exception ex)
             {
 
-                throw new Exception(ex.Message);
+                throw new Exception("Lỗi: " + ex.Message);
             }
         }
         public HOPDONG Update(HOPDONG hd)
@@ -77,7 +77,7 @@ namespace BUS
                 _hd.THOIHAN = hd.THOIHAN;
                 _hd.SOHD = hd.SOHD;
                 _hd.UPDATED_BY = hd.UPDATED_BY;
-
+                _hd.UPDATED_DATE = hd.UPDATED_DATE;
                 db.SaveChanges();
                 return hd;
             }
