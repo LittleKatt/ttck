@@ -153,7 +153,7 @@ namespace GUI
                 hd.HESOLUONG = double.Parse(spHeSL.EditValue.ToString());
                 hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
                 hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
-                hd.NOIDUNG = txtNoiDung.RtfText;
+                //hd.NOIDUNG = txtNoiDung.RtfText;
                 hd.CREATED_BY = 1;
                 hd.CREATED_DATE = DateTime.Now;
                 _hdld.Add(hd);
@@ -168,7 +168,7 @@ namespace GUI
                 hd.HESOLUONG = double.Parse(spHeSL.EditValue.ToString());
                 hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
                 hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
-                hd.NOIDUNG = txtNoiDung.RtfText;
+                //hd.NOIDUNG = txtNoiDung.RtfText;
                 hd.UPDATED_BY = 1;
                 hd.UPDATED_DATE = DateTime.Now;
                 _hdld.Update(hd);
@@ -189,7 +189,7 @@ namespace GUI
                 spHeSL.Text = hd.HESOLUONG.ToString();
                 spLanKy.Text = hd.LANKY.ToString();
                 slkNhanVien.EditValue = hd.IDNV;
-                txtNoiDung.RtfText = hd.NOIDUNG;
+                //txtNoiDung.RtfText = hd.NOIDUNG;
                 _lstHD = _hdld.getItemFull(_sohd);
             }
         }

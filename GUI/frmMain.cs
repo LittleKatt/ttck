@@ -75,5 +75,10 @@ namespace GUI
         {
             openForm(typeof(frmHopDongLaoDong));
         }
+
+        private void btnKhenThuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmKhenThuong));
+        }
     }
 }

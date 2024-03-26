@@ -23,6 +23,7 @@ namespace BUS
             HDLD_DTO hd;
             foreach (var item in lstHD)
             {
+                string NGAYKY1;
                 hd = new HDLD_DTO();
                 hd.SOHD = item.SOHD;
                 //hd.NGAYBATDAU = "Từ ngày " +item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(0,2) +"tháng" + item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(3,2) + "năm" + item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(6,2);
@@ -32,7 +33,7 @@ namespace BUS
                 hd.THOIHAN = item.THOIHAN;
                 hd.HESOLUONG = item.HESOLUONG;
                 hd.LANKY = item.LANKY;
-                hd.NOIDUNG = item.NOIDUNG;
+                hd.NOIDUNG = " ngày " + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(0, 2) + " tháng " + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(3, 2) + " năm " + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(6);
                 hd.IDNV = item.IDNV;
                 var nv = db.NHANVIENs.FirstOrDefault(n => n.IDNV == item.IDNV);
                 hd.HOTEN = nv.HOTEN;
@@ -40,25 +41,6 @@ namespace BUS
                 hd.CCCD = nv.CCCD;
                 hd.DIENTHOAI = nv.DIENTHOAI;
                 hd.DIACHI = nv.DIACHI;
-
-                //hd.IDPB = item.IDPB;
-                //var pb = db.PHONGBANs.FirstOrDefault(p => p.IDPB == item.IDPB);
-                //hd.TENPB = pb.TENPB;
-
-                //hd.IDBP = item.IDBP;
-                //var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
-                //hd.TENBP = bp.TENBP;
-
-                //hd.IDCV = item.IDCV;
-                //var cv = db.CHUCVUs.FirstOrDefault(c => c.IDCV == item.IDCV);
-                //hd.TENCV = cv.TENCV;
-
-                //hd.IDTD = item.IDTD;
-                //var td = db.TRINHDOes.FirstOrDefault(t => t.IDTD == item.IDTD);
-                //hd.TENTD = td.TENTD;
-
-
-
                 hd.CREATED_BY = item.CREATED_BY;
                 hd.CREATED_DATE = item.CREATED_DATE;
                 hd.UPDATED_BY = item.UPDATED_BY;
@@ -89,6 +71,7 @@ namespace BUS
                 hd.HESOLUONG = item.HESOLUONG;
                 hd.LANKY = item.LANKY;
                 hd.NOIDUNG = item.NOIDUNG;
+
                 hd.IDNV = item.IDNV;
                 var nv = db.NHANVIENs.FirstOrDefault(n => n.IDNV == item.IDNV);
                 hd.HOTEN = nv.HOTEN;
@@ -96,24 +79,6 @@ namespace BUS
                 hd.CCCD = nv.CCCD;
                 hd.DIENTHOAI = nv.DIENTHOAI;
                 hd.DIACHI = nv.DIACHI;
-
-
-                //hd.IDPB = item.IDPB;
-                //var pb = db.PHONGBANs.FirstOrDefault(p => p.IDPB == item.IDPB);
-                //hd.TENPB = pb.TENPB;
-
-                //hd.IDBP = item.IDBP;
-                //var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
-                //hd.TENBP = bp.TENBP;
-
-                //hd.IDCV = item.IDCV;
-                //var cv = db.CHUCVUs.FirstOrDefault(c => c.IDCV == item.IDCV);
-                //hd.TENCV = cv.TENCV;
-
-                //hd.IDTD = item.IDTD;
-                //var td = db.TRINHDOes.FirstOrDefault(t => t.IDTD == item.IDTD);
-                //hd.TENTD = td.TENTD;
-
 
                 hd.CREATED_BY = item.CREATED_BY;
                 hd.CREATED_DATE = item.CREATED_DATE;

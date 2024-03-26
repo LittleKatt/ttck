@@ -54,6 +54,7 @@
     <Compile Include="DTO\HDLD_DTO.cs" />
     <Compile Include="DTO\NhanVien_DTO.cs" />
     <Compile Include="HopDongLD.cs" />
+    <Compile Include="KhenThuong_KyLuat.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="PhongBan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
