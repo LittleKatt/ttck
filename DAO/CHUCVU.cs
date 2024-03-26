@@ -18,6 +18,7 @@ namespace DAO
         public CHUCVU()
         {
             this.NHANVIENs = new HashSet<NHANVIEN>();
+            this.HOPDONGs = new HashSet<HOPDONG>();
         }
     
         public int IDCV { get; set; }
@@ -25,5 +26,7 @@ namespace DAO
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
     }
 }

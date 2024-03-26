@@ -15,6 +15,60 @@ namespace BUS
         {
             return db.HOPDONGs.FirstOrDefault(x=>x.SOHD == sohd);
         }
+       
+        public List<HDLD_DTO> getItemFull(string sohd)
+        {
+            List<HOPDONG> lstHD = db.HOPDONGs.Where(x=>x.SOHD==sohd).ToList();
+            List<HDLD_DTO> lstDTO = new List<HDLD_DTO>();
+            HDLD_DTO hd;
+            foreach (var item in lstHD)
+            {
+                hd = new HDLD_DTO();
+                hd.SOHD = item.SOHD;
+                //hd.NGAYBATDAU = "Từ ngày " +item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(0,2) +"tháng" + item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(3,2) + "năm" + item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(6,2);
+                hd.NGAYBATDAU = item.NGAYBATDAU.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKY = item.NGAYKY.Value.ToString("dd/MM/yyyy");
+                hd.THOIHAN = item.THOIHAN;
+                hd.HESOLUONG = item.HESOLUONG;
+                hd.LANKY = item.LANKY;
+                hd.NOIDUNG = item.NOIDUNG;
+                hd.IDNV = item.IDNV;
+                var nv = db.NHANVIENs.FirstOrDefault(n => n.IDNV == item.IDNV);
+                hd.HOTEN = nv.HOTEN;
+                hd.NGAYSINH = nv.NGAYSINH.Value.ToString("dd/MM/yyyy");
+                hd.CCCD = nv.CCCD;
+                hd.DIENTHOAI = nv.DIENTHOAI;
+                hd.DIACHI = nv.DIACHI;
+
+                //hd.IDPB = item.IDPB;
+                //var pb = db.PHONGBANs.FirstOrDefault(p => p.IDPB == item.IDPB);
+                //hd.TENPB = pb.TENPB;
+
+                //hd.IDBP = item.IDBP;
+                //var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
+                //hd.TENBP = bp.TENBP;
+
+                //hd.IDCV = item.IDCV;
+                //var cv = db.CHUCVUs.FirstOrDefault(c => c.IDCV == item.IDCV);
+                //hd.TENCV = cv.TENCV;
+
+                //hd.IDTD = item.IDTD;
+                //var td = db.TRINHDOes.FirstOrDefault(t => t.IDTD == item.IDTD);
+                //hd.TENTD = td.TENTD;
+
+
+
+                hd.CREATED_BY = item.CREATED_BY;
+                hd.CREATED_DATE = item.CREATED_DATE;
+                hd.UPDATED_BY = item.UPDATED_BY;
+                hd.UPDATED_DATE = item.UPDATED_DATE;
+                hd.DELETE_BY = item.DELETE_BY;
+                hd.DELETE_DATE = item.DELETE_DATE;
+                lstDTO.Add(hd);
+            }
+            return lstDTO;
+        }
         public List<HOPDONG>getList()
         {
             return db.HOPDONGs.ToList();
@@ -28,9 +82,9 @@ namespace BUS
             {
                 hd = new HDLD_DTO();
                 hd.SOHD = item.SOHD;
-                hd.NGAYBATDAU = item.NGAYBATDAU;
-                hd.NGAYKETTHUC = item.NGAYKETTHUC;
-                hd.NGAYKY = item.NGAYKY;
+                hd.NGAYBATDAU = item.NGAYBATDAU.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKY = item.NGAYKY.Value.ToString("dd/MM/yyyy");
                 hd.THOIHAN = item.THOIHAN;
                 hd.HESOLUONG = item.HESOLUONG;
                 hd.LANKY = item.LANKY;
@@ -38,6 +92,29 @@ namespace BUS
                 hd.IDNV = item.IDNV;
                 var nv = db.NHANVIENs.FirstOrDefault(n => n.IDNV == item.IDNV);
                 hd.HOTEN = nv.HOTEN;
+                hd.NGAYSINH = nv.NGAYSINH.Value.ToString("dd/MM/yyyy");
+                hd.CCCD = nv.CCCD;
+                hd.DIENTHOAI = nv.DIENTHOAI;
+                hd.DIACHI = nv.DIACHI;
+
+
+                //hd.IDPB = item.IDPB;
+                //var pb = db.PHONGBANs.FirstOrDefault(p => p.IDPB == item.IDPB);
+                //hd.TENPB = pb.TENPB;
+
+                //hd.IDBP = item.IDBP;
+                //var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
+                //hd.TENBP = bp.TENBP;
+
+                //hd.IDCV = item.IDCV;
+                //var cv = db.CHUCVUs.FirstOrDefault(c => c.IDCV == item.IDCV);
+                //hd.TENCV = cv.TENCV;
+
+                //hd.IDTD = item.IDTD;
+                //var td = db.TRINHDOes.FirstOrDefault(t => t.IDTD == item.IDTD);
+                //hd.TENTD = td.TENTD;
+
+
                 hd.CREATED_BY = item.CREATED_BY;
                 hd.CREATED_DATE = item.CREATED_DATE;
                 hd.UPDATED_BY = item.UPDATED_BY;

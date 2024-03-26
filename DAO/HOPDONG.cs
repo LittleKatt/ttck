@@ -23,6 +23,10 @@ namespace DAO
         public string THOIHAN { get; set; }
         public Nullable<double> HESOLUONG { get; set; }
         public Nullable<int> IDNV { get; set; }
+        public Nullable<int> IDTD { get; set; }
+        public Nullable<int> IDPB { get; set; }
+        public Nullable<int> IDBP { get; set; }
+        public Nullable<int> IDCV { get; set; }
         public Nullable<int> DELETE_BY { get; set; }
         public Nullable<System.DateTime> DELETE_DATE { get; set; }
         public Nullable<int> UPDATED_BY { get; set; }
@@ -30,6 +34,10 @@ namespace DAO
         public Nullable<int> CREATED_BY { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
     
+        public virtual BOPHAN BOPHAN { get; set; }
+        public virtual CHUCVU CHUCVU { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual PHONGBAN PHONGBAN { get; set; }
+        public virtual TRINHDO TRINHDO { get; set; }
     }
 }

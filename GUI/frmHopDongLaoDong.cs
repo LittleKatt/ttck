@@ -29,6 +29,7 @@ namespace GUI
         bool _them;
         string _sohd;
         //string _maxsohd;
+        List<HDLD_DTO> _lstHD;
         private void frmHopDongLaoDong_Load(object sender, EventArgs e)
         {
             _hdld = new HopDongLD();
@@ -126,7 +127,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            rptHDLD rpt = new rptHDLD();
+            _lstHD = _hdld.getItemFull(_sohd);
+            rptHDLD rpt = new rptHDLD(_lstHD);
             rpt.ShowPreviewDialog();
         }
 
@@ -188,6 +190,7 @@ namespace GUI
                 spLanKy.Text = hd.LANKY.ToString();
                 slkNhanVien.EditValue = hd.IDNV;
                 txtNoiDung.RtfText = hd.NOIDUNG;
+                _lstHD = _hdld.getItemFull(_sohd);
             }
         }
 
