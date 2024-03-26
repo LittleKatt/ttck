@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
 using BUS;
+using GUI.Reports;
+using BUS.DTO;
+using System.IO;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -122,7 +126,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptHDLD rpt = new rptHDLD();
+            rpt.ShowPreviewDialog();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -139,6 +139,12 @@
     <Compile Include="Reports\rptDSNV.Designer.cs">
       <DependentUpon>rptDSNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptHDLD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptHDLD.Designer.cs">
+      <DependentUpon>rptHDLD.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmBoPhan.resx">
       <DependentUpon>frmBoPhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +185,9 @@
     </Compile>
     <EmbeddedResource Include="Reports\rptDSNV.resx">
       <DependentUpon>rptDSNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptHDLD.resx">
+      <DependentUpon>rptHDLD.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
