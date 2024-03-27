@@ -28,7 +28,6 @@ namespace GUI
         NhanVien _nhanvien;
         bool _them;
         string _sohd;
-        //string _maxsohd;
         List<HDLD_DTO> _lstHD;
         private void frmHopDongLaoDong_Load(object sender, EventArgs e)
         {
@@ -136,7 +135,7 @@ namespace GUI
         {
             this.Close();
         }
-        void SaveData()
+        private void SaveData()
         {
             if (_them)
             {
