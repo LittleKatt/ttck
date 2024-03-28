@@ -23,7 +23,6 @@ namespace BUS
             HDLD_DTO hd;
             foreach (var item in lstHD)
             {
-                string NGAYKY1;
                 hd = new HDLD_DTO();
                 hd.SOHD = item.SOHD;
                 //hd.NGAYBATDAU = "Từ ngày " +item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(0,2) +"tháng" + item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(3,2) + "năm" + item.NGAYBATDAU.Value.ToString("dd/MM/yyyy").Substring(6,2);

@@ -65,7 +65,6 @@ namespace GUI
             spHeSL.Text = "1";
             dtNgayBD.Value = DateTime.Now;
             dtNgayKT.Value = DateTime.Now;
-            dtNgayKT.Value = DateTime.Now;
             dtNgayKy.Value = DateTime.Now;
             slkNhanVien.Text = string.Empty;
             

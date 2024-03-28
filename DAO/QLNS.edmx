@@ -88,10 +88,11 @@
           <Property Name="LOAI" Type="int" />
           <Property Name="TUNGAY" Type="datetime" />
           <Property Name="DENNGAY" Type="datetime" />
+          <Property Name="NGAYKY" Type="datetime" />
           <Property Name="CREATED_BY" Type="int" />
           <Property Name="CREATED_DATE" Type="datetime" />
-          <Property Name="UPDATE_BY" Type="int" />
-          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
           <Property Name="DELETED_BY" Type="int" />
           <Property Name="DELETED_DATE" Type="datetime" />
         </EntityType>
@@ -1085,10 +1086,11 @@
           <Property Name="LOAI" Type="Int32" />
           <Property Name="TUNGAY" Type="DateTime" Precision="3" />
           <Property Name="DENNGAY" Type="DateTime" Precision="3" />
+          <Property Name="NGAYKY" Type="DateTime" Precision="3" />
           <Property Name="CREATED_BY" Type="Int32" />
           <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="UPDATE_BY" Type="Int32" />
-          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
           <Property Name="DELETED_BY" Type="Int32" />
           <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
           <NavigationProperty Name="NHANVIEN" Relationship="QLNSModel.FK_KHENTHUONG_KYLUAT_NHANVIEN" FromRole="KHENTHUONG_KYLUAT" ToRole="NHANVIEN" />
@@ -1302,10 +1304,11 @@
               <MappingFragment StoreEntitySet="KHENTHUONG_KYLUAT">
                 <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
                 <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
-                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
-                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
                 <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
                 <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="NGAYKY" ColumnName="NGAYKY" />
                 <ScalarProperty Name="DENNGAY" ColumnName="DENNGAY" />
                 <ScalarProperty Name="TUNGAY" ColumnName="TUNGAY" />
                 <ScalarProperty Name="LOAI" ColumnName="LOAI" />

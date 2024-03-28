@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BUS.DTO;
 using DAO;
 
 namespace BUS
@@ -18,6 +19,34 @@ namespace BUS
         public List<KHENTHUONG_KYLUAT> getList(int loai)
         {
             return db.KHENTHUONG_KYLUAT.Where(x => x.LOAI == loai).ToList();
+        }
+        public List<KTKL_DTO> getListFull(int loai)
+        {
+            List<KHENTHUONG_KYLUAT> lstKT = db.KHENTHUONG_KYLUAT.Where(x => x.LOAI == loai).ToList();
+            List<KTKL_DTO> lstDTO = new List<KTKL_DTO>();
+            KTKL_DTO kt;
+            foreach (var item in lstKT)
+            {
+                kt = new KTKL_DTO();
+                kt.SOQD = item.SOQD;
+                //kt.NGAYBATDAU = item.NGAYBATDAU.Value.ToString("dd/MM/yyyy");
+                //kt.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                kt.NGAYKY = item.NGAYKY.Value;
+                kt.LOAI = item.LOAI;
+                kt.LYDO = item.LYDO;
+                kt.NOIDUNG = item.NOIDUNG;
+                kt.IDNV = item.IDNV;
+                var nv = db.NHANVIENs.FirstOrDefault(n => n.IDNV == item.IDNV);
+                kt.HOTEN = nv.HOTEN;
+                kt.CREATED_BY = item.CREATED_BY;
+                kt.CREATED_DATE = item.CREATED_DATE;
+                kt.UPDATED_BY = item.UPDATED_BY;
+                kt.UPDATED_DATE = item.UPDATED_DATE;
+                kt.DELETED_BY = item.DELETED_BY;
+                kt.DELETED_DATE = item.DELETED_DATE;
+                lstDTO.Add(kt);
+            }
+            return lstDTO;
         }
 
         public KHENTHUONG_KYLUAT Add (KHENTHUONG_KYLUAT kt)
@@ -47,8 +76,8 @@ namespace BUS
                 _kt.NOIDUNG = kt.NOIDUNG;
                 _kt.LOAI = kt.LOAI;
                 _kt.IDNV = kt.IDNV;
-                _kt.UPDATE_BY = kt.UPDATE_BY;
-                _kt.UPDATE_DATE = kt.UPDATE_DATE;
+                _kt.UPDATED_BY = kt.UPDATED_BY;
+                _kt.UPDATED_DATE = kt.UPDATED_DATE;
                 db.SaveChanges();
                 return kt;
             }
@@ -59,13 +88,13 @@ namespace BUS
             }
         }
 
-        public void Delete (string soqd)
+        public void Delete (string soqd, int idnv)
         {
             try
             {
                 KHENTHUONG_KYLUAT _kt = db.KHENTHUONG_KYLUAT.FirstOrDefault(x => x.SOQD == soqd);
-                _kt.DELETED_BY = _kt.DELETED_BY;
-                _kt.DELETED_DATE = _kt.DELETED_DATE;
+                _kt.DELETED_BY = idnv;
+                _kt.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -73,6 +102,17 @@ namespace BUS
 
                 throw new Exception("Lỗi " + ex.Message);
             }
+        }
+
+        public string MaxSoQuyetDinh(int loai)
+        {
+            var _kt = db.KHENTHUONG_KYLUAT.Where(x=>x.LOAI == loai).OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
+            if (_kt != null)
+            {
+                return _kt.SOQD;
+            }
+            else
+            { return "000"; }
         }
     }
 }

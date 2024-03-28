@@ -308,6 +308,7 @@
             this.btnKyLuat.Id = 25;
             this.btnKyLuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKyLuat.ImageOptions.SvgImage")));
             this.btnKyLuat.Name = "btnKyLuat";
+            this.btnKyLuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKyLuat_ItemClick);
             // 
             // rbpHeThong
             // 
