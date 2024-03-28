@@ -69,7 +69,7 @@ namespace BUS
             try
             {
                 KHENTHUONG_KYLUAT _kt = db.KHENTHUONG_KYLUAT.FirstOrDefault(x=>x.SOQD == kt.SOQD);
-                _kt.NGAY = kt.NGAY;
+                //_kt.NGAY = kt.NGAY;
                 _kt.TUNGAY = kt.TUNGAY;
                 _kt.DENNGAY = kt.DENNGAY;
                 _kt.LYDO = kt.LYDO;

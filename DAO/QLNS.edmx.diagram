@@ -40,7 +40,7 @@
         <AssociationConnector Association="QLNSModel.FK_HOPDONG_NHANVIEN" />
         <AssociationConnector Association="QLNSModel.FK_HOPDONG_PHONGBAN" />
         <AssociationConnector Association="QLNSModel.FK_HOPDONG_TRINHDO" />
-        <EntityTypeShape EntityType="QLNSModel.KHENTHUONG_KYLUAT" Width="1.5" PointX="5.25" PointY="15.625" />
+        <EntityTypeShape EntityType="QLNSModel.KHENTHUONG_KYLUAT" Width="1.5" PointX="5.25" PointY="15.75" />
         <AssociationConnector Association="QLNSModel.FK_KHENTHUONG_KYLUAT_NHANVIEN" />
       </Diagram>
     </edmx:Diagrams>

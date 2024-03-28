@@ -83,7 +83,6 @@
           <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LYDO" Type="nvarchar" MaxLength="500" />
           <Property Name="NOIDUNG" Type="nvarchar" MaxLength="500" />
-          <Property Name="NGAY" Type="datetime" />
           <Property Name="IDNV" Type="int" />
           <Property Name="LOAI" Type="int" />
           <Property Name="TUNGAY" Type="datetime" />
@@ -1081,7 +1080,6 @@
           <Property Name="SOQD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LYDO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="NOIDUNG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="NGAY" Type="DateTime" Precision="3" />
           <Property Name="IDNV" Type="Int32" />
           <Property Name="LOAI" Type="Int32" />
           <Property Name="TUNGAY" Type="DateTime" Precision="3" />
@@ -1313,7 +1311,6 @@
                 <ScalarProperty Name="TUNGAY" ColumnName="TUNGAY" />
                 <ScalarProperty Name="LOAI" ColumnName="LOAI" />
                 <ScalarProperty Name="IDNV" ColumnName="IDNV" />
-                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
                 <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
                 <ScalarProperty Name="LYDO" ColumnName="LYDO" />
                 <ScalarProperty Name="SOQD" ColumnName="SOQD" />

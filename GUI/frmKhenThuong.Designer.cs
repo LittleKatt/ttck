@@ -482,11 +482,12 @@
             this.LYDO.AppearanceHeader.Options.UseFont = true;
             this.LYDO.Caption = "LÝ DO";
             this.LYDO.FieldName = "LYDO";
-            this.LYDO.MinWidth = 25;
+            this.LYDO.MaxWidth = 250;
+            this.LYDO.MinWidth = 250;
             this.LYDO.Name = "LYDO";
             this.LYDO.Visible = true;
             this.LYDO.VisibleIndex = 3;
-            this.LYDO.Width = 94;
+            this.LYDO.Width = 250;
             // 
             // NOIDUNG
             // 
@@ -494,11 +495,12 @@
             this.NOIDUNG.AppearanceHeader.Options.UseFont = true;
             this.NOIDUNG.Caption = "NỘI DUNG";
             this.NOIDUNG.FieldName = "NOIDUNG";
-            this.NOIDUNG.MinWidth = 25;
+            this.NOIDUNG.MaxWidth = 250;
+            this.NOIDUNG.MinWidth = 250;
             this.NOIDUNG.Name = "NOIDUNG";
             this.NOIDUNG.Visible = true;
             this.NOIDUNG.VisibleIndex = 4;
-            this.NOIDUNG.Width = 94;
+            this.NOIDUNG.Width = 250;
             // 
             // barDockControl1
             // 

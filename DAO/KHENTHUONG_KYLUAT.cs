@@ -17,7 +17,6 @@ namespace DAO
         public string SOQD { get; set; }
         public string LYDO { get; set; }
         public string NOIDUNG { get; set; }
-        public Nullable<System.DateTime> NGAY { get; set; }
         public Nullable<int> IDNV { get; set; }
         public Nullable<int> LOAI { get; set; }
         public Nullable<System.DateTime> TUNGAY { get; set; }
