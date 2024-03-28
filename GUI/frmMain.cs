@@ -85,5 +85,10 @@ namespace GUI
         {
             //openForm(typeof(frmKyLuat));
         }
+
+        private void btnDieuChuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmDieuChuyen));
+        }
     }
 }

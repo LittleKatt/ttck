@@ -51,6 +51,7 @@
     <Compile Include="BoPhan.cs" />
     <Compile Include="ChucVu.cs" />
     <Compile Include="DanToc.cs" />
+    <Compile Include="DieuChuyen.cs" />
     <Compile Include="DTO\HDLD_DTO.cs" />
     <Compile Include="DTO\KTKL_DTO.cs" />
     <Compile Include="DTO\NhanVien_DTO.cs" />

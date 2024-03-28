@@ -112,7 +112,7 @@ namespace BUS
                 return _kt.SOQD;
             }
             else
-            { return "000"; }
+            { return "0000"; }
         }
     }
 }

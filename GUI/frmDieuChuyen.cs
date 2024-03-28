@@ -1,6 +1,4 @@
 ﻿using BUS;
-using BUS.DTO;
-using DAO;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -14,23 +12,32 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmKhenThuong : DevExpress.XtraEditors.XtraForm
+    public partial class frmDieuChuyen : DevExpress.XtraEditors.XtraForm
     {
-        public frmKhenThuong()
+        public frmDieuChuyen()
         {
             InitializeComponent();
         }
         bool _them;
         string _soqd;
-        KhenThuong_KyLuat _ktkl;
+        DieuChuyen _dc;
         NhanVien _nhanvien;
-        private void frmKhenThuong_Load(object sender, EventArgs e)
+        PhongBan _phongban;
+        BoPhan _bophan;
+        ChucVu _chucvu;
+        private void frmDieuChuyen_Load(object sender, EventArgs e)
         {
-            _ktkl = new KhenThuong_KyLuat();
+            _dc = new DieuChuyen();
             _nhanvien = new NhanVien();
+            _phongban = new PhongBan();
+            _bophan = new BoPhan();
+            _chucvu = new ChucVu();
             _them = false;
             LoadNhanVien();
             LoadData();
+            LoadPB();
+            LoadBP();
+            LoadCV();
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
         }
@@ -45,11 +52,12 @@ namespace GUI
             btnIn.Enabled = kt;
             txtSoQD.Enabled = !kt;
             txtLyDo.Enabled = !kt;
-            txtNoiDung.Enabled = !kt;
-            //dtNgayBD.Enabled = !kt;
-            //dtNgayKT.Enabled = !kt;
+            txtGhiChu.Enabled = !kt;
             dtNgayKy.Enabled = !kt;
             slkNhanVien.Enabled = !kt;
+            cbbNewPB.Enabled = !kt;
+            cbbNewBP.Enabled = !kt;
+            cbbNewCV.Enabled = !kt;
             gcDanhSach.Enabled = kt;
         }
 
@@ -57,11 +65,9 @@ namespace GUI
         {
             txtSoQD.Text = string.Empty;
             txtLyDo.Text = string.Empty;
-            txtNoiDung.Text = string.Empty;
-            //dtNgayBD.Value = DateTime.Now;
-            //dtNgayKT.Value = DateTime.Now;
-            dtNgayKy.Value = DateTime.Now;
-            slkNhanVien.Text = string.Empty;
+            txtGhiChu.Text = string.Empty;
+            //dtNgayKy.Value = DateTime.Now;
+            //slkNhanVien.Text = string.Empty;
 
         }
 
@@ -73,8 +79,27 @@ namespace GUI
         }
         private void LoadData()
         {
-            gcDanhSach.DataSource = _ktkl.getListFull(1);
+            gcDanhSach.DataSource = _dc.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
+        }
+
+        void LoadPB()
+        {
+            cbbNewPB.DataSource = _phongban.getList();
+            cbbNewPB.DisplayMember = "TEBPB";
+            cbbNewPB.ValueMember = "IDPB";
+        }
+        void LoadBP()
+        {
+            cbbNewPB.DataSource = _bophan.getList();
+            cbbNewPB.DisplayMember = "TEBBP";
+            cbbNewPB.ValueMember = "IDBP";
+        }
+        void LoadCV()
+        {
+            cbbNewPB.DataSource = _chucvu.getList();
+            cbbNewPB.DisplayMember = "TEBCV";
+            cbbNewPB.ValueMember = "IDCV";
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -115,7 +140,6 @@ namespace GUI
             _them = false;
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
-
         }
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -132,7 +156,7 @@ namespace GUI
         {
             if (_them)
             {
-             
+
                 var maxsoqd = _ktkl.MaxSoQuyetDinh(1);
                 int so = int.Parse(maxsoqd.Substring(0, 4)) + 1;
 

@@ -183,6 +183,7 @@
             this.btnDieuChuyen.Id = 8;
             this.btnDieuChuyen.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDieuChuyen.ImageOptions.SvgImage")));
             this.btnDieuChuyen.Name = "btnDieuChuyen";
+            this.btnDieuChuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDieuChuyen_ItemClick);
             // 
             // btnNghiViec
             // 
@@ -405,7 +406,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
-            this.Text = "Phần mềm quản lý nhân sự";
+            this.Text = "Quản Lý Nhân Sự Tiền Lương";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();

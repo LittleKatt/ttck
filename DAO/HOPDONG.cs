@@ -27,8 +27,8 @@ namespace DAO
         public Nullable<int> IDPB { get; set; }
         public Nullable<int> IDBP { get; set; }
         public Nullable<int> IDCV { get; set; }
-        public Nullable<int> DELETE_BY { get; set; }
-        public Nullable<System.DateTime> DELETE_DATE { get; set; }
+        public Nullable<int> DELETED_BY { get; set; }
+        public Nullable<System.DateTime> DELETED_DATE { get; set; }
         public Nullable<int> UPDATED_BY { get; set; }
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
         public Nullable<int> CREATED_BY { get; set; }

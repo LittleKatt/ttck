@@ -44,8 +44,8 @@ namespace BUS
                 hd.CREATED_DATE = item.CREATED_DATE;
                 hd.UPDATED_BY = item.UPDATED_BY;
                 hd.UPDATED_DATE = item.UPDATED_DATE;
-                hd.DELETE_BY = item.DELETE_BY;
-                hd.DELETE_DATE = item.DELETE_DATE;
+                hd.DELETED_BY = item.DELETED_BY;
+                hd.DELETED_DATE = item.DELETED_DATE;
                 lstDTO.Add(hd);
             }
             return lstDTO;
@@ -83,8 +83,8 @@ namespace BUS
                 hd.CREATED_DATE = item.CREATED_DATE;
                 hd.UPDATED_BY = item.UPDATED_BY;
                 hd.UPDATED_DATE = item.UPDATED_DATE;
-                hd.DELETE_BY = item.DELETE_BY;
-                hd.DELETE_DATE = item.DELETE_DATE;
+                hd.DELETED_BY = item.DELETED_BY;
+                hd.DELETED_DATE = item.DELETED_DATE;
                 lstDTO.Add(hd);
             }
             return lstDTO;
@@ -131,8 +131,8 @@ namespace BUS
         public void Delete (string sohd, int idnv)
         {
             var _hd = db.HOPDONGs.FirstOrDefault(x => x.SOHD == sohd);
-            _hd.DELETE_BY = idnv;
-            _hd.DELETE_DATE = DateTime.Now;
+            _hd.DELETED_BY = idnv;
+            _hd.DELETED_DATE = DateTime.Now;
             db.SaveChanges();
         }
         public string MaxSoHopDong()
