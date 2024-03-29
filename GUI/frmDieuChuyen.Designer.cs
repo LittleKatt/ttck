@@ -64,25 +64,25 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TENPB = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CREATED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DELETED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SOQD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDPB = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENBP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENPB = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDBP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENCV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENBP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDCV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENPB2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENCV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDPB2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LYDO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENPB2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDBP2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IDCV2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENBP2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDCV2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENCV2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LYDO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -99,6 +99,10 @@
             this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl15 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl16 = new DevExpress.XtraBars.BarDockControl();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -266,6 +270,10 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox3);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl5);
             this.splitContainer1.Panel1.Controls.Add(this.cbbNewCV);
             this.splitContainer1.Panel1.Controls.Add(this.cbbNewBP);
             this.splitContainer1.Panel1.Controls.Add(this.cbbNewPB);
@@ -292,7 +300,7 @@
             // 
             this.cbbNewCV.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbbNewCV.FormattingEnabled = true;
-            this.cbbNewCV.Location = new System.Drawing.Point(872, 76);
+            this.cbbNewCV.Location = new System.Drawing.Point(613, 114);
             this.cbbNewCV.Name = "cbbNewCV";
             this.cbbNewCV.Size = new System.Drawing.Size(196, 29);
             this.cbbNewCV.TabIndex = 42;
@@ -301,16 +309,16 @@
             // 
             this.cbbNewBP.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbbNewBP.FormattingEnabled = true;
-            this.cbbNewBP.Location = new System.Drawing.Point(588, 76);
+            this.cbbNewBP.Location = new System.Drawing.Point(361, 114);
             this.cbbNewBP.Name = "cbbNewBP";
-            this.cbbNewBP.Size = new System.Drawing.Size(229, 29);
+            this.cbbNewBP.Size = new System.Drawing.Size(215, 29);
             this.cbbNewBP.TabIndex = 41;
             // 
             // cbbNewPB
             // 
             this.cbbNewPB.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbbNewPB.FormattingEnabled = true;
-            this.cbbNewPB.Location = new System.Drawing.Point(315, 76);
+            this.cbbNewPB.Location = new System.Drawing.Point(149, 114);
             this.cbbNewPB.Name = "cbbNewPB";
             this.cbbNewPB.Size = new System.Drawing.Size(192, 29);
             this.cbbNewPB.TabIndex = 40;
@@ -319,7 +327,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(26, 84);
+            this.labelControl4.Location = new System.Drawing.Point(26, 114);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(93, 21);
             this.labelControl4.TabIndex = 39;
@@ -327,7 +335,7 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(408, 139);
+            this.txtGhiChu.Location = new System.Drawing.Point(408, 169);
             this.txtGhiChu.MenuManager = this.barManager1;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -339,7 +347,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(334, 142);
+            this.labelControl3.Location = new System.Drawing.Point(334, 172);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(57, 21);
             this.labelControl3.TabIndex = 37;
@@ -347,7 +355,7 @@
             // 
             // txtLyDo
             // 
-            this.txtLyDo.Location = new System.Drawing.Point(100, 135);
+            this.txtLyDo.Location = new System.Drawing.Point(100, 165);
             this.txtLyDo.MenuManager = this.barManager1;
             this.txtLyDo.Name = "txtLyDo";
             this.txtLyDo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -359,7 +367,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(26, 138);
+            this.labelControl2.Location = new System.Drawing.Point(26, 168);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 21);
             this.labelControl2.TabIndex = 35;
@@ -462,9 +470,9 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(26, 36);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(46, 21);
+            this.labelControl1.Size = new System.Drawing.Size(47, 21);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Số HĐ";
+            this.labelControl1.Text = "Số QĐ";
             // 
             // gcDanhSach
             // 
@@ -481,7 +489,7 @@
             // gvDanhSach
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.CREATED_BY,
+            this.DELETED_BY,
             this.SOQD,
             this.NGAYKY,
             this.IDNV,
@@ -505,31 +513,18 @@
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
             this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
             // 
-            // TENPB
+            // DELETED_BY
             // 
-            this.TENPB.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.TENPB.AppearanceHeader.Options.UseFont = true;
-            this.TENPB.Caption = "PHÒNG BAN";
-            this.TENPB.FieldName = "TENPB";
-            this.TENPB.MaxWidth = 120;
-            this.TENPB.MinWidth = 120;
-            this.TENPB.Name = "TENPB";
-            this.TENPB.Visible = true;
-            this.TENPB.VisibleIndex = 4;
-            this.TENPB.Width = 120;
-            // 
-            // CREATED_BY
-            // 
-            this.CREATED_BY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.CREATED_BY.AppearanceHeader.Options.UseFont = true;
-            this.CREATED_BY.Caption = "DEL";
-            this.CREATED_BY.FieldName = "CREATED_BY";
-            this.CREATED_BY.MaxWidth = 50;
-            this.CREATED_BY.MinWidth = 50;
-            this.CREATED_BY.Name = "CREATED_BY";
-            this.CREATED_BY.Visible = true;
-            this.CREATED_BY.VisibleIndex = 0;
-            this.CREATED_BY.Width = 50;
+            this.DELETED_BY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.DELETED_BY.AppearanceHeader.Options.UseFont = true;
+            this.DELETED_BY.Caption = "DEL";
+            this.DELETED_BY.FieldName = "DELETED_BY";
+            this.DELETED_BY.MaxWidth = 50;
+            this.DELETED_BY.MinWidth = 50;
+            this.DELETED_BY.Name = "DELETED_BY";
+            this.DELETED_BY.Visible = true;
+            this.DELETED_BY.VisibleIndex = 0;
+            this.DELETED_BY.Width = 50;
             // 
             // SOQD
             // 
@@ -588,6 +583,28 @@
             this.IDPB.Name = "IDPB";
             this.IDPB.Width = 25;
             // 
+            // TENPB
+            // 
+            this.TENPB.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TENPB.AppearanceHeader.Options.UseFont = true;
+            this.TENPB.Caption = "PHÒNG BAN";
+            this.TENPB.FieldName = "TENPB";
+            this.TENPB.MaxWidth = 120;
+            this.TENPB.MinWidth = 120;
+            this.TENPB.Name = "TENPB";
+            this.TENPB.Visible = true;
+            this.TENPB.VisibleIndex = 4;
+            this.TENPB.Width = 120;
+            // 
+            // IDBP
+            // 
+            this.IDBP.Caption = "IDBP";
+            this.IDBP.FieldName = "IDBP";
+            this.IDBP.MaxWidth = 25;
+            this.IDBP.MinWidth = 25;
+            this.IDBP.Name = "IDBP";
+            this.IDBP.Width = 25;
+            // 
             // TENBP
             // 
             this.TENBP.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
@@ -601,14 +618,15 @@
             this.TENBP.VisibleIndex = 5;
             this.TENBP.Width = 120;
             // 
-            // IDBP
+            // IDCV
             // 
-            this.IDBP.Caption = "IDBP";
-            this.IDBP.FieldName = "IDBP";
-            this.IDBP.MaxWidth = 25;
-            this.IDBP.MinWidth = 25;
-            this.IDBP.Name = "IDBP";
-            this.IDBP.Width = 25;
+            this.IDCV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.IDCV.AppearanceHeader.Options.UseFont = true;
+            this.IDCV.Caption = "IDCV";
+            this.IDCV.FieldName = "IDCV";
+            this.IDCV.MinWidth = 25;
+            this.IDCV.Name = "IDCV";
+            this.IDCV.Width = 94;
             // 
             // TENCV
             // 
@@ -623,29 +641,6 @@
             this.TENCV.VisibleIndex = 6;
             this.TENCV.Width = 120;
             // 
-            // IDCV
-            // 
-            this.IDCV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.IDCV.AppearanceHeader.Options.UseFont = true;
-            this.IDCV.Caption = "IDCV";
-            this.IDCV.FieldName = "IDCV";
-            this.IDCV.MinWidth = 25;
-            this.IDCV.Name = "IDCV";
-            this.IDCV.Width = 94;
-            // 
-            // TENPB2
-            // 
-            this.TENPB2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.TENPB2.AppearanceHeader.Options.UseFont = true;
-            this.TENPB2.Caption = "PHÒNG BAN MỚI";
-            this.TENPB2.FieldName = "TENPB2";
-            this.TENPB2.MaxWidth = 120;
-            this.TENPB2.MinWidth = 120;
-            this.TENPB2.Name = "TENPB2";
-            this.TENPB2.Visible = true;
-            this.TENPB2.VisibleIndex = 7;
-            this.TENPB2.Width = 120;
-            // 
             // IDPB2
             // 
             this.IDPB2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
@@ -656,18 +651,18 @@
             this.IDPB2.Name = "IDPB2";
             this.IDPB2.Width = 94;
             // 
-            // LYDO
+            // TENPB2
             // 
-            this.LYDO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.LYDO.AppearanceHeader.Options.UseFont = true;
-            this.LYDO.Caption = "LÝ DO";
-            this.LYDO.FieldName = "LYDO";
-            this.LYDO.MaxWidth = 250;
-            this.LYDO.MinWidth = 250;
-            this.LYDO.Name = "LYDO";
-            this.LYDO.Visible = true;
-            this.LYDO.VisibleIndex = 10;
-            this.LYDO.Width = 250;
+            this.TENPB2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TENPB2.AppearanceHeader.Options.UseFont = true;
+            this.TENPB2.Caption = "PHÒNG BAN MỚI";
+            this.TENPB2.FieldName = "TENPB2";
+            this.TENPB2.MaxWidth = 150;
+            this.TENPB2.MinWidth = 150;
+            this.TENPB2.Name = "TENPB2";
+            this.TENPB2.Visible = true;
+            this.TENPB2.VisibleIndex = 7;
+            this.TENPB2.Width = 150;
             // 
             // IDBP2
             // 
@@ -676,27 +671,6 @@
             this.IDBP2.MinWidth = 25;
             this.IDBP2.Name = "IDBP2";
             this.IDBP2.Width = 94;
-            // 
-            // GHICHU
-            // 
-            this.GHICHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.GHICHU.AppearanceHeader.Options.UseFont = true;
-            this.GHICHU.Caption = "GHI CHÚ";
-            this.GHICHU.FieldName = "GHICHU";
-            this.GHICHU.MaxWidth = 250;
-            this.GHICHU.MinWidth = 250;
-            this.GHICHU.Name = "GHICHU";
-            this.GHICHU.Visible = true;
-            this.GHICHU.VisibleIndex = 11;
-            this.GHICHU.Width = 250;
-            // 
-            // IDCV2
-            // 
-            this.IDCV2.Caption = "IDCV2";
-            this.IDCV2.FieldName = "IDCV2";
-            this.IDCV2.MinWidth = 25;
-            this.IDCV2.Name = "IDCV2";
-            this.IDCV2.Width = 94;
             // 
             // TENBP2
             // 
@@ -711,6 +685,14 @@
             this.TENBP2.VisibleIndex = 8;
             this.TENBP2.Width = 120;
             // 
+            // IDCV2
+            // 
+            this.IDCV2.Caption = "IDCV2";
+            this.IDCV2.FieldName = "IDCV2";
+            this.IDCV2.MinWidth = 25;
+            this.IDCV2.Name = "IDCV2";
+            this.IDCV2.Width = 94;
+            // 
             // TENCV2
             // 
             this.TENCV2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
@@ -723,6 +705,32 @@
             this.TENCV2.Visible = true;
             this.TENCV2.VisibleIndex = 9;
             this.TENCV2.Width = 120;
+            // 
+            // LYDO
+            // 
+            this.LYDO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.LYDO.AppearanceHeader.Options.UseFont = true;
+            this.LYDO.Caption = "LÝ DO";
+            this.LYDO.FieldName = "LYDO";
+            this.LYDO.MaxWidth = 250;
+            this.LYDO.MinWidth = 250;
+            this.LYDO.Name = "LYDO";
+            this.LYDO.Visible = true;
+            this.LYDO.VisibleIndex = 10;
+            this.LYDO.Width = 250;
+            // 
+            // GHICHU
+            // 
+            this.GHICHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.GHICHU.AppearanceHeader.Options.UseFont = true;
+            this.GHICHU.Caption = "GHI CHÚ";
+            this.GHICHU.FieldName = "GHICHU";
+            this.GHICHU.MaxWidth = 250;
+            this.GHICHU.MinWidth = 250;
+            this.GHICHU.Name = "GHICHU";
+            this.GHICHU.Visible = true;
+            this.GHICHU.VisibleIndex = 11;
+            this.GHICHU.Width = 250;
             // 
             // barDockControl1
             // 
@@ -852,6 +860,43 @@
             this.barDockControl16.Manager = this.barManager1;
             this.barDockControl16.Size = new System.Drawing.Size(1100, 0);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(613, 79);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(196, 29);
+            this.comboBox1.TabIndex = 46;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(361, 79);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(215, 29);
+            this.comboBox2.TabIndex = 45;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(149, 79);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(192, 29);
+            this.comboBox3.TabIndex = 44;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(26, 79);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(81, 21);
+            this.labelControl5.TabIndex = 43;
+            this.labelControl5.Text = "Chuyển từ:";
+            // 
             // frmDieuChuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -957,7 +1002,7 @@
         private System.Windows.Forms.ComboBox cbbNewCV;
         private System.Windows.Forms.ComboBox cbbNewBP;
         private System.Windows.Forms.ComboBox cbbNewPB;
-        private DevExpress.XtraGrid.Columns.GridColumn CREATED_BY;
+        private DevExpress.XtraGrid.Columns.GridColumn DELETED_BY;
         private DevExpress.XtraGrid.Columns.GridColumn IDPB;
         private DevExpress.XtraGrid.Columns.GridColumn TENBP;
         private DevExpress.XtraGrid.Columns.GridColumn IDBP;
@@ -970,5 +1015,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn GHICHU;
         private DevExpress.XtraGrid.Columns.GridColumn IDCV2;
         private DevExpress.XtraGrid.Columns.GridColumn TENBP2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }

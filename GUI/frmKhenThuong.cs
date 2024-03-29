@@ -137,7 +137,7 @@ namespace GUI
                 int so = int.Parse(maxsoqd.Substring(0, 4)) + 1;
 
                 KHENTHUONG_KYLUAT kt = new KHENTHUONG_KYLUAT();
-                kt.SOQD = so.ToString("0000") + @"/2024/QĐKT";
+                kt.SOQD = so.ToString("0000") + @"/" + DateTime.Now.Year.ToString() + "/QĐKT";
                 //kt.TUNGAY = dtNgayBD.Value;
                 //kt.DENNGAY = dtNgayKT.Value;
                 kt.LYDO = txtLyDo.Text;

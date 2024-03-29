@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DAO;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
 
 namespace GUI
 {
@@ -35,9 +37,7 @@ namespace GUI
             _them = false;
             LoadNhanVien();
             LoadData();
-            LoadPB();
-            LoadBP();
-            LoadCV();
+            LoadCombobox();
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
         }
@@ -66,9 +66,11 @@ namespace GUI
             txtSoQD.Text = string.Empty;
             txtLyDo.Text = string.Empty;
             txtGhiChu.Text = string.Empty;
-            //dtNgayKy.Value = DateTime.Now;
-            //slkNhanVien.Text = string.Empty;
-
+            dtNgayKy.Value = DateTime.Now;
+            slkNhanVien.Text = string.Empty;
+            cbbNewBP.Text = string.Empty;
+            cbbNewCV.Text = string.Empty;
+            cbbNewPB.Text = string.Empty;
         }
 
         void LoadNhanVien()
@@ -79,27 +81,22 @@ namespace GUI
         }
         private void LoadData()
         {
-            gcDanhSach.DataSource = _dc.getList();
+            gcDanhSach.DataSource = _dc.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
         }
 
-        void LoadPB()
+        void LoadCombobox()
         {
             cbbNewPB.DataSource = _phongban.getList();
-            cbbNewPB.DisplayMember = "TEBPB";
+            cbbNewPB.DisplayMember = "TENPB";
             cbbNewPB.ValueMember = "IDPB";
-        }
-        void LoadBP()
-        {
-            cbbNewPB.DataSource = _bophan.getList();
-            cbbNewPB.DisplayMember = "TEBBP";
-            cbbNewPB.ValueMember = "IDBP";
-        }
-        void LoadCV()
-        {
-            cbbNewPB.DataSource = _chucvu.getList();
-            cbbNewPB.DisplayMember = "TEBCV";
-            cbbNewPB.ValueMember = "IDCV";
+            cbbNewBP.DataSource = _bophan.getList();
+            cbbNewBP.DisplayMember = "TENBP";
+            cbbNewBP.ValueMember = "IDBP";
+            cbbNewCV.DataSource = _chucvu.getList();
+            cbbNewCV.DisplayMember = "TENCV";
+            cbbNewCV.ValueMember = "IDCV";
+
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -121,7 +118,7 @@ namespace GUI
         {
             if (MessageBox.Show("Bạn có chắc chắn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _ktkl.Delete(_soqd, 1);
+                _dc.Delete(_soqd, 1);
                 LoadData();
             }
         }
@@ -154,38 +151,47 @@ namespace GUI
 
         private void SaveData()
         {
+            DIEUCHUYEN dc;
             if (_them)
             {
 
-                var maxsoqd = _ktkl.MaxSoQuyetDinh(1);
+                var maxsoqd = _dc.MaxSoQuyetDinh();
                 int so = int.Parse(maxsoqd.Substring(0, 4)) + 1;
-
-                KHENTHUONG_KYLUAT kt = new KHENTHUONG_KYLUAT();
-                kt.SOQD = so.ToString("0000") + @"/2024/QĐKT";
-                //kt.TUNGAY = dtNgayBD.Value;
-                //kt.DENNGAY = dtNgayKT.Value;
-                kt.LYDO = txtLyDo.Text;
-                kt.NOIDUNG = txtNoiDung.Text;
-                kt.NGAYKY = dtNgayKy.Value;
-                kt.LOAI = 1;
-                kt.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
-                kt.CREATED_BY = 1;
-                kt.CREATED_DATE = DateTime.Now;
-                _ktkl.Add(kt);
+                dc = new DIEUCHUYEN();
+                dc.SOQD = so.ToString("0000") + @"/"+DateTime.Now.Year.ToString()+"/QĐĐC";
+                dc.LYDO = txtLyDo.Text;
+                dc.GHICHU = txtGhiChu.Text;
+                dc.NGAYKY = dtNgayKy.Value;
+                dc.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
+                dc.IDPB = _nhanvien.getItem(int.Parse(slkNhanVien.EditValue.ToString())).IDPB;
+                dc.IDPB2 = int.Parse(cbbNewPB.SelectedValue.ToString());
+                dc.IDBP=_nhanvien.getItem(int.Parse(slkNhanVien.EditValue.ToString())).IDBP;
+                dc.IDBP2 = int.Parse(cbbNewBP.SelectedValue.ToString());
+                dc.IDCV = _nhanvien.getItem(int.Parse(slkNhanVien.EditValue.ToString())).IDCV;
+                dc.IDCV2 = int.Parse(cbbNewCV.SelectedValue.ToString());
+                dc.CREATED_BY = 1;
+                dc.CREATED_DATE = DateTime.Now;
+                _dc.Add(dc);
             }
             else
             {
-                var kt = _ktkl.getItem(_soqd);
-                //kt.TUNGAY = dtNgayBD.Value;
-                //kt.DENNGAY = dtNgayKT.Value;
-                kt.NGAYKY = dtNgayKy.Value;
-                kt.LYDO = txtLyDo.Text;
-                kt.NOIDUNG = txtNoiDung.Text;
-                kt.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
-                kt.UPDATED_BY = 1;
-                kt.UPDATED_DATE = DateTime.Now;
-                _ktkl.Update(kt);
+                dc = _dc.getItem(_soqd);
+                dc.LYDO = txtLyDo.Text;
+                dc.GHICHU = txtGhiChu.Text;
+                dc.NGAYKY = dtNgayKy.Value;
+                dc.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
+                dc.IDPB2 = int.Parse(cbbNewPB.SelectedValue.ToString());
+                dc.IDBP2 = int.Parse(cbbNewBP.SelectedValue.ToString());
+                dc.IDCV2 = int.Parse(cbbNewCV.SelectedValue.ToString());
+                dc.UPDATED_BY = 1;
+                dc.UPDATED_DATE = DateTime.Now;
+                _dc.Update(dc);
             }
+            var nv = _nhanvien.getItem(dc.IDNV.Value);
+            nv.IDPB = dc.IDPB2;
+            nv.IDBP = dc.IDBP2;
+            nv.IDCV = dc.IDCV2;
+            _nhanvien.Update(nv);
         }
 
         private void gvDanhSach_Click(object sender, EventArgs e)
@@ -193,14 +199,15 @@ namespace GUI
             if (gvDanhSach.RowCount > 0)
             {
                 _soqd = gvDanhSach.GetFocusedRowCellValue("SOQD").ToString();
-                var kt = _ktkl.getItem(_soqd);
+                var dc = _dc.getItem(_soqd);
                 txtSoQD.Text = _soqd;
-                txtLyDo.Text = kt.LYDO;
-                txtNoiDung.Text = kt.NOIDUNG;
-                //dtNgayBD.Value = kt.TUNGAY.Value;
-                //dtNgayKT.Value = kt.DENNGAY.Value;
-                dtNgayKy.Value = kt.NGAYKY.Value;
-                slkNhanVien.EditValue = kt.IDNV;
+                txtLyDo.Text = dc.LYDO;
+                txtGhiChu.Text = dc.GHICHU;
+                dtNgayKy.Value = dc.NGAYKY.Value;
+                slkNhanVien.EditValue = dc.IDNV;
+                cbbNewPB.SelectedValue = dc.IDPB2;
+                cbbNewBP.SelectedValue = dc.IDBP2;
+                cbbNewCV.SelectedValue = dc.IDCV2;
             }
         }
     }
