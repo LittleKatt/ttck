@@ -37,6 +37,7 @@ namespace BUS
                 nvDTO.CCCD = item.CCCD;
                 nvDTO.DIACHI = item.DIACHI;
                 nvDTO.HINHANH = item.HINHANH;
+                nvDTO.THOIVIEC = item.DATHOIVIEC;
 
                 nvDTO.IDPB = item.IDPB;
                 var pb = db.PHONGBANs.FirstOrDefault(p=>p.IDPB == item.IDPB);
@@ -94,6 +95,7 @@ namespace BUS
                 _nv.CCCD = nv.CCCD;
                 _nv.DIACHI = nv.DIACHI;
                 _nv.HINHANH = nv.HINHANH;
+                _nv.DATHOIVIEC = nv.DATHOIVIEC;
                 _nv.IDPB = nv.IDPB;
                 _nv.IDBP = nv.IDBP;
                 _nv.IDCV = nv.IDCV;

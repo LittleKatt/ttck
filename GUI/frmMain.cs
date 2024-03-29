@@ -90,5 +90,10 @@ namespace GUI
         {
             openForm(typeof(frmDieuChuyen));
         }
+
+        private void btnNghiViec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmNhanVien_ThoiViec));
+        }
     }
 }

@@ -36,8 +36,8 @@ namespace DAO
     
         public virtual BOPHAN BOPHAN { get; set; }
         public virtual CHUCVU CHUCVU { get; set; }
-        public virtual NHANVIEN NHANVIEN { get; set; }
         public virtual PHONGBAN PHONGBAN { get; set; }
         public virtual TRINHDO TRINHDO { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

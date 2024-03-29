@@ -12,17 +12,12 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class DIEUCHUYEN
+    public partial class NHANVIEN_THOIVIEC
     {
         public string SOQD { get; set; }
-        public Nullable<System.DateTime> NGAYKY { get; set; }
         public Nullable<int> IDNV { get; set; }
-        public Nullable<int> IDPB { get; set; }
-        public Nullable<int> IDPB2 { get; set; }
-        public Nullable<int> IDBP { get; set; }
-        public Nullable<int> IDBP2 { get; set; }
-        public Nullable<int> IDCV { get; set; }
-        public Nullable<int> IDCV2 { get; set; }
+        public Nullable<System.DateTime> NGAYNOPDON { get; set; }
+        public Nullable<System.DateTime> NGAYNGHI { get; set; }
         public string LYDO { get; set; }
         public string GHICHU { get; set; }
         public Nullable<int> CREATED_BY { get; set; }
@@ -30,8 +25,6 @@ namespace DAO
         public Nullable<int> UPDATED_BY { get; set; }
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
         public Nullable<int> DELETED_BY { get; set; }
-        public Nullable<System.DateTime> DELETE_DATE { get; set; }
-    
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public Nullable<System.DateTime> DELETED_DATE { get; set; }
     }
 }

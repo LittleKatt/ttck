@@ -73,7 +73,6 @@
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -103,16 +102,14 @@
             this.btnThoa,
             this.btnKyLuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonControl1.MaxItemId = 26;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpHeThong,
             this.rbpNhanSu,
             this.rbpChamCong,
             this.rbpBaoBieu});
-            this.ribbonControl1.Size = new System.Drawing.Size(1164, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(998, 158);
             // 
             // btnDanToc
             // 
@@ -191,6 +188,7 @@
             this.btnNghiViec.Id = 9;
             this.btnNghiViec.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNghiViec.ImageOptions.SvgImage")));
             this.btnNghiViec.Name = "btnNghiViec";
+            this.btnNghiViec.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNghiViec_ItemClick);
             // 
             // btnLoaiCa
             // 
@@ -398,12 +396,11 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 608);
+            this.ClientSize = new System.Drawing.Size(998, 494);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Quản Lý Nhân Sự Tiền Lương";
