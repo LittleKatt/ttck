@@ -127,5 +127,9 @@ namespace BUS
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
+        public List<NHANVIEN>getSinhNhat()
+        {
+            return db.NHANVIENs.Where(x => x.NGAYSINH.Value.Month == DateTime.Now.Month).ToList();
+        }
     }
 }

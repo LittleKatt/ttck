@@ -30,6 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase2 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement3 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement4 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDanToc = new DevExpress.XtraBars.BarButtonItem();
             this.btnTonGiao = new DevExpress.XtraBars.BarButtonItem();
@@ -55,6 +65,7 @@
             this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnKyLuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNangLuong = new DevExpress.XtraBars.BarButtonItem();
             this.rbpHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpNhanSu = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -66,10 +77,25 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.btnNangLuong = new DevExpress.XtraBars.BarButtonItem();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.lstNangLuong = new DevExpress.XtraEditors.ListBoxControl();
+            this.lstSinhNhat = new DevExpress.XtraEditors.ListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.dockPanel1.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lstNangLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lstSinhNhat)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -311,6 +337,14 @@
             this.btnKyLuat.Name = "btnKyLuat";
             this.btnKyLuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKyLuat_ItemClick);
             // 
+            // btnNangLuong
+            // 
+            this.btnNangLuong.Caption = "Nâng lương";
+            this.btnNangLuong.Id = 27;
+            this.btnNangLuong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNangLuong.ImageOptions.SvgImage")));
+            this.btnNangLuong.Name = "btnNangLuong";
+            this.btnNangLuong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNangLuong_ItemClick);
+            // 
             // rbpHeThong
             // 
             this.rbpHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -397,19 +431,125 @@
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
-            // btnNangLuong
+            // dockManager1
             // 
-            this.btnNangLuong.Caption = "Nâng lương";
-            this.btnNangLuong.Id = 27;
-            this.btnNangLuong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNangLuong.ImageOptions.SvgImage")));
-            this.btnNangLuong.Name = "btnNangLuong";
-            this.btnNangLuong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNangLuong_ItemClick);
+            this.dockManager1.Form = this;
+            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel1});
+            this.dockManager1.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "System.Windows.Forms.StatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl",
+            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
+            "DevExpress.XtraBars.Navigation.TileNavPane",
+            "DevExpress.XtraBars.TabFormControl",
+            "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
+            "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
+            // 
+            // dockPanel1
+            // 
+            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel1.ID = new System.Guid("60e33cad-65c5-46c3-ad29-bdf9d24ae5f8");
+            this.dockPanel1.Location = new System.Drawing.Point(752, 158);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(246, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(246, 336);
+            this.dockPanel1.Text = "Thông báo";
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.groupControl2);
+            this.dockPanel1_Container.Controls.Add(this.groupControl1);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 26);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(239, 307);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.lstSinhNhat);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(239, 144);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Sinh nhật trong tháng";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.lstNangLuong);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl2.Location = new System.Drawing.Point(0, 144);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(239, 163);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "Nâng lương";
+            // 
+            // lstNangLuong
+            // 
+            this.lstNangLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstNangLuong.ItemHeight = 62;
+            this.lstNangLuong.Location = new System.Drawing.Point(2, 23);
+            this.lstNangLuong.Name = "lstNangLuong";
+            this.lstNangLuong.Size = new System.Drawing.Size(235, 138);
+            this.lstNangLuong.TabIndex = 0;
+            itemTemplateBase1.Columns.Add(tableColumnDefinition1);
+            templatedItemElement1.FieldName = "HOTEN";
+            templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement1.Text = "HOTEN";
+            templatedItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            templatedItemElement2.AnchorElementIndex = 0;
+            templatedItemElement2.FieldName = "NGAYBATDAU";
+            templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement2.Text = "NGAYBATDAU";
+            templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            itemTemplateBase1.Elements.Add(templatedItemElement1);
+            itemTemplateBase1.Elements.Add(templatedItemElement2);
+            itemTemplateBase1.Name = "nangluong_nv";
+            itemTemplateBase1.Rows.Add(tableRowDefinition1);
+            this.lstNangLuong.Templates.Add(itemTemplateBase1);
+            this.lstNangLuong.CustomizeItem += new DevExpress.XtraEditors.CustomizeTemplatedItemEventHandler(this.lstNangLuong_CustomizeItem);
+            // 
+            // lstSinhNhat
+            // 
+            this.lstSinhNhat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstSinhNhat.ItemHeight = 52;
+            this.lstSinhNhat.Location = new System.Drawing.Point(2, 23);
+            this.lstSinhNhat.Name = "lstSinhNhat";
+            this.lstSinhNhat.Size = new System.Drawing.Size(235, 119);
+            this.lstSinhNhat.TabIndex = 0;
+            itemTemplateBase2.Columns.Add(tableColumnDefinition2);
+            templatedItemElement3.FieldName = "HOTEN";
+            templatedItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement3.Text = "HOTEN";
+            templatedItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            templatedItemElement4.AnchorElementIndex = 0;
+            templatedItemElement4.FieldName = "NGAYSINH";
+            templatedItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement4.Text = "NGAYSINH";
+            templatedItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            itemTemplateBase2.Elements.Add(templatedItemElement3);
+            itemTemplateBase2.Elements.Add(templatedItemElement4);
+            itemTemplateBase2.Name = "sinhnhat_nv";
+            itemTemplateBase2.Rows.Add(tableRowDefinition2);
+            this.lstSinhNhat.Templates.Add(itemTemplateBase2);
+            this.lstSinhNhat.CustomizeItem += new DevExpress.XtraEditors.CustomizeTemplatedItemEventHandler(this.lstSinhNhat_CustomizeItem);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 494);
+            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "frmMain";
@@ -420,6 +560,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.dockPanel1.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lstNangLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lstSinhNhat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,6 +613,13 @@
         private DevExpress.XtraBars.BarButtonItem btnThoa;
         private DevExpress.XtraBars.BarButtonItem btnKyLuat;
         private DevExpress.XtraBars.BarButtonItem btnNangLuong;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.ListBoxControl lstNangLuong;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraEditors.ListBoxControl lstSinhNhat;
     }
 }
 

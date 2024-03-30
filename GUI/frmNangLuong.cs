@@ -153,7 +153,7 @@ namespace GUI
                 nl.GHICHU = txtGhiChu.Text;
                 nl.NGAYKY = dtNgayKy.Value;
                 nl.NGAYLENLUONG = dtNgayLenLuong.Value;
-                nl.IDNV = int.Parse(slkHopDong.EditValue.ToString());
+                nl.IDNV = _hopdong.getItem(slkHopDong.EditValue.ToString()).IDNV;
                 nl.HESOLUONGHIENTAI = _hopdong.getItem(slkHopDong.EditValue.ToString()).HESOLUONG;
                 nl.HESOLUONGMOI = double.Parse(spHSLMoi.EditValue.ToString());
                 nl.UPDATED_BY = 1;
@@ -188,6 +188,7 @@ namespace GUI
             if (hd.Count != 0)
             {
                 txtNhanVien.Text = hd[0].IDNV +" " + hd[0].HOTEN;
+                spHSLCu.EditValue = hd[0].HESOLUONG;
             }
         }
     }

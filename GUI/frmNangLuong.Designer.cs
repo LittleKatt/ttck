@@ -722,6 +722,8 @@
             // 
             // HESOLUONGMOI
             // 
+            this.HESOLUONGMOI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.HESOLUONGMOI.AppearanceHeader.Options.UseFont = true;
             this.HESOLUONGMOI.Caption = "HSL MỚI";
             this.HESOLUONGMOI.FieldName = "HESOLUONGMOI";
             this.HESOLUONGMOI.MaxWidth = 100;

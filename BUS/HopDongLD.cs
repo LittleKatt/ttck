@@ -145,5 +145,40 @@ namespace BUS
             else
             { return "0000"; }
         }
+        public List<HDLD_DTO>getNangLuong()
+        {
+            List<HOPDONG> lstHD = db.HOPDONGs.Where(x=>(x.NGAYBATDAU.Value.Month - DateTime.Now.Month) == 0 && (DateTime.Now.Year - x.NGAYBATDAU.Value.Year) == 2).ToList();
+            List<HDLD_DTO> lstDTO = new List<HDLD_DTO>();
+            HDLD_DTO hd;
+            foreach (var item in lstHD)
+            {
+                hd = new HDLD_DTO();
+                hd.SOHD = item.SOHD;
+                hd.NGAYBATDAU = item.NGAYBATDAU.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKY = item.NGAYKY.Value.ToString("dd/MM/yyyy");
+                hd.THOIHAN = item.THOIHAN;
+                hd.HESOLUONG = item.HESOLUONG;
+                hd.LANKY = item.LANKY;
+                hd.NOIDUNG = item.NOIDUNG;
+
+                hd.IDNV = item.IDNV;
+                var nv = db.NHANVIENs.FirstOrDefault(n => n.IDNV == item.IDNV);
+                hd.HOTEN = nv.HOTEN;
+                hd.NGAYSINH = nv.NGAYSINH.Value.ToString("dd/MM/yyyy");
+                hd.CCCD = nv.CCCD;
+                hd.DIENTHOAI = nv.DIENTHOAI;
+                hd.DIACHI = nv.DIACHI;
+
+                hd.CREATED_BY = item.CREATED_BY;
+                hd.CREATED_DATE = item.CREATED_DATE;
+                hd.UPDATED_BY = item.UPDATED_BY;
+                hd.UPDATED_DATE = item.UPDATED_DATE;
+                hd.DELETED_BY = item.DELETED_BY;
+                hd.DELETED_DATE = item.DELETED_DATE;
+                lstDTO.Add(hd);
+            }
+            return lstDTO;
+        }
     }
 }

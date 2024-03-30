@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,8 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        NhanVien _nhanvien;
+        HopDongLD _hopdong; 
         void openForm(Type typeForm)
         {
             foreach (var frm in MdiChildren) 
@@ -44,8 +46,23 @@ namespace GUI
         private void frmMain_Load(object sender, EventArgs e)
         {
             ribbonControl1.SelectedPage = rbpNhanSu;
+            _nhanvien = new NhanVien();
+            _hopdong = new HopDongLD();
+            loadSinhNhat();
+            loadNangLuong();
         }
-
+        void loadSinhNhat()
+        {
+            lstSinhNhat.DataSource = _nhanvien.getSinhNhat();
+            lstSinhNhat.DisplayMember = "HOTEN";
+            lstSinhNhat.ValueMember = "IDNV";
+        }
+        void loadNangLuong()
+        {
+            lstNangLuong.DataSource = _hopdong.getNangLuong();
+            lstNangLuong.DisplayMember = "HOTEN";
+            lstNangLuong.ValueMember = "IDNV";
+        }
         private void btnTrinhDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(typeof (frmTrinhDo));
@@ -99,6 +116,22 @@ namespace GUI
         private void btnNangLuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(typeof(frmNangLuong)); 
+        }
+
+        private void lstSinhNhat_CustomizeItem(object sender, DevExpress.XtraEditors.CustomizeTemplatedItemEventArgs e)
+        {
+            if (e.TemplatedItem.Elements[1].Text.Substring(0,2) == DateTime.Now.Day.ToString())
+            {
+                e.TemplatedItem.AppearanceItem.Normal.ForeColor = Color.Red;
+            }
+        }
+
+        private void lstNangLuong_CustomizeItem(object sender, DevExpress.XtraEditors.CustomizeTemplatedItemEventArgs e)
+        {
+            if (e.TemplatedItem.Elements[1].Text.Substring(0, 2) == DateTime.Now.Day.ToString())
+            {
+                e.TemplatedItem.AppearanceItem.Normal.ForeColor = Color.Red;
+            }
         }
     }
 }

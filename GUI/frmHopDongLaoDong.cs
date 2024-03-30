@@ -202,9 +202,13 @@ namespace GUI
             {
                 dtNgayKT.Value = dtNgayBD.Value.AddMonths(6);
             }
-            else
+            else if (cbbThoiHan.Text == "12 tháng")
             {
                 dtNgayKT.Value = dtNgayBD.Value.AddMonths(12);
+            }    
+            else
+            {
+                dtNgayKT.Value = dtNgayBD.Value.AddMonths(24);
             }
         }
     }

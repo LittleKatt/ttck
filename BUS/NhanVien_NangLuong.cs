@@ -34,7 +34,7 @@ namespace BUS
                 nlDTO.IDNV = item.IDNV;
                 var nv = db.NHANVIENs.FirstOrDefault(x => x.IDNV == item.IDNV);
                 nlDTO.HOTEN = nv.HOTEN;
-
+                nlDTO.GHICHU = item.GHICHU;
                 nlDTO.NGAYKY = item.NGAYKY;
                 nlDTO.NGAYLENLUONG = item.NGAYLENLUONG;                      
                 nlDTO.CREATED_BY = item.CREATED_BY;
