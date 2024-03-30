@@ -83,6 +83,9 @@
     <Compile Include="NHANVIEN.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="NHANVIEN_NANGLUONG.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="NHANVIEN_PHUCAP.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>

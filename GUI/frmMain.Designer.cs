@@ -66,6 +66,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.btnNangLuong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -100,9 +101,10 @@
             this.btnBoPhan,
             this.btnChucVu,
             this.btnThoa,
-            this.btnKyLuat});
+            this.btnKyLuat,
+            this.btnNangLuong});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 26;
+            this.ribbonControl1.MaxItemId = 28;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpHeThong,
@@ -349,6 +351,7 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnHopDong, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnKhenThuong, true);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnNangLuong, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnKyLuat, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnDieuChuyen, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNghiViec, true);
@@ -393,6 +396,14 @@
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // btnNangLuong
+            // 
+            this.btnNangLuong.Caption = "Nâng lương";
+            this.btnNangLuong.Id = 27;
+            this.btnNangLuong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNangLuong.ImageOptions.SvgImage")));
+            this.btnNangLuong.Name = "btnNangLuong";
+            this.btnNangLuong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNangLuong_ItemClick);
             // 
             // frmMain
             // 
@@ -452,6 +463,7 @@
         private DevExpress.XtraBars.BarButtonItem btnChucVu;
         private DevExpress.XtraBars.BarButtonItem btnThoa;
         private DevExpress.XtraBars.BarButtonItem btnKyLuat;
+        private DevExpress.XtraBars.BarButtonItem btnNangLuong;
     }
 }
 

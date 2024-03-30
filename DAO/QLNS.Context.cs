@@ -44,5 +44,6 @@ namespace DAO
         public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHANVIEN_THOIVIEC> NHANVIEN_THOIVIEC { get; set; }
+        public virtual DbSet<NHANVIEN_NANGLUONG> NHANVIEN_NANGLUONG { get; set; }
     }
 }

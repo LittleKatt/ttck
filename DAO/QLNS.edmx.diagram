@@ -45,6 +45,7 @@
         <AssociationConnector Association="QLNSModel.FK_TANGCA_NHANVIEN" />
         <AssociationConnector Association="QLNSModel.FK_UNGLUONG_NHANVIEN" />
         <EntityTypeShape EntityType="QLNSModel.NHANVIEN_THOIVIEC" Width="2.5" PointX="5" PointY="0.75" />
+        <EntityTypeShape EntityType="QLNSModel.NHANVIEN_NANGLUONG" Width="2.375" PointX="8.375" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
