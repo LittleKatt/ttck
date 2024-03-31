@@ -61,6 +61,7 @@
     <Compile Include="HopDongLD.cs" />
     <Compile Include="KhenThuong_KyLuat.cs" />
     <Compile Include="LoaiCa.cs" />
+    <Compile Include="LoaiCong.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="NhanVien_NangLuong.cs" />
     <Compile Include="NhanVien_ThoiViec.cs" />

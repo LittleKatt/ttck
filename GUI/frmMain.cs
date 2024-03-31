@@ -139,5 +139,10 @@ namespace GUI
         {
             openForm(typeof(frmLoaiCa));
         }
+
+        private void btnLoaiCong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmLoaiCong));
+        }
     }
 }

@@ -1,29 +1,29 @@
-﻿using System;
+﻿using DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BUS.DTO;
-using DAO;
+
 namespace BUS
 {
-    public class LoaiCa
+    public class LoaiCong
     {
         QLNSEntities db = new QLNSEntities();
 
-        public LOAICA getItem(int idloaica)
+        public LOAICONG getItem(int id)
         {
-            return db.LOAICAs.FirstOrDefault(x => x.IDLCA == idloaica);
+            return db.LOAICONGs.FirstOrDefault(x => x.IDLC == id);
         }
-        public List<LOAICA> getList()
+        public List<LOAICONG> getList()
         {
-            return db.LOAICAs.ToList();
+            return db.LOAICONGs.ToList();
         }
-        public LOAICA Add(LOAICA lc)
+        public LOAICONG Add(LOAICONG lc)
         {
             try
             {
-                db.LOAICAs.Add(lc);
+                db.LOAICONGs.Add(lc);
                 db.SaveChanges();
                 return lc;
             }
@@ -33,16 +33,16 @@ namespace BUS
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
-        public LOAICA Update(LOAICA lc)
+        public LOAICONG Update(LOAICONG lc)
         {
             try
             {
-                var _lc = db.LOAICAs.FirstOrDefault(x => x.IDLCA == lc.IDLCA);
-                _lc.TENLOAICA = lc.TENLOAICA;
+                var _lc = db.LOAICONGs.FirstOrDefault(x => x.IDLC == lc.IDLC);
+                _lc.TENLC = lc.TENLC;
                 _lc.HESO = lc.HESO;
                 _lc.UPDATED_BY = lc.UPDATED_BY;
                 _lc.UPDATED_DATE = lc.UPDATED_DATE;
-                
+
                 db.SaveChanges();
                 return lc;
             }
@@ -52,11 +52,11 @@ namespace BUS
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
-        public void Delete(int idloaica, int iduser)
+        public void Delete(int id, int iduser)
         {
             try
             {
-                var _lc = db.LOAICAs.FirstOrDefault(x => x.IDLCA == idloaica);
+                var _lc = db.LOAICAs.FirstOrDefault(x => x.IDLCA == id);
                 _lc.DELETED_BY = iduser;
                 _lc.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();

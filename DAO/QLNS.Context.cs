@@ -30,7 +30,6 @@ namespace DAO
         public virtual DbSet<BOPHAN> BOPHANs { get; set; }
         public virtual DbSet<CHUCVU> CHUCVUs { get; set; }
         public virtual DbSet<DANTOC> DANTOCs { get; set; }
-        public virtual DbSet<LOAICONG> LOAICONGs { get; set; }
         public virtual DbSet<NHANVIEN_PHUCAP> NHANVIEN_PHUCAP { get; set; }
         public virtual DbSet<PHONGBAN> PHONGBANs { get; set; }
         public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
@@ -45,5 +44,6 @@ namespace DAO
         public virtual DbSet<NHANVIEN_THOIVIEC> NHANVIEN_THOIVIEC { get; set; }
         public virtual DbSet<NHANVIEN_NANGLUONG> NHANVIEN_NANGLUONG { get; set; }
         public virtual DbSet<LOAICA> LOAICAs { get; set; }
+        public virtual DbSet<LOAICONG> LOAICONGs { get; set; }
     }
 }
