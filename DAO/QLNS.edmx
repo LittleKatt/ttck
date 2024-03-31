@@ -124,6 +124,12 @@
           <Property Name="IDLCA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENLOAICA" Type="nvarchar" MaxLength="50" />
           <Property Name="HESO" Type="float" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="LOAICONG">
           <Key>
@@ -621,7 +627,6 @@
           <EntitySet Name="BOPHANs" EntityType="QLNSModel.BOPHAN" />
           <EntitySet Name="CHUCVUs" EntityType="QLNSModel.CHUCVU" />
           <EntitySet Name="DANTOCs" EntityType="QLNSModel.DANTOC" />
-          <EntitySet Name="LOAICAs" EntityType="QLNSModel.LOAICA" />
           <EntitySet Name="LOAICONGs" EntityType="QLNSModel.LOAICONG" />
           <EntitySet Name="NHANVIEN_PHUCAP" EntityType="QLNSModel.NHANVIEN_PHUCAP" />
           <EntitySet Name="PHONGBANs" EntityType="QLNSModel.PHONGBAN" />
@@ -633,10 +638,6 @@
           <AssociationSet Name="FK_BANGCHAMCONG_LOAICONG1" Association="QLNSModel.FK_BANGCHAMCONG_LOAICONG1">
             <End Role="LOAICONG" EntitySet="LOAICONGs" />
             <End Role="BANGCHAMCONG" EntitySet="BANGCHAMCONGs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TANGCA_LOAICA" Association="QLNSModel.FK_TANGCA_LOAICA">
-            <End Role="LOAICA" EntitySet="LOAICAs" />
-            <End Role="TANGCA" EntitySet="TANGCAs" />
           </AssociationSet>
           <AssociationSet Name="FK_NHANVIEN_PHUCAP_PHUCAP" Association="QLNSModel.FK_NHANVIEN_PHUCAP_PHUCAP">
             <End Role="PHUCAP" EntitySet="PHUCAPs" />
@@ -720,6 +721,11 @@
           </AssociationSet>
           <EntitySet Name="NHANVIEN_THOIVIEC" EntityType="QLNSModel.NHANVIEN_THOIVIEC" />
           <EntitySet Name="NHANVIEN_NANGLUONG" EntityType="QLNSModel.NHANVIEN_NANGLUONG" />
+          <EntitySet Name="LOAICAs" EntityType="QLNSModel.LOAICA" />
+          <AssociationSet Name="FK_TANGCA_LOAICA" Association="QLNSModel.FK_TANGCA_LOAICA">
+            <End Role="LOAICA" EntitySet="LOAICAs" />
+            <End Role="TANGCA" EntitySet="TANGCAs" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="BANGCHAMCONG">
           <Key>
@@ -776,15 +782,6 @@
           <Property Name="TENDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NHANVIENs" Relationship="QLNSModel.FK_NHANVIEN_DANTOC" FromRole="DANTOC" ToRole="NHANVIEN" />
         </EntityType>
-        <EntityType Name="LOAICA">
-          <Key>
-            <PropertyRef Name="IDLCA" />
-          </Key>
-          <Property Name="IDLCA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TENLOAICA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HESO" Type="Double" />
-          <NavigationProperty Name="TANGCAs" Relationship="QLNSModel.FK_TANGCA_LOAICA" FromRole="LOAICA" ToRole="TANGCA" />
-        </EntityType>
         <EntityType Name="LOAICONG">
           <Key>
             <PropertyRef Name="IDLC" />
@@ -836,8 +833,8 @@
           <Property Name="SOGIO" Type="Double" />
           <Property Name="IDNV" Type="Int32" />
           <Property Name="IDLCA" Type="Int32" />
-          <NavigationProperty Name="LOAICA" Relationship="QLNSModel.FK_TANGCA_LOAICA" FromRole="TANGCA" ToRole="LOAICA" />
           <NavigationProperty Name="NHANVIEN" Relationship="QLNSModel.FK_TANGCA_NHANVIEN" FromRole="TANGCA" ToRole="NHANVIEN" />
+          <NavigationProperty Name="LOAICA" Relationship="QLNSModel.FK_TANGCA_LOAICA" FromRole="TANGCA" ToRole="LOAICA" />
         </EntityType>
         <EntityType Name="TONGIAO">
           <Key>
@@ -878,18 +875,6 @@
             </Principal>
             <Dependent Role="BANGCHAMCONG">
               <PropertyRef Name="IDLC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TANGCA_LOAICA">
-          <End Type="QLNSModel.LOAICA" Role="LOAICA" Multiplicity="0..1" />
-          <End Type="QLNSModel.TANGCA" Role="TANGCA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LOAICA">
-              <PropertyRef Name="IDLCA" />
-            </Principal>
-            <Dependent Role="TANGCA">
-              <PropertyRef Name="IDLCA" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1263,6 +1248,33 @@
           <Property Name="DELETED_BY" Type="Int32" />
           <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="LOAICA">
+          <Key>
+            <PropertyRef Name="IDLCA" />
+          </Key>
+          <Property Name="IDLCA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENLOAICA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HESO" Type="Double" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TANGCAs" Relationship="QLNSModel.FK_TANGCA_LOAICA" FromRole="LOAICA" ToRole="TANGCA" />
+        </EntityType>
+        <Association Name="FK_TANGCA_LOAICA">
+          <End Type="QLNSModel.LOAICA" Role="LOAICA" Multiplicity="0..1" />
+          <End Type="QLNSModel.TANGCA" Role="TANGCA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAICA">
+              <PropertyRef Name="IDLCA" />
+            </Principal>
+            <Dependent Role="TANGCA">
+              <PropertyRef Name="IDLCA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1318,15 +1330,6 @@
               <MappingFragment StoreEntitySet="DANTOC">
                 <ScalarProperty Name="TENDT" ColumnName="TENDT" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LOAICAs">
-            <EntityTypeMapping TypeName="QLNSModel.LOAICA">
-              <MappingFragment StoreEntitySet="LOAICA">
-                <ScalarProperty Name="HESO" ColumnName="HESO" />
-                <ScalarProperty Name="TENLOAICA" ColumnName="TENLOAICA" />
-                <ScalarProperty Name="IDLCA" ColumnName="IDLCA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1534,6 +1537,21 @@
                 <ScalarProperty Name="IDNV" ColumnName="IDNV" />
                 <ScalarProperty Name="SOHD" ColumnName="SOHD" />
                 <ScalarProperty Name="SOQD" ColumnName="SOQD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAICAs">
+            <EntityTypeMapping TypeName="QLNSModel.LOAICA">
+              <MappingFragment StoreEntitySet="LOAICA">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="HESO" ColumnName="HESO" />
+                <ScalarProperty Name="TENLOAICA" ColumnName="TENLOAICA" />
+                <ScalarProperty Name="IDLCA" ColumnName="IDLCA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

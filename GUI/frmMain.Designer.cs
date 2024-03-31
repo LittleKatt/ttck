@@ -80,9 +80,9 @@
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.lstNangLuong = new DevExpress.XtraEditors.ListBoxControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lstSinhNhat = new DevExpress.XtraEditors.ListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
@@ -90,11 +90,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lstNangLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lstSinhNhat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -225,6 +225,7 @@
             this.btnLoaiCa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLoaiCa.ImageOptions.SvgImage")));
             this.btnLoaiCa.Name = "btnLoaiCa";
             this.btnLoaiCa.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLoaiCa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiCa_ItemClick);
             // 
             // btnLoaiCong
             // 
@@ -470,16 +471,6 @@
             this.dockPanel1_Container.Size = new System.Drawing.Size(239, 307);
             this.dockPanel1_Container.TabIndex = 0;
             // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.lstSinhNhat);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(239, 144);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Sinh nhật trong tháng";
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.lstNangLuong);
@@ -516,6 +507,16 @@
             itemTemplateBase1.Rows.Add(tableRowDefinition1);
             this.lstNangLuong.Templates.Add(itemTemplateBase1);
             this.lstNangLuong.CustomizeItem += new DevExpress.XtraEditors.CustomizeTemplatedItemEventHandler(this.lstNangLuong_CustomizeItem);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.lstSinhNhat);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(239, 144);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Sinh nhật trong tháng";
             // 
             // lstSinhNhat
             // 
@@ -563,11 +564,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lstNangLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lstSinhNhat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

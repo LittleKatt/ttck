@@ -1,4 +1,5 @@
 ﻿using BUS;
+using GUI.CHAMCONG;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -132,6 +133,11 @@ namespace GUI
             {
                 e.TemplatedItem.AppearanceItem.Normal.ForeColor = Color.Red;
             }
+        }
+
+        private void btnLoaiCa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmLoaiCa));
         }
     }
 }

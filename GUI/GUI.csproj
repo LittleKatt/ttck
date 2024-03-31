@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CHAMCONG\frmLoaiCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHAMCONG\frmLoaiCa.Designer.cs">
+      <DependentUpon>frmLoaiCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBoPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     <Compile Include="Reports\rptHDLD.Designer.cs">
       <DependentUpon>rptHDLD.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CHAMCONG\frmLoaiCa.resx">
+      <DependentUpon>frmLoaiCa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBoPhan.resx">
       <DependentUpon>frmBoPhan.cs</DependentUpon>
     </EmbeddedResource>
