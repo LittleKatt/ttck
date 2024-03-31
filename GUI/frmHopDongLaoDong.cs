@@ -148,6 +148,7 @@ namespace GUI
                 hd.NGAYKETTHUC = dtNgayKT.Value;
                 hd.NGAYKY = dtNgayKy.Value;
                 hd.THOIHAN = cbbThoiHan.Text;
+                hd.LUONGCOBAN = int.Parse(spLuongCoBan.EditValue.ToString());
                 hd.HESOLUONG = double.Parse(spHeSL.EditValue.ToString());
                 hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
                 hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
@@ -163,6 +164,7 @@ namespace GUI
                 hd.NGAYKETTHUC = dtNgayKT.Value;
                 hd.NGAYKY = dtNgayKy.Value;
                 hd.THOIHAN = cbbThoiHan.Text;
+                hd.LUONGCOBAN = int.Parse(spLuongCoBan.EditValue.ToString());
                 hd.HESOLUONG = double.Parse(spHeSL.EditValue.ToString());
                 hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
                 hd.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
@@ -184,7 +186,8 @@ namespace GUI
                 dtNgayKT.Value = hd.NGAYKETTHUC.Value;
                 dtNgayKy.Value = hd.NGAYKY.Value;
                 cbbThoiHan.Text = hd.THOIHAN;
-                spHeSL.Text = hd.HESOLUONG.ToString();
+                spLuongCoBan.EditValue = hd.LUONGCOBAN;
+                spHeSL.EditValue = hd.HESOLUONG;
                 spLanKy.Text = hd.LANKY.ToString();
                 slkNhanVien.EditValue = hd.IDNV;
                 //txtNoiDung.RtfText = hd.NOIDUNG;

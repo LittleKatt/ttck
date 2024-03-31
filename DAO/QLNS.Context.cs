@@ -39,11 +39,14 @@ namespace DAO
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
         public virtual DbSet<KHENTHUONG_KYLUAT> KHENTHUONG_KYLUAT { get; set; }
         public virtual DbSet<DIEUCHUYEN> DIEUCHUYENs { get; set; }
-        public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHANVIEN_THOIVIEC> NHANVIEN_THOIVIEC { get; set; }
         public virtual DbSet<NHANVIEN_NANGLUONG> NHANVIEN_NANGLUONG { get; set; }
         public virtual DbSet<LOAICA> LOAICAs { get; set; }
         public virtual DbSet<LOAICONG> LOAICONGs { get; set; }
+        public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
+        public virtual DbSet<KYCONG> KYCONGs { get; set; }
+        public virtual DbSet<KYCONGCHITIET> KYCONGCHITIETs { get; set; }
+        public virtual DbSet<BANGCONG_NHANVIEN_CHITIET> BANGCONG_NHANVIEN_CHITIET { get; set; }
     }
 }

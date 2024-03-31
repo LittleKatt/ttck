@@ -21,6 +21,7 @@ namespace DAO
         public string NOIDUNG { get; set; }
         public Nullable<int> LANKY { get; set; }
         public string THOIHAN { get; set; }
+        public Nullable<int> LUONGCOBAN { get; set; }
         public Nullable<double> HESOLUONG { get; set; }
         public Nullable<int> IDNV { get; set; }
         public Nullable<int> IDTD { get; set; }
@@ -36,8 +37,8 @@ namespace DAO
     
         public virtual BOPHAN BOPHAN { get; set; }
         public virtual CHUCVU CHUCVU { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
         public virtual PHONGBAN PHONGBAN { get; set; }
         public virtual TRINHDO TRINHDO { get; set; }
-        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

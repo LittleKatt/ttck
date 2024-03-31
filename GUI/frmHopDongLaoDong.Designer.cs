@@ -83,6 +83,9 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.spLuongCoBan = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.LUONGCOBAN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -95,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spLuongCoBan.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -255,6 +259,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.spLuongCoBan);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl6);
             this.splitContainer1.Panel1.Controls.Add(this.cbbThoiHan);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl5);
             this.splitContainer1.Panel1.Controls.Add(this.slkNhanVien);
@@ -394,7 +400,7 @@
             0,
             0,
             0});
-            this.spLanKy.Location = new System.Drawing.Point(589, 138);
+            this.spLanKy.Location = new System.Drawing.Point(200, 178);
             this.spLanKy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.spLanKy.MenuManager = this.barManager1;
             this.spLanKy.Name = "spLanKy";
@@ -411,7 +417,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(473, 141);
+            this.labelControl2.Location = new System.Drawing.Point(84, 181);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(42, 17);
@@ -542,6 +548,7 @@
             this.NGAYKETTHUC,
             this.NGAYKY,
             this.THOIHAN,
+            this.LUONGCOBAN,
             this.HESOLUONG,
             this.LANKY,
             this.IDNV,
@@ -627,7 +634,7 @@
             this.HESOLUONG.MinWidth = 43;
             this.HESOLUONG.Name = "HESOLUONG";
             this.HESOLUONG.Visible = true;
-            this.HESOLUONG.VisibleIndex = 5;
+            this.HESOLUONG.VisibleIndex = 6;
             this.HESOLUONG.Width = 43;
             // 
             // LANKY
@@ -640,7 +647,7 @@
             this.LANKY.MinWidth = 86;
             this.LANKY.Name = "LANKY";
             this.LANKY.Visible = true;
-            this.LANKY.VisibleIndex = 6;
+            this.LANKY.VisibleIndex = 7;
             this.LANKY.Width = 86;
             // 
             // IDNV
@@ -661,7 +668,7 @@
             this.HOTEN.MinWidth = 171;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.Visible = true;
-            this.HOTEN.VisibleIndex = 7;
+            this.HOTEN.VisibleIndex = 8;
             this.HOTEN.Width = 171;
             // 
             // barDockControl1
@@ -736,6 +743,48 @@
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControl8.Size = new System.Drawing.Size(1036, 0);
             // 
+            // spLuongCoBan
+            // 
+            this.spLuongCoBan.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spLuongCoBan.Location = new System.Drawing.Point(589, 142);
+            this.spLuongCoBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.spLuongCoBan.MenuManager = this.barManager1;
+            this.spLuongCoBan.Name = "spLuongCoBan";
+            this.spLuongCoBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.spLuongCoBan.Properties.Appearance.Options.UseFont = true;
+            this.spLuongCoBan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spLuongCoBan.Size = new System.Drawing.Size(167, 22);
+            this.spLuongCoBan.TabIndex = 40;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(473, 145);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(88, 17);
+            this.labelControl6.TabIndex = 39;
+            this.labelControl6.Text = "Lương Cơ Bản";
+            // 
+            // LUONGCOBAN
+            // 
+            this.LUONGCOBAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LUONGCOBAN.AppearanceHeader.Options.UseFont = true;
+            this.LUONGCOBAN.Caption = "LƯƠNG CƠ BẢN";
+            this.LUONGCOBAN.FieldName = "LUONGCOBAN";
+            this.LUONGCOBAN.MaxWidth = 120;
+            this.LUONGCOBAN.MinWidth = 120;
+            this.LUONGCOBAN.Name = "LUONGCOBAN";
+            this.LUONGCOBAN.Visible = true;
+            this.LUONGCOBAN.VisibleIndex = 5;
+            this.LUONGCOBAN.Width = 120;
+            // 
             // frmHopDongLaoDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -771,6 +820,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spLuongCoBan.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -831,5 +881,8 @@
         private System.Windows.Forms.ComboBox cbbThoiHan;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.DateTimePicker dtNgayKT;
+        private DevExpress.XtraEditors.SpinEdit spLuongCoBan;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraGrid.Columns.GridColumn LUONGCOBAN;
     }
 }

@@ -15,6 +15,7 @@ namespace BUS.DTO
         public string NOIDUNG { get; set; }
         public Nullable<int> LANKY { get; set; }
         public string THOIHAN { get; set; }
+        public int? LUONGCOBAN {  get; set; }
         public Nullable<double> HESOLUONG { get; set; }
         public Nullable<int> IDNV { get; set; }
         public string HOTEN { get; set; }

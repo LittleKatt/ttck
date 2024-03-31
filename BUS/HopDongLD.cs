@@ -30,6 +30,7 @@ namespace BUS
                 hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
                 hd.NGAYKY = item.NGAYKY.Value.ToString("dd/MM/yyyy");
                 hd.THOIHAN = item.THOIHAN;
+                hd.LUONGCOBAN = item.LUONGCOBAN;
                 hd.HESOLUONG = item.HESOLUONG;
                 hd.LANKY = item.LANKY;
                 hd.NOIDUNG = " ngày " + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(0, 2) + " tháng " + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(3, 2) + " năm " + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(6);
@@ -67,6 +68,7 @@ namespace BUS
                 hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
                 hd.NGAYKY = item.NGAYKY.Value.ToString("dd/MM/yyyy");
                 hd.THOIHAN = item.THOIHAN;
+                hd.LUONGCOBAN = item.LUONGCOBAN;
                 hd.HESOLUONG = item.HESOLUONG;
                 hd.LANKY = item.LANKY;
                 hd.NOIDUNG = item.NOIDUNG;
@@ -112,6 +114,7 @@ namespace BUS
                 _hd.NGAYKETTHUC = hd.NGAYKETTHUC;
                 _hd.NGAYKY = hd.NGAYKY;
                 _hd.LANKY = hd.LANKY;
+                _hd.LUONGCOBAN = hd.LUONGCOBAN;
                 _hd.HESOLUONG = hd.HESOLUONG;
                 _hd.IDNV = hd.IDNV;
                 _hd.NOIDUNG = hd.NOIDUNG;
@@ -158,6 +161,7 @@ namespace BUS
                 hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
                 hd.NGAYKY = item.NGAYKY.Value.ToString("dd/MM/yyyy");
                 hd.THOIHAN = item.THOIHAN;
+                hd.LUONGCOBAN = item.LUONGCOBAN;
                 hd.HESOLUONG = item.HESOLUONG;
                 hd.LANKY = item.LANKY;
                 hd.NOIDUNG = item.NOIDUNG;
