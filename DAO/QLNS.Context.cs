@@ -25,7 +25,7 @@ namespace DAO
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C_BANGCONGCHITIET> C_BANGCONGCHITIET { get; set; }
+        public virtual DbSet<BANGCONGCHITIET> BANGCONGCHITIETs { get; set; }
         public virtual DbSet<BANGCHAMCONG> BANGCHAMCONGs { get; set; }
         public virtual DbSet<BAOHIEM> BAOHIEMs { get; set; }
         public virtual DbSet<BOPHAN> BOPHANs { get; set; }
@@ -33,6 +33,7 @@ namespace DAO
         public virtual DbSet<DANTOC> DANTOCs { get; set; }
         public virtual DbSet<DIEUCHUYEN> DIEUCHUYENs { get; set; }
         public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
+        public virtual DbSet<KYCONG> KYCONGs { get; set; }
         public virtual DbSet<KYCONGCHITIET> KYCONGCHITIETs { get; set; }
         public virtual DbSet<KHENTHUONG_KYLUAT> KHENTHUONG_KYLUAT { get; set; }
         public virtual DbSet<LOAICA> LOAICAs { get; set; }
@@ -47,6 +48,5 @@ namespace DAO
         public virtual DbSet<THOIVIEC> THOIVIECs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
-        public virtual DbSet<KYCONG> KYCONGs { get; set; }
     }
 }

@@ -4,37 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GUI
+namespace BUS
 {
-    public class HamXuLy
+    public static class XuLy
     {
         //Đếm số ngày làm việc trong tháng 
         public static int demSoNgayLamViecTrongThang(int thang, int nam)
         {
-            int dem = 0 ;
+            int dem = 0;
             DateTime f = new DateTime(nam, thang, 01);
             int x = f.Month + 1;
-            while (f.Month<x)
+            while (f.Month < x)
             {
-                dem = dem +1;
-                if(f.DayOfWeek ==DayOfWeek.Sunday) 
+                dem = dem + 1;
+                if (f.DayOfWeek == DayOfWeek.Sunday)
                 {
                     dem = dem - 1;
                 }
-                f= f.AddDays(1);
+                f = f.AddDays(1);
             }
             return dem;
         }
-        public static int laySoNgayCuaThang(int thang, int nam) 
+        public static int laySoNgayCuaThang(int thang, int nam)
         {
-            return DateTime.DaysInMonth(nam, thang);    
+            return DateTime.DaysInMonth(nam, thang);
         }
 
-        public static string layThuTrongTuan (int nam,  int thang, int ngay)
+        public static string layThuTrongTuan(int nam, int thang, int ngay)
         {
             string thu = "";
             DateTime newDate = new DateTime(nam, thang, ngay);
-            switch(newDate.DayOfWeek.ToString())
+            switch (newDate.DayOfWeek.ToString())
             {
                 case "Monday":
                     thu = "Thứ hai";

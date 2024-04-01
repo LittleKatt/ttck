@@ -25,6 +25,7 @@ namespace GUI
         ThoiViec _nvtv;
         NhanVien _nhanvien;
 
+
         private void frmThoiViec_Load(object sender, EventArgs e)
         {
             _nvtv = new ThoiViec();
@@ -35,7 +36,9 @@ namespace GUI
 
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
+
         }
+      
         private void ShowHide(bool kt)
         {
             btnLuu.Enabled = !kt;

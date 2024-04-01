@@ -14,8 +14,7 @@ namespace DAO
     
     public partial class KYCONG
     {
-        public int IDCK { get; set; }
-        public int IDCKCT { get; set; }
+        public int IDKCCT { get; set; }
         public Nullable<int> THANG { get; set; }
         public Nullable<int> NAM { get; set; }
         public Nullable<bool> KHOA { get; set; }

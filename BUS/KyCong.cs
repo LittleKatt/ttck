@@ -10,9 +10,9 @@ namespace BUS
     {
         QLNSEntities db = new QLNSEntities();
 
-        public KYCONG getItem(int id)
+        public KYCONG getItem(int idkcct)
         {
-            return db.KYCONGs.FirstOrDefault(x => x.IDCK == id);
+            return db.KYCONGs.FirstOrDefault(x => x.IDKCCT == idkcct);
         }
         public List<KYCONG> getList()
         {
@@ -36,8 +36,8 @@ namespace BUS
         {
             try
             {
-                var _kc = db.KYCONGs.FirstOrDefault(x => x.IDCK == kc.IDCK);
-                _kc.IDCKCT = kc.IDCKCT;
+                var _kc = db.KYCONGs.FirstOrDefault(x => x.IDKCCT == kc.IDKCCT);
+                _kc.IDKCCT = kc.IDKCCT;
                 _kc.NAM = kc.NAM;
                 _kc.THANG = kc.THANG; 
                 _kc.KHOA = kc.KHOA;
@@ -56,11 +56,11 @@ namespace BUS
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
-        public void Delete(int id, int iduser)
+        public void Delete(int idkcct, int iduser)
         {
             try
             {
-                var _kc = db.KYCONGs.FirstOrDefault(x => x.IDCK == id);
+                var _kc = db.KYCONGs.FirstOrDefault(x => x.IDKCCT == idkcct);
                 
                 _kc.DELETED_BY = iduser;
                 _kc.DELETED_DATE = DateTime.Now;
@@ -71,6 +71,23 @@ namespace BUS
             {
                 throw new Exception("Lỗi: " + ex.Message);
             }
+        }
+
+        public bool KTPhatSinhKC (int idkc)
+        {
+            var kc = db.KYCONGs.FirstOrDefault(x=>x.IDKCCT == idkc);
+            if (kc == null)
+            {
+                return false;
+            } 
+            else
+            {
+                if (kc.TRANGTHAI == true)
+                    return true;
+                else
+                    return false;
+            }
+                
         }
     }
 }

@@ -21,15 +21,15 @@ namespace GUI.CHAMCONG
         }
         KyCong _kycong;
         bool _them;
-        int _id;
+        int _idkc;
         private void frmBangCong_Load(object sender, EventArgs e)
         {
             _them = false;
             _kycong = new KyCong();
             ShowHide(true);
             LoadData();
-            cboNam.Text = DateTime.Now.Year.ToString();
-            cboThang.Text = DateTime.Now.Month.ToString();
+            cbbNam.Text = DateTime.Now.Year.ToString();
+            cbbThang.Text = DateTime.Now.Month.ToString();
         }
         void ShowHide(bool kt)
         {
@@ -52,8 +52,8 @@ namespace GUI.CHAMCONG
         {
             ShowHide(false);
             _them = true;
-            cboNam.Text = DateTime.Now.Year.ToString();
-            cboThang.Text = DateTime.Now.Month.ToString();
+            cbbNam.Text = DateTime.Now.Year.ToString();
+            cbbThang.Text = DateTime.Now.Month.ToString();
             chkKhoa.Checked = false;
             chkTrangThai.Checked = false;
         }
@@ -67,7 +67,7 @@ namespace GUI.CHAMCONG
         {
             if (MessageBox.Show("Bạn có chắc chắn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _kycong.Delete(_id, 1);
+                _kycong.Delete(_idkc, 1);
                 LoadData();
             }
         }
@@ -100,12 +100,12 @@ namespace GUI.CHAMCONG
             if (_them)
             {
                 KYCONG kc = new KYCONG();
-                kc.IDCKCT = int.Parse(cboNam.Text) * 100 + int.Parse(cboThang.Text); //Mã kỳ công =202404
-                kc.NAM   = int.Parse(cboNam.Text);
-                kc.THANG = int.Parse(cboThang.Text);
+                kc.IDKCCT = int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text); //Mã kỳ công =202404
+                kc.NAM   = int.Parse(cbbNam.Text);
+                kc.THANG = int.Parse(cbbThang.Text);
                 kc.KHOA = chkKhoa.Checked;
                 kc.TRANGTHAI = chkTrangThai.Checked;
-                kc.NGAYCONGTRONGTHANG = HamXuLy.demSoNgayLamViecTrongThang(int.Parse(cboThang.Text), int.Parse(cboNam.Text));
+                kc.NGAYCONGTRONGTHANG = HamXuLy.demSoNgayLamViecTrongThang(int.Parse(cbbThang.Text), int.Parse(cbbNam.Text));
                 kc.NGAYTINHCONG = DateTime.Now;
                 kc.CREATED_BY = 1;
                 kc.CREATED_DATE = DateTime.Now;
@@ -113,13 +113,13 @@ namespace GUI.CHAMCONG
             }
             else
             {
-                var kc = _kycong.getItem(_id);
-                kc.IDCKCT = int.Parse(cboNam.Text) * 100 + int.Parse(cboThang.Text); //Mã kỳ công =202404
-                kc.NAM = int.Parse(cboNam.Text);
-                kc.THANG = int.Parse(cboThang.Text);
+                var kc = _kycong.getItem(_idkc);
+                kc.IDKCCT = int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text); //Mã kỳ công =202404
+                kc.NAM = int.Parse(cbbNam.Text);
+                kc.THANG = int.Parse(cbbThang.Text);
                 kc.KHOA = chkKhoa.Checked;
                 kc.TRANGTHAI = chkTrangThai.Checked;
-                kc.NGAYCONGTRONGTHANG = HamXuLy.demSoNgayLamViecTrongThang(int.Parse(cboThang.Text), int.Parse(cboNam.Text));
+                kc.NGAYCONGTRONGTHANG = HamXuLy.demSoNgayLamViecTrongThang(int.Parse(cbbThang.Text), int.Parse(cbbNam.Text));
                 kc.NGAYTINHCONG = DateTime.Now;
                 kc.UPDATED_BY = 1;
                 kc.UPDATED_DATE = DateTime.Now;
@@ -131,14 +131,23 @@ namespace GUI.CHAMCONG
         {
             if (gvDanhSach.RowCount > 0)
             {
-                _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDCK").ToString());
-                cboNam.Text = gvDanhSach.GetFocusedRowCellValue("NAM").ToString();
-                cboThang.Text = gvDanhSach.GetFocusedRowCellValue("THANG").ToString();
+                _idkc = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDKCCT").ToString());
+                cbbNam.Text = gvDanhSach.GetFocusedRowCellValue("NAM").ToString();
+                cbbThang.Text = gvDanhSach.GetFocusedRowCellValue("THANG").ToString();
                 chkKhoa.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("KHOA").ToString());
                 chkTrangThai.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("TRANGTHAI").ToString());
 
 
             }
+        }
+
+        private void btnXemBangCong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmBangCongChiTiet frm = new frmBangCongChiTiet();
+            frm._idkcct = _idkc;
+            frm._thang = int.Parse(cbbThang.Text);
+            frm._nam = int.Parse(cbbNam.Text);
+            frm.ShowDialog();
         }
     }
 }
