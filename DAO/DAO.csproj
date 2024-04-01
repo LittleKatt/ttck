@@ -53,6 +53,9 @@
     <Compile Include="BANGCHAMCONG.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="BANGCONGCHITIET.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="BAOHIEM.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
@@ -60,9 +63,6 @@
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="CHUCVU.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="C_BANGCONGCHITIET.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="DANTOC.cs">

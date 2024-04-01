@@ -14,7 +14,7 @@ namespace DAO
     
     public partial class KYCONGCHITIET
     {
-        public int IDCKCT { get; set; }
+        public int IDKCCT { get; set; }
         public int IDNV { get; set; }
         public string HOTEN { get; set; }
         public string D1 { get; set; }

@@ -5,12 +5,12 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="QLNSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name=" BANGCONGCHITIET">
+        <EntityType Name="BANGCONGCHITIET">
           <Key>
             <PropertyRef Name="IDBCCT" />
           </Key>
           <Property Name="IDBCCT" Type="int" Nullable="false" />
-          <Property Name="IDCKCT" Type="int" />
+          <Property Name="IDKCCT" Type="int" />
           <Property Name="IDNV" Type="nvarchar" MaxLength="50" />
           <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
           <Property Name="NGAY" Type="datetime" />
@@ -123,10 +123,9 @@
         </EntityType>
         <EntityType Name="KYCONG">
           <Key>
-            <PropertyRef Name="IDCK" />
+            <PropertyRef Name="IDKCCT" />
           </Key>
-          <Property Name="IDCK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDCKCT" Type="int" Nullable="false" />
+          <Property Name="IDKCCT" Type="int" Nullable="false" />
           <Property Name="THANG" Type="int" />
           <Property Name="NAM" Type="int" />
           <Property Name="KHOA" Type="bit" />
@@ -142,10 +141,10 @@
         </EntityType>
         <EntityType Name="KYCONGCHITIET">
           <Key>
-            <PropertyRef Name="IDCKCT" />
+            <PropertyRef Name="IDKCCT" />
             <PropertyRef Name="IDNV" />
           </Key>
-          <Property Name="IDCKCT" Type="int" Nullable="false" />
+          <Property Name="IDKCCT" Type="int" Nullable="false" />
           <Property Name="IDNV" Type="int" Nullable="false" />
           <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
           <Property Name="D1" Type="nvarchar" MaxLength="10" />
@@ -634,7 +633,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QLNSModelStoreContainer">
-          <EntitySet Name=" BANGCONGCHITIET" EntityType="Self. BANGCONGCHITIET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BANGCONGCHITIET" EntityType="Self.BANGCONGCHITIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BANGCHAMCONG" EntityType="Self.BANGCHAMCONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BAOHIEM" EntityType="Self.BAOHIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BOPHAN" EntityType="Self.BOPHAN" Schema="dbo" store:Type="Tables" />
@@ -755,7 +754,7 @@
     <edmx:ConceptualModels>
       <Schema Namespace="QLNSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="QLNSEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="C_BANGCONGCHITIET" EntityType="QLNSModel.C_BANGCONGCHITIET" />
+          <EntitySet Name="BANGCONGCHITIETs" EntityType="QLNSModel.BANGCONGCHITIET" />
           <EntitySet Name="BANGCHAMCONGs" EntityType="QLNSModel.BANGCHAMCONG" />
           <EntitySet Name="BAOHIEMs" EntityType="QLNSModel.BAOHIEM" />
           <EntitySet Name="BOPHANs" EntityType="QLNSModel.BOPHAN" />
@@ -763,6 +762,7 @@
           <EntitySet Name="DANTOCs" EntityType="QLNSModel.DANTOC" />
           <EntitySet Name="DIEUCHUYENs" EntityType="QLNSModel.DIEUCHUYEN" />
           <EntitySet Name="HOPDONGs" EntityType="QLNSModel.HOPDONG" />
+          <EntitySet Name="KYCONGs" EntityType="QLNSModel.KYCONG" />
           <EntitySet Name="KYCONGCHITIETs" EntityType="QLNSModel.KYCONGCHITIET" />
           <EntitySet Name="KHENTHUONG_KYLUAT" EntityType="QLNSModel.KHENTHUONG_KYLUAT" />
           <EntitySet Name="LOAICAs" EntityType="QLNSModel.LOAICA" />
@@ -869,14 +869,13 @@
             <End Role="PHUCAP" EntitySet="PHUCAPs" />
             <End Role="NHANVIEN_PHUCAP" EntitySet="NHANVIEN_PHUCAP" />
           </AssociationSet>
-          <EntitySet Name="KYCONGs" EntityType="QLNSModel.KYCONG" />
         </EntityContainer>
-        <EntityType Name="C_BANGCONGCHITIET">
+        <EntityType Name="BANGCONGCHITIET">
           <Key>
             <PropertyRef Name="IDBCCT" />
           </Key>
           <Property Name="IDBCCT" Type="Int32" Nullable="false" />
-          <Property Name="IDCKCT" Type="Int32" />
+          <Property Name="IDKCCT" Type="Int32" />
           <Property Name="IDNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NGAY" Type="DateTime" Precision="3" />
@@ -1001,12 +1000,30 @@
           <NavigationProperty Name="PHONGBAN" Relationship="QLNSModel.FK_HOPDONG_PHONGBAN" FromRole="HOPDONG" ToRole="PHONGBAN" />
           <NavigationProperty Name="TRINHDO" Relationship="QLNSModel.FK_HOPDONG_TRINHDO" FromRole="HOPDONG" ToRole="TRINHDO" />
         </EntityType>
+        <EntityType Name="KYCONG">
+          <Key>
+            <PropertyRef Name="IDKCCT" />
+          </Key>
+          <Property Name="IDKCCT" Type="Int32" Nullable="false" />
+          <Property Name="THANG" Type="Int32" />
+          <Property Name="NAM" Type="Int32" />
+          <Property Name="KHOA" Type="Boolean" />
+          <Property Name="NGAYTINHCONG" Type="DateTime" Precision="3" />
+          <Property Name="NGAYCONGTRONGTHANG" Type="Double" />
+          <Property Name="TRANGTHAI" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="KYCONGCHITIET">
           <Key>
-            <PropertyRef Name="IDCKCT" />
+            <PropertyRef Name="IDKCCT" />
             <PropertyRef Name="IDNV" />
           </Key>
-          <Property Name="IDCKCT" Type="Int32" Nullable="false" />
+          <Property Name="IDKCCT" Type="Int32" Nullable="false" />
           <Property Name="IDNV" Type="Int32" Nullable="false" />
           <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="D1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1526,34 +1543,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="KYCONG">
-          <Key>
-            <PropertyRef Name="IDCK" />
-          </Key>
-          <Property Name="IDCK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDCKCT" Type="Int32" Nullable="false" />
-          <Property Name="THANG" Type="Int32" />
-          <Property Name="NAM" Type="Int32" />
-          <Property Name="KHOA" Type="Boolean" />
-          <Property Name="NGAYTINHCONG" Type="DateTime" Precision="3" />
-          <Property Name="NGAYCONGTRONGTHANG" Type="Double" />
-          <Property Name="TRANGTHAI" Type="Boolean" />
-          <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="UPDATED_BY" Type="Int32" />
-          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="DELETED_BY" Type="Int32" />
-          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QLNSModelStoreContainer" CdmEntityContainer="QLNSEntities">
-          <EntitySetMapping Name="C_BANGCONGCHITIET">
-            <EntityTypeMapping TypeName="QLNSModel.C_BANGCONGCHITIET">
-              <MappingFragment StoreEntitySet=" BANGCONGCHITIET">
+          <EntitySetMapping Name="BANGCONGCHITIETs">
+            <EntityTypeMapping TypeName="QLNSModel.BANGCONGCHITIET">
+              <MappingFragment StoreEntitySet="BANGCONGCHITIET">
                 <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
                 <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
                 <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
@@ -1569,7 +1567,7 @@
                 <ScalarProperty Name="NGAY" ColumnName="NGAY" />
                 <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
                 <ScalarProperty Name="IDNV" ColumnName="IDNV" />
-                <ScalarProperty Name="IDCKCT" ColumnName="IDCKCT" />
+                <ScalarProperty Name="IDKCCT" ColumnName="IDKCCT" />
                 <ScalarProperty Name="IDBCCT" ColumnName="IDBCCT" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1675,6 +1673,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="KYCONGs">
+            <EntityTypeMapping TypeName="QLNSModel.KYCONG">
+              <MappingFragment StoreEntitySet="KYCONG">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+                <ScalarProperty Name="NGAYCONGTRONGTHANG" ColumnName="NGAYCONGTRONGTHANG" />
+                <ScalarProperty Name="NGAYTINHCONG" ColumnName="NGAYTINHCONG" />
+                <ScalarProperty Name="KHOA" ColumnName="KHOA" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="IDKCCT" ColumnName="IDKCCT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="KYCONGCHITIETs">
             <EntityTypeMapping TypeName="QLNSModel.KYCONGCHITIET">
               <MappingFragment StoreEntitySet="KYCONGCHITIET">
@@ -1721,7 +1738,7 @@
                 <ScalarProperty Name="D1" ColumnName="D1" />
                 <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
                 <ScalarProperty Name="IDNV" ColumnName="IDNV" />
-                <ScalarProperty Name="IDCKCT" ColumnName="IDCKCT" />
+                <ScalarProperty Name="IDKCCT" ColumnName="IDKCCT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1902,26 +1919,6 @@
                 <ScalarProperty Name="THANG" ColumnName="THANG" />
                 <ScalarProperty Name="NAM" ColumnName="NAM" />
                 <ScalarProperty Name="IDUL" ColumnName="IDUL" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="KYCONGs">
-            <EntityTypeMapping TypeName="QLNSModel.KYCONG">
-              <MappingFragment StoreEntitySet="KYCONG">
-                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
-                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
-                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
-                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
-                <ScalarProperty Name="NGAYCONGTRONGTHANG" ColumnName="NGAYCONGTRONGTHANG" />
-                <ScalarProperty Name="NGAYTINHCONG" ColumnName="NGAYTINHCONG" />
-                <ScalarProperty Name="KHOA" ColumnName="KHOA" />
-                <ScalarProperty Name="NAM" ColumnName="NAM" />
-                <ScalarProperty Name="THANG" ColumnName="THANG" />
-                <ScalarProperty Name="IDCKCT" ColumnName="IDCKCT" />
-                <ScalarProperty Name="IDCK" ColumnName="IDCK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
