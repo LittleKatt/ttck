@@ -23,7 +23,9 @@ namespace GUI.CHAMCONG
         {
             InitializeComponent();
         }
+        NhanVien _nhanvien; 
         KyCongChiTiet _kcct;
+        BangCongChiTiet _bcct; 
         KyCong _kycong;
         public int _idkcct;
         public int _thang;
@@ -32,7 +34,10 @@ namespace GUI.CHAMCONG
         {
             _kcct = new KyCongChiTiet();
             _kycong = new KyCong();
+            _nhanvien = new NhanVien();
+            _bcct = new BangCongChiTiet();
             gcBangCongChiTiet.DataSource = _kcct.getList(_idkcct);
+            gvBangCongChiTiet.OptionsBehavior.Editable = false;
             CustomView(_thang, _nam);
             cbbThang.Text = _thang.ToString();
             cbbNam.Text = _nam.ToString();
@@ -41,6 +46,7 @@ namespace GUI.CHAMCONG
         {
             gcBangCongChiTiet.DataSource = _kcct.getList(int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text));
             CustomView(int.Parse(cbbThang.Text), int.Parse(cbbNam.Text));
+            gvBangCongChiTiet.OptionsBehavior.Editable = false;
 
         }
         private void btnPhatSinhKyCong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -52,7 +58,33 @@ namespace GUI.CHAMCONG
                 SplashScreenManager.CloseForm();
                 return;
             }
+            List<NHANVIEN> lstNhanVien = _nhanvien.getList();
             _kcct.phatSinhKyCongChiTiet(int.Parse(cbbThang.Text), int.Parse(cbbNam.Text));
+            foreach (var item in lstNhanVien )
+            {
+                for (int i = 1; i <= GetDayNumber(int.Parse(cbbThang.Text), int.Parse(cbbNam.Text)); i++)
+                {
+                    BANGCONGCHITIET bcct = new BANGCONGCHITIET();
+                    bcct.IDNV = item.IDNV;
+                    bcct.HOTEN = item.HOTEN; 
+                    bcct.GIOVAO = "08:00";
+                    bcct.GIORA = "17:00";
+                    bcct.NGAY = DateTime.Parse(cbbNam.Text + " - " + cbbThang.Text + " - " + i.ToString());
+                    bcct.THU = HamXuLy.layThuTrongTuan(int.Parse(cbbNam.Text), int.Parse(cbbThang.Text), i);
+                    bcct.NGAYPHEP = 0;
+                    bcct.CONGNGAYLE = 0; 
+                    bcct.CONGCHUNHAT = 0 ;
+                    if (bcct.THU == "Chủ nhật")
+                        bcct.KYHIEU = "CN";
+                    else
+                        bcct.KYHIEU = "X";
+                    bcct.IDKCCT = _idkcct;
+                    bcct.CREATED_BY = 1; 
+                    bcct.CREATED_DATE = DateTime.Now;
+                    _bcct.Add(bcct);
+
+                }
+            }
             var kc = _kycong.getItem(int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text));
             kc.TRANGTHAI = true;
             _kycong.Update(kc);
@@ -234,6 +266,17 @@ namespace GUI.CHAMCONG
             }
 
             return dayNumber;
+        }
+
+        private void mnCapNhatNC_Click(object sender, EventArgs e)
+        {
+            frmCapNhatNgayCong frm = new frmCapNhatNgayCong();
+            frm._idkcct = _idkcct;
+            frm._idnv = int.Parse(gvBangCongChiTiet.GetFocusedRowCellValue("IDNV").ToString());
+            frm._hoten = gvBangCongChiTiet.GetFocusedRowCellValue("HOTEN").ToString();
+
+            frm._ngay = gvBangCongChiTiet.FocusedColumn.FieldName.ToString();
+            frm.ShowDialog();
         }
     }
 }

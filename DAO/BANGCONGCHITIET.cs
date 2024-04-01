@@ -16,7 +16,7 @@ namespace DAO
     {
         public int IDBCCT { get; set; }
         public Nullable<int> IDKCCT { get; set; }
-        public string IDNV { get; set; }
+        public Nullable<int> IDNV { get; set; }
         public string HOTEN { get; set; }
         public Nullable<System.DateTime> NGAY { get; set; }
         public string THU { get; set; }
