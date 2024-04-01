@@ -111,7 +111,7 @@ namespace GUI
 
         private void btnNghiViec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmNhanVien_ThoiViec));
+            openForm(typeof(frmThoiViec));
         }
 
         private void btnNangLuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

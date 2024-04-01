@@ -56,7 +56,7 @@ namespace BUS
         {
             try
             {
-                var _lc = db.LOAICAs.FirstOrDefault(x => x.IDLCA == id);
+                var _lc = db.LOAICONGs.FirstOrDefault(x => x.IDLC == id);
                 _lc.DELETED_BY = iduser;
                 _lc.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();

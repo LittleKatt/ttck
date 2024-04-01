@@ -7,26 +7,26 @@ using BUS.DTO;
 using DAO;
 namespace BUS
 {
-    public class NhanVien_NangLuong
+    public class NangLuong
     {
         QLNSEntities db = new QLNSEntities();
 
-        public NHANVIEN_NANGLUONG getItem(string soqd)
+        public NANGLUONG getItem(string soqd)
         {
-            return db.NHANVIEN_NANGLUONG.FirstOrDefault(x => x.SOQD == soqd);
+            return db.NANGLUONGs.FirstOrDefault(x => x.SOQD == soqd);
         }
-        public List<NHANVIEN_NANGLUONG> getList()
+        public List<NANGLUONG> getList()
         {
-            return db.NHANVIEN_NANGLUONG.ToList();
+            return db.NANGLUONGs.ToList();
         }
-        public List<NhanVien_NangLuong_DTO> getListFull()
+        public List<NangLuong_DTO> getListFull()
         {
-            var lstDC = db.NHANVIEN_NANGLUONG.ToList();
-            List<NhanVien_NangLuong_DTO> lstDTO = new List<NhanVien_NangLuong_DTO>();
-            NhanVien_NangLuong_DTO nlDTO;
+            var lstDC = db.NANGLUONGs.ToList();
+            List<NangLuong_DTO> lstDTO = new List<NangLuong_DTO>();
+            NangLuong_DTO nlDTO;
             foreach (var item in lstDC)
             {
-                nlDTO = new NhanVien_NangLuong_DTO();
+                nlDTO = new NangLuong_DTO();
                 nlDTO.SOQD = item.SOQD;
                 nlDTO.HESOLUONGHIENTAI = item.HESOLUONGHIENTAI;
                 nlDTO.HESOLUONGMOI = item.HESOLUONGMOI;
@@ -47,11 +47,11 @@ namespace BUS
             }
             return lstDTO;
         }
-        public NHANVIEN_NANGLUONG Add(NHANVIEN_NANGLUONG nl)
+        public NANGLUONG Add(NANGLUONG nl)
         {
             try
             {
-                db.NHANVIEN_NANGLUONG.Add(nl);
+                db.NANGLUONGs.Add(nl);
                 db.SaveChanges();
                 return nl;
             }
@@ -61,11 +61,11 @@ namespace BUS
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
-        public NHANVIEN_NANGLUONG Update(NHANVIEN_NANGLUONG nl)
+        public NANGLUONG Update(NANGLUONG nl)
         {
             try
             {
-                var _nl = db.NHANVIEN_NANGLUONG.FirstOrDefault(x => x.SOQD == nl.SOQD);
+                var _nl = db.NANGLUONGs.FirstOrDefault(x => x.SOQD == nl.SOQD);
                 _nl.SOQD = nl.SOQD;
                 _nl.HESOLUONGHIENTAI = nl.HESOLUONGHIENTAI; 
                 _nl.HESOLUONGMOI = nl.HESOLUONGMOI;
@@ -88,7 +88,7 @@ namespace BUS
         {
             try
             {
-                var _tv = db.NHANVIEN_NANGLUONG.FirstOrDefault(x => x.SOQD == soqd);
+                var _tv = db.NANGLUONGs.FirstOrDefault(x => x.SOQD == soqd);
                 _tv.DELETED_BY = iduser;
                 _tv.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
@@ -102,7 +102,7 @@ namespace BUS
         }
         public string MaxSoQuyetDinh()
         {
-            var _dc = db.NHANVIEN_NANGLUONG.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
+            var _dc = db.NANGLUONGs.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
            if (_dc != null)
            {
                 return _dc.SOQD;

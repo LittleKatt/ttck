@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmNhanVien_ThoiViec
+    partial class frmThoiViec
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien_ThoiViec));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThoiViec));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -771,7 +771,7 @@
             this.barDockControl20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControl20.Size = new System.Drawing.Size(947, 0);
             // 
-            // frmNhanVien_ThoiViec
+            // frmThoiViec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -801,9 +801,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "frmNhanVien_ThoiViec";
+            this.Name = "frmThoiViec";
             this.Text = "Danh sách nhân viên thôi việc";
-            this.Load += new System.EventHandler(this.frmNhanVien_ThoiViec_Load);
+            this.Load += new System.EventHandler(this.frmThoiViec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

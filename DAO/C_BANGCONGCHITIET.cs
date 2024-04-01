@@ -12,21 +12,24 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class NHANVIEN_NANGLUONG
+    public partial class C_BANGCONGCHITIET
     {
-        public string SOQD { get; set; }
-        public string SOHD { get; set; }
-        public Nullable<int> IDNV { get; set; }
-        public Nullable<double> HESOLUONGHIENTAI { get; set; }
-        public Nullable<double> HESOLUONGMOI { get; set; }
-        public Nullable<System.DateTime> NGAYLENLUONG { get; set; }
-        public Nullable<System.DateTime> NGAYKY { get; set; }
+        public int IDBCCT { get; set; }
+        public Nullable<int> IDCKCT { get; set; }
+        public string IDNV { get; set; }
+        public string HOTEN { get; set; }
+        public Nullable<System.DateTime> NGAY { get; set; }
+        public string THU { get; set; }
+        public string GIOVAO { get; set; }
+        public string GIORA { get; set; }
+        public Nullable<double> NGAYPHEP { get; set; }
+        public Nullable<double> CONGNGAYLE { get; set; }
+        public Nullable<double> CONGCHUNHAT { get; set; }
+        public string KYHIEU { get; set; }
         public string GHICHU { get; set; }
         public Nullable<int> CREATED_BY { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
         public Nullable<int> UPDATED_BY { get; set; }
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
-        public Nullable<int> DELETED_BY { get; set; }
-        public Nullable<System.DateTime> DELETED_DATE { get; set; }
     }
 }

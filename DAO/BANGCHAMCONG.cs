@@ -25,7 +25,7 @@ namespace DAO
         public Nullable<int> IDNV { get; set; }
         public Nullable<int> IDLC { get; set; }
     
-        public virtual NHANVIEN NHANVIEN { get; set; }
         public virtual LOAICONG LOAICONG { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace BUS
 
         public KYCONG getItem(int id)
         {
-            return db.KYCONGs.FirstOrDefault(x => x.ID == id);
+            return db.KYCONGs.FirstOrDefault(x => x.IDCK == id);
         }
         public List<KYCONG> getList()
         {
@@ -36,8 +36,8 @@ namespace BUS
         {
             try
             {
-                var _kc = db.KYCONGs.FirstOrDefault(x => x.ID == kc.ID);
-                _kc.MAKYCONG = kc.MAKYCONG;
+                var _kc = db.KYCONGs.FirstOrDefault(x => x.IDCK == kc.IDCK);
+                _kc.IDCKCT = kc.IDCKCT;
                 _kc.NAM = kc.NAM;
                 _kc.THANG = kc.THANG; 
                 _kc.KHOA = kc.KHOA;
@@ -60,11 +60,11 @@ namespace BUS
         {
             try
             {
-                var _kc = db.KYCONGs.FirstOrDefault(x => x.ID == id);
+                var _kc = db.KYCONGs.FirstOrDefault(x => x.IDCK == id);
+                
                 _kc.DELETED_BY = iduser;
                 _kc.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
-
             }
 
             catch (Exception ex)

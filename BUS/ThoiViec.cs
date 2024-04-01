@@ -7,26 +7,26 @@ using BUS.DTO;
 using DAO;
 namespace BUS
 {
-    public class NhanVien_ThoiViec
+    public class ThoiViec
     {
         QLNSEntities db = new QLNSEntities();
 
-        public NHANVIEN_THOIVIEC getItem(string soqd)
+        public THOIVIEC getItem(string soqd)
         {
-            return db.NHANVIEN_THOIVIEC.FirstOrDefault(x => x.SOQD == soqd);
+            return db.THOIVIECs.FirstOrDefault(x => x.SOQD == soqd);
         }
-        public List<NHANVIEN_THOIVIEC> getList()
+        public List<THOIVIEC> getList()
         {
-            return db.NHANVIEN_THOIVIEC.ToList();
+            return db.THOIVIECs.ToList();
         }
-        public List<NhanVien_ThoiViec_DTO> getListFull()
+        public List<ThoiViec_DTO> getListFull()
         {
-            var lstDC = db.NHANVIEN_THOIVIEC.ToList();
-            List<NhanVien_ThoiViec_DTO> lstDTO = new List<NhanVien_ThoiViec_DTO>();
-            NhanVien_ThoiViec_DTO nvDTO;
+            var lstDC = db.THOIVIECs.ToList();
+            List<ThoiViec_DTO> lstDTO = new List<ThoiViec_DTO>();
+            ThoiViec_DTO nvDTO;
             foreach (var item in lstDC)
             {
-                nvDTO = new NhanVien_ThoiViec_DTO();
+                nvDTO = new ThoiViec_DTO();
                 nvDTO.SOQD = item.SOQD;
                 nvDTO.NGAYNOPDON = item.NGAYNOPDON;
                 nvDTO.NGAYNGHI = item.NGAYNGHI;
@@ -48,11 +48,11 @@ namespace BUS
             }
             return lstDTO;
         }
-        public NHANVIEN_THOIVIEC Add(NHANVIEN_THOIVIEC tv)
+        public THOIVIEC Add(THOIVIEC tv)
         {
             try
             {
-                db.NHANVIEN_THOIVIEC.Add(tv);
+                db.THOIVIECs.Add(tv);
                 db.SaveChanges(); 
                 return tv;
             }
@@ -62,11 +62,11 @@ namespace BUS
                 throw new Exception("Lỗi: "+ex.Message);
             }   
         }
-        public NHANVIEN_THOIVIEC Update(NHANVIEN_THOIVIEC tv)
+        public THOIVIEC Update(THOIVIEC tv)
         {
             try
             {
-                var _tv = db.NHANVIEN_THOIVIEC.FirstOrDefault(x => x.SOQD == tv.SOQD);
+                var _tv = db.THOIVIECs.FirstOrDefault(x => x.SOQD == tv.SOQD);
                 _tv.NGAYNOPDON =    tv.NGAYNOPDON;
                 _tv.NGAYNGHI = tv.NGAYNGHI;
                 _tv.IDNV = tv.IDNV;
@@ -87,7 +87,7 @@ namespace BUS
         {
             try
             {
-                var _tv = db.NHANVIEN_THOIVIEC.FirstOrDefault(x => x.SOQD == soqd);
+                var _tv = db.THOIVIECs.FirstOrDefault(x => x.SOQD == soqd);
                 _tv.DELETED_BY = iduser;
                 _tv.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
@@ -101,7 +101,7 @@ namespace BUS
         }
         public string MaxSoQuyetDinh()
         {
-            var _dc = db.NHANVIEN_THOIVIEC.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
+            var _dc = db.THOIVIECs.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
             if (_dc != null)
             {
                 return _dc.SOQD;

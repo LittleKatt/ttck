@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BUS.DTO
 {
-    public class NhanVien_NangLuong_DTO
+    public class NangLuong_DTO
     {
         public string SOQD { get; set; }
         public string SOHD { get; set; }

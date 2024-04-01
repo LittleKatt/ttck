@@ -14,25 +14,25 @@ using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
 
 namespace GUI
 {
-    public partial class frmNhanVien_ThoiViec : DevExpress.XtraEditors.XtraForm
+    public partial class frmThoiViec : DevExpress.XtraEditors.XtraForm
     {
-        public frmNhanVien_ThoiViec()
+        public frmThoiViec()
         {
             InitializeComponent();
         }
         bool _them;
         string _soqd;
-        NhanVien_ThoiViec _nvtv;
+        ThoiViec _nvtv;
         NhanVien _nhanvien;
-       
-        private void frmNhanVien_ThoiViec_Load(object sender, EventArgs e)
+
+        private void frmThoiViec_Load(object sender, EventArgs e)
         {
-            _nvtv = new NhanVien_ThoiViec();
+            _nvtv = new ThoiViec();
             _nhanvien = new NhanVien();
             _them = false;
             LoadNhanVien();
             LoadData();
-            
+
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
         }
@@ -129,13 +129,13 @@ namespace GUI
         }
         private void SaveData()
         {
-            NHANVIEN_THOIVIEC tv;
+            THOIVIEC tv;
             if (_them)
             {
 
                 var maxsoqd = _nvtv.MaxSoQuyetDinh();
                 int so = int.Parse(maxsoqd.Substring(0, 4)) + 1;
-                tv = new NHANVIEN_THOIVIEC(); 
+                tv = new THOIVIEC(); 
                 tv.SOQD = so.ToString("0000") + @"/" + DateTime.Now.Year.ToString() + "/QĐTV";
                 tv.LYDO = txtLyDo.Text;
                 tv.GHICHU = txtGhiChu.Text;
@@ -183,6 +183,8 @@ namespace GUI
         {
             dtNgayNghi.Value = dtNgayNopDon.Value.AddDays(30);
         }
+
+       
 
         //private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         //{
