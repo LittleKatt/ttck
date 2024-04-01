@@ -187,7 +187,7 @@ namespace GUI
             dtNgayNghi.Value = dtNgayNopDon.Value.AddDays(30);
         }
 
-        
+       
 
         //private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         //{

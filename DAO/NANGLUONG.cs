@@ -28,5 +28,7 @@ namespace DAO
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
         public Nullable<int> DELETED_BY { get; set; }
         public Nullable<System.DateTime> DELETED_DATE { get; set; }
+    
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

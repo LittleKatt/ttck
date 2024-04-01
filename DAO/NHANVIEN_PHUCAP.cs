@@ -21,7 +21,7 @@ namespace DAO
         public string NOIDUNG { get; set; }
         public Nullable<double> SOTIEN { get; set; }
     
-        public virtual PHUCAP PHUCAP { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual PHUCAP PHUCAP { get; set; }
     }
 }

@@ -56,8 +56,8 @@
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DELETED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MAKYCONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDCK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDCKCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KHOA = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -380,8 +380,8 @@
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.DELETED_BY,
-            this.ID,
-            this.MAKYCONG,
+            this.IDCK,
+            this.IDCKCT,
             this.NAM,
             this.THANG,
             this.KHOA,
@@ -403,31 +403,30 @@
             this.DELETED_BY.VisibleIndex = 0;
             this.DELETED_BY.Width = 20;
             // 
-            // ID
+            // IDCK
             // 
-            this.ID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.ID.AppearanceHeader.Options.UseFont = true;
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.MaxWidth = 50;
-            this.ID.MinWidth = 50;
-            this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 1;
-            this.ID.Width = 50;
+            this.IDCK.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.IDCK.AppearanceHeader.Options.UseFont = true;
+            this.IDCK.FieldName = "IDCK";
+            this.IDCK.MaxWidth = 50;
+            this.IDCK.MinWidth = 50;
+            this.IDCK.Name = "IDCK";
+            this.IDCK.Visible = true;
+            this.IDCK.VisibleIndex = 1;
+            this.IDCK.Width = 50;
             // 
-            // MAKYCONG
+            // IDCKCT
             // 
-            this.MAKYCONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.MAKYCONG.AppearanceHeader.Options.UseFont = true;
-            this.MAKYCONG.Caption = "MÃ KỲ CÔNG";
-            this.MAKYCONG.FieldName = "MAKYCONG";
-            this.MAKYCONG.MaxWidth = 100;
-            this.MAKYCONG.MinWidth = 100;
-            this.MAKYCONG.Name = "MAKYCONG";
-            this.MAKYCONG.Visible = true;
-            this.MAKYCONG.VisibleIndex = 2;
-            this.MAKYCONG.Width = 100;
+            this.IDCKCT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.IDCKCT.AppearanceHeader.Options.UseFont = true;
+            this.IDCKCT.Caption = "IDCKCT";
+            this.IDCKCT.FieldName = "IDCKCT";
+            this.IDCKCT.MaxWidth = 100;
+            this.IDCKCT.MinWidth = 100;
+            this.IDCKCT.Name = "IDCKCT";
+            this.IDCKCT.Visible = true;
+            this.IDCKCT.VisibleIndex = 2;
+            this.IDCKCT.Width = 100;
             // 
             // NAM
             // 
@@ -718,8 +717,8 @@
         private DevExpress.XtraGrid.GridControl gcDanhSach;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach;
         private DevExpress.XtraGrid.Columns.GridColumn DELETED_BY;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
-        private DevExpress.XtraGrid.Columns.GridColumn MAKYCONG;
+        private DevExpress.XtraGrid.Columns.GridColumn IDCK;
+        private DevExpress.XtraGrid.Columns.GridColumn IDCKCT;
         private DevExpress.XtraGrid.Columns.GridColumn NAM;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl2;

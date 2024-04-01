@@ -12,10 +12,10 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class BANGCONG_NHANVIEN_CHITIET
+    public partial class C_BANGCONGCHITIET
     {
-        public int ID { get; set; }
-        public Nullable<int> MAKYCONG { get; set; }
+        public int IDBCCT { get; set; }
+        public Nullable<int> IDCKCT { get; set; }
         public string IDNV { get; set; }
         public string HOTEN { get; set; }
         public Nullable<System.DateTime> NGAY { get; set; }

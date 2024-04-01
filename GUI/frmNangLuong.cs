@@ -21,12 +21,12 @@ namespace GUI
         }
         bool _them;
         string _soqd;
-        NhanVien_NangLuong _nvnl;
+        NangLuong _nvnl;
         HopDongLD  _hopdong;
         NhanVien _nv; 
         private void frmNangLuong_Load(object sender, EventArgs e)
         {
-            _nvnl = new NhanVien_NangLuong();
+            _nvnl = new NangLuong();
             _hopdong = new HopDongLD();
             _nv = new NhanVien();
             _them = false;
@@ -127,13 +127,13 @@ namespace GUI
         }
         private void SaveData()
         {
-            NHANVIEN_NANGLUONG nl;
+            NANGLUONG nl;
             if (_them)
             {
 
                 var maxsoqd = _nvnl.MaxSoQuyetDinh();
                 int so = int.Parse(maxsoqd.Substring(0, 4)) + 1;
-                nl = new NHANVIEN_NANGLUONG();
+                nl = new NANGLUONG();
                 nl.SOQD = so.ToString("0000") + @"/" + DateTime.Now.Year.ToString() + "/QĐNL";
                 nl.SOHD = slkHopDong.EditValue.ToString();
                 nl.GHICHU = txtGhiChu.Text;

@@ -22,7 +22,7 @@ namespace DAO
         public Nullable<int> IDNV { get; set; }
         public Nullable<int> IDLCA { get; set; }
     
-        public virtual NHANVIEN NHANVIEN { get; set; }
         public virtual LOAICA LOAICA { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

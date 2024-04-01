@@ -100,7 +100,7 @@ namespace GUI.CHAMCONG
             if (_them)
             {
                 KYCONG kc = new KYCONG();
-                kc.MAKYCONG = int.Parse(cboNam.Text) * 100 + int.Parse(cboThang.Text); //Mã kỳ công =202404
+                kc.IDCKCT = int.Parse(cboNam.Text) * 100 + int.Parse(cboThang.Text); //Mã kỳ công =202404
                 kc.NAM   = int.Parse(cboNam.Text);
                 kc.THANG = int.Parse(cboThang.Text);
                 kc.KHOA = chkKhoa.Checked;
@@ -114,7 +114,7 @@ namespace GUI.CHAMCONG
             else
             {
                 var kc = _kycong.getItem(_id);
-                kc.MAKYCONG = int.Parse(cboNam.Text) * 100 + int.Parse(cboThang.Text); //Mã kỳ công =202404
+                kc.IDCKCT = int.Parse(cboNam.Text) * 100 + int.Parse(cboThang.Text); //Mã kỳ công =202404
                 kc.NAM = int.Parse(cboNam.Text);
                 kc.THANG = int.Parse(cboThang.Text);
                 kc.KHOA = chkKhoa.Checked;
@@ -131,7 +131,7 @@ namespace GUI.CHAMCONG
         {
             if (gvDanhSach.RowCount > 0)
             {
-                _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("ID").ToString());
+                _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("IDCK").ToString());
                 cboNam.Text = gvDanhSach.GetFocusedRowCellValue("NAM").ToString();
                 cboThang.Text = gvDanhSach.GetFocusedRowCellValue("THANG").ToString();
                 chkKhoa.Checked = bool.Parse(gvDanhSach.GetFocusedRowCellValue("KHOA").ToString());
