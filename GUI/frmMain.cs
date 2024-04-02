@@ -1,5 +1,6 @@
 ﻿using BUS;
 using GUI.CHAMCONG;
+using GUI.TINHLUONG;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -153,6 +154,11 @@ namespace GUI
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPhuCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmPhuCap));
         }
     }
 }

@@ -33,12 +33,12 @@ namespace GUI.CHAMCONG
         {
             btnLuu.Enabled = !kt;
             btnHuy.Enabled = !kt;
-            txtLoaiCong.Enabled = !kt;
             btnThem.Enabled = kt;
             btnSua.Enabled = kt;
             btnXoa.Enabled = kt;
             btnDong.Enabled = kt;
             btnIn.Enabled = kt;
+            txtLoaiCong.Enabled = !kt;
             spHeSo.Enabled = !kt;
         }
         void LoadData()

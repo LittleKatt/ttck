@@ -21,6 +21,48 @@ namespace BUS
             return db.NHANVIENs.ToList();
         }
 
+        public NhanVien_DTO getItemFull(int id)
+        {
+            var item = db.NHANVIENs.FirstOrDefault(x => x.IDNV == id);
+            NhanVien_DTO nvDTO = new NhanVien_DTO();
+                nvDTO.IDNV = item.IDNV;
+                nvDTO.HOTEN = item.HOTEN;
+                nvDTO.GIOITINH = item.GIOITINH;
+                nvDTO.NGAYSINH = item.NGAYSINH;
+                nvDTO.DIENTHOAI = item.DIENTHOAI;
+                nvDTO.CCCD = item.CCCD;
+                nvDTO.DIACHI = item.DIACHI;
+                nvDTO.HINHANH = item.HINHANH;
+                nvDTO.THOIVIEC = item.DATHOIVIEC;
+
+                nvDTO.IDPB = item.IDPB;
+                var pb = db.PHONGBANs.FirstOrDefault(p => p.IDPB == item.IDPB);
+                nvDTO.TENPB = pb.TENPB;
+
+                nvDTO.IDBP = item.IDBP;
+                var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
+                nvDTO.TENBP = bp.TENBP;
+
+                nvDTO.IDCV = item.IDCV;
+                var cv = db.CHUCVUs.FirstOrDefault(c => c.IDCV == item.IDCV);
+                nvDTO.TENCV = cv.TENCV;
+
+                nvDTO.IDTD = item.IDTD;
+                var td = db.TRINHDOes.FirstOrDefault(t => t.IDTD == item.IDTD);
+                nvDTO.TENTD = td.TENTD;
+
+                nvDTO.IDDT = item.IDDT;
+                var dt = db.DANTOCs.FirstOrDefault(d => d.ID == item.IDDT);
+                nvDTO.TENDT = dt.TENDT;
+
+                nvDTO.IDTG = item.IDTG;
+                var tg = db.TONGIAOs.FirstOrDefault(g => g.ID == item.IDTG);
+                nvDTO.TENTG = tg.TENTG;
+
+            return nvDTO;
+        }
+
+
         public List<NhanVien_DTO> getListFull()
         {
             var lstNV = db.NHANVIENs.ToList();

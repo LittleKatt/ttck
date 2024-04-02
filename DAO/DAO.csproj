@@ -89,13 +89,13 @@
     <Compile Include="LOAICONG.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="LOAIPHUCAP.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="NANGLUONG.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="NHANVIEN.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NHANVIEN_PHUCAP.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="PHONGBAN.cs">

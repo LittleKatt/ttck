@@ -12,16 +12,19 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class NHANVIEN_PHUCAP
+    public partial class LOAIPHUCAP
     {
-        public int ID { get; set; }
-        public Nullable<int> IDNV { get; set; }
-        public Nullable<int> IDPC { get; set; }
-        public Nullable<System.DateTime> NGAY { get; set; }
-        public string NOIDUNG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public LOAIPHUCAP()
+        {
+            this.PHUCAPs = new HashSet<PHUCAP>();
+        }
+    
+        public int IDPC { get; set; }
+        public string TENPC { get; set; }
         public Nullable<double> SOTIEN { get; set; }
     
-        public virtual NHANVIEN NHANVIEN { get; set; }
-        public virtual PHUCAP PHUCAP { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHUCAP> PHUCAPs { get; set; }
     }
 }

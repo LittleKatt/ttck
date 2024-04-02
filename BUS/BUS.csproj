@@ -58,6 +58,7 @@
     <Compile Include="DTO\KTKL_DTO.cs" />
     <Compile Include="DTO\NhanVien_DTO.cs" />
     <Compile Include="DTO\NangLuong_DTO.cs" />
+    <Compile Include="DTO\PhuCap_DTO.cs" />
     <Compile Include="DTO\ThoiViec_DTO.cs" />
     <Compile Include="HopDongLD.cs" />
     <Compile Include="KhenThuong_KyLuat.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="LoaiCong.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="NangLuong.cs" />
+    <Compile Include="PhuCap.cs" />
     <Compile Include="ThoiViec.cs" />
     <Compile Include="PhongBan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
