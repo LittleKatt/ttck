@@ -42,8 +42,9 @@ namespace GUI.CHAMCONG
             cbbThang.Text = _thang.ToString();
             cbbNam.Text = _nam.ToString();
         }
-        void loadBangCong()
+        public void loadBangCong()
         {
+            _kcct = new KyCongChiTiet();
             gcBangCongChiTiet.DataSource = _kcct.getList(int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text));
             CustomView(int.Parse(cbbThang.Text), int.Parse(cbbNam.Text));
             gvBangCongChiTiet.OptionsBehavior.Editable = false;

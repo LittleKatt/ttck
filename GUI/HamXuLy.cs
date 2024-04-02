@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +61,55 @@ namespace GUI
                     break;
             }
             return thu;
+        }
+        // khai báo biến sql 
+        static SqlConnection con = new SqlConnection();
+        //Ham ket noi 
+        public static void taoKetNoi()
+        {
+            con.ConnectionString = @"Data Source=DESKTOP-GGD112V\SQL;Initial Catalog=QLNS;Integrated Security=True";
+            try
+            {
+                con.Open();
+            }
+            catch (Exception) 
+            {
+                throw;
+            }
+        }
+        //Hàm đóng kết nối 
+        public static void dongKetNoi()
+        {
+            con.Close();
+        }
+        //Hàm đổ dữ liệu vào database 
+        public static DataTable getData(string query)
+        {
+            taoKetNoi();
+            DataTable tb = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            da.Fill(tb);
+            dongKetNoi();
+            return tb;
+        }
+        //Hàm lấy dữ liệu từ database
+        public static DataSet getDataSet(string query)
+        {
+            taoKetNoi();
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(da);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+        //Hàm inset/update dữ liệu
+        public static void execQuery(string qr)
+        {
+            taoKetNoi();
+            SqlCommand cmd = new SqlCommand(qr, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            dongKetNoi();
         }
     }
 }
