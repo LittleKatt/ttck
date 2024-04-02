@@ -160,5 +160,10 @@ namespace GUI
         {
             openForm(typeof(frmPhuCap));
         }
+
+        private void btnTangCa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmTangCa));
+        }
     }
 }

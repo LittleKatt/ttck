@@ -65,6 +65,9 @@
     <Compile Include="CHUCVU.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="CONFIG.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DANTOC.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>

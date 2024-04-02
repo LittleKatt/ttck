@@ -16,13 +16,12 @@
         <EntityTypeShape EntityType="QLNSModel.KYCONG" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="QLNSModel.KYCONGCHITIET" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="QLNSModel.KHENTHUONG_KYLUAT" Width="1.5" PointX="5.25" PointY="39.75" />
-        <EntityTypeShape EntityType="QLNSModel.LOAICA" Width="1.5" PointX="6" PointY="48.375" />
+        <EntityTypeShape EntityType="QLNSModel.LOAICA" Width="1.5" PointX="7.75" PointY="44.125" />
         <EntityTypeShape EntityType="QLNSModel.LOAICONG" Width="1.5" PointX="6" PointY="7.375" />
         <EntityTypeShape EntityType="QLNSModel.LOAIPHUCAP" Width="1.5" PointX="6" PointY="32" />
         <EntityTypeShape EntityType="QLNSModel.NANGLUONG" Width="1.5" PointX="5.25" PointY="14.75" />
         <EntityTypeShape EntityType="QLNSModel.NHANVIEN" Width="1.5" PointX="3" PointY="20.375" />
         <EntityTypeShape EntityType="QLNSModel.PHONGBAN" Width="1.5" PointX="0.75" PointY="19.375" />
-        <EntityTypeShape EntityType="QLNSModel.TANGCA" Width="1.5" PointX="8.25" PointY="26.5" />
         <EntityTypeShape EntityType="QLNSModel.TONGIAO" Width="1.5" PointX="0.75" PointY="28.5" />
         <EntityTypeShape EntityType="QLNSModel.THOIVIEC" Width="1.5" PointX="5.25" PointY="27.75" />
         <EntityTypeShape EntityType="QLNSModel.TRINHDO" Width="1.5" PointX="0.75" PointY="25.875" />
@@ -40,17 +39,19 @@
         <AssociationConnector Association="QLNSModel.FK_HOPDONG_PHONGBAN" />
         <AssociationConnector Association="QLNSModel.FK_HOPDONG_TRINHDO" />
         <AssociationConnector Association="QLNSModel.FK_KHENTHUONG_KYLUAT_NHANVIEN" />
-        <AssociationConnector Association="QLNSModel.FK_TANGCA_LOAICA" />
         <AssociationConnector Association="QLNSModel.FK_NHANVIEN_NANGLUONG_NHANVIEN" />
         <AssociationConnector Association="QLNSModel.FK_NHANVIEN_PHONGBAN" />
         <AssociationConnector Association="QLNSModel.FK_NHANVIEN_TONGIAO" />
         <AssociationConnector Association="QLNSModel.FK_NHANVIEN_THOIVIEC_NHANVIEN" />
         <AssociationConnector Association="QLNSModel.FK_NHANVIEN_TRINHDO" />
-        <AssociationConnector Association="QLNSModel.FK_TANGCA_NHANVIEN" />
         <AssociationConnector Association="QLNSModel.FK_UNGLUONG_NHANVIEN" />
         <EntityTypeShape EntityType="QLNSModel.PHUCAP" Width="1.5" PointX="11.25" PointY="26.25" />
         <AssociationConnector Association="QLNSModel.FK_NHANVIEN_PHUCAP_PHUCAP" />
         <AssociationConnector Association="QLNSModel.FK_NHANVIEN_PHUCAP_NHANVIEN" />
+        <EntityTypeShape EntityType="QLNSModel.TANGCA" Width="1.5" PointX="8" PointY="27.625" />
+        <AssociationConnector Association="QLNSModel.FK_TANGCA_LOAICA" />
+        <AssociationConnector Association="QLNSModel.FK_TANGCA_NHANVIEN" />
+        <EntityTypeShape EntityType="QLNSModel.CONFIG" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -67,7 +67,7 @@ namespace GUI
         //Ham ket noi 
         public static void taoKetNoi()
         {
-            con.ConnectionString = @"Data Source=DESKTOP-MPGIDDQ;Initial Catalog=QLNS;Integrated Security=True";
+            con.ConnectionString = @"Data Source=DESKTOP-GGD112V\SQL;Initial Catalog=QLNS;Integrated Security=True";
             try
             {
                 con.Open();
