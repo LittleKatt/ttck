@@ -76,9 +76,15 @@ namespace GUI.CHAMCONG
                     bcct.CONGNGAYLE = 0; 
                     bcct.CONGCHUNHAT = 0 ;
                     if (bcct.THU == "Chủ nhật")
+                    {
                         bcct.KYHIEU = "CN";
+                        bcct.NGAYCONG = 0;
+                    }    
                     else
+                    {
                         bcct.KYHIEU = "X";
+                        bcct.NGAYCONG = 1;
+                    }    
                     bcct.IDKCCT = _idkcct;
                     bcct.CREATED_BY = 1; 
                     bcct.CREATED_DATE = DateTime.Now;
@@ -278,6 +284,37 @@ namespace GUI.CHAMCONG
 
             frm._ngay = gvBangCongChiTiet.FocusedColumn.FieldName.ToString();
             frm.ShowDialog();
+        }
+
+        private void gvBangCongChiTiet_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.CellValue == null)
+            {
+
+            }
+            else
+            {
+                if (e.CellValue.ToString()=="CT")
+                {
+                    e.Appearance.BackColor = Color.DeepSkyBlue;
+                    e.Appearance.ForeColor = Color.White;
+                }
+                if (e.CellValue.ToString()=="VR")
+                {
+                    e.Appearance.BackColor = Color.DarkGreen;
+                    e.Appearance.ForeColor = Color.White;
+                }
+                if (e.CellValue.ToString() == "P")
+                {
+                    e.Appearance.BackColor = Color.LightBlue;
+                    //e.Appearance.ForeColor = Color.White;
+                }
+                if (e.CellValue.ToString() == "V")
+                {
+                    e.Appearance.BackColor = Color.IndianRed;
+                    e.Appearance.ForeColor = Color.White;
+                }
+            }
         }
     }
 }

@@ -26,11 +26,14 @@ namespace GUI.CHAMCONG
         public int _idkcct;
         public string _ngay;
         public string _phongban;
-        KyCongChiTiet _kcct;
         public int _cNgay;
+        KyCongChiTiet _kcct;
+        BangCongChiTiet _bcct;
+
         frmBangCongChiTiet frmBCCT = (frmBangCongChiTiet)Application.OpenForms["frmBangCongChiTiet"];
         private void frmCapNhatNgayCong_Load(object sender, EventArgs e)
         {
+            _bcct = new BangCongChiTiet();
             _kcct = new KyCongChiTiet();
             lblIDNV.Text = _idnv.ToString();
             lblHoTen.Text = _hoten.ToString();
@@ -50,10 +53,10 @@ namespace GUI.CHAMCONG
             
             var kcct = _kcct.getItem(_idkcct, _idnv);
 
-            double? tongngaycong = kcct.TONGNGAYCONG;
-            double? tongngayphep = kcct.NGAYPHEP; 
-            double? tongngaykhongphep = kcct.NGHIKHONGPHEP;
-            double? tongngayle = kcct.CONGNGAYLE;
+            //double? tongngaycong = kcct.TONGNGAYCONG;
+            //double? tongngayphep = kcct.NGAYPHEP; 
+            //double? tongngaykhongphep = kcct.NGHIKHONGPHEP;
+            //double? tongngayle = kcct.CONGNGAYLE;
             if (cldNgayCong.SelectionRange.Start.Year*100+cldNgayCong.SelectionRange.Start.Month != _idkcct)
             {
                 MessageBox.Show("Thực hiện chấm công không đúng kỳ công. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information );
@@ -62,6 +65,69 @@ namespace GUI.CHAMCONG
 
             //CẬP NHẬT KYCONGCHITIET => CẬP NHẬT BANGCONGCHITIET
             HamXuLy.execQuery("UPDATE KYCONGCHITIET SET " + fieldName + "='" + _valueChamCong + "' WHERE IDKCCT=" + _idkcct + " AND IDNV=" + _idnv);
+
+
+            BANGCONGCHITIET bcct = _bcct.getItem(_idnv, _idkcct, cldNgayCong.SelectionStart.Day);
+            bcct.KYHIEU = _valueChamCong;
+            switch (_valueChamCong)
+            {
+                case "P":
+                    if (_valueTGNghi == "NN")
+                    {
+                        bcct.NGAYPHEP = 1;
+                        bcct.NGAYCONG = 0;
+                    }
+                    else
+                    {
+                        bcct.NGAYPHEP = 0.5;
+                        bcct.NGAYCONG = 0.5;
+                    }
+                    break;
+                case "CT":
+                    if (_valueTGNghi == "NN")
+                    {
+                        bcct.NGAYCONG = 1;
+                    }
+                    else
+                    {
+                        bcct.NGAYPHEP = 0.5;
+                        bcct.NGAYCONG = 0.5;
+                    }
+                    break;
+                case "VR":
+                    if (_valueTGNghi == "NN")
+                    {
+                        bcct.NGAYPHEP = 1;
+                        bcct.NGAYCONG = 0;
+                    }
+                    else
+                    {
+                        bcct.NGAYPHEP = 0.5;
+                        bcct.NGAYCONG = 0.5;
+                    }
+                    break;
+                case "V":
+                    if (_valueTGNghi == "NN")
+                    {
+                        bcct.NGAYCONG = 0;
+                    }
+                    else
+                    {
+                        bcct.NGAYCONG = 0.5;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            //update bảng bangcongchitiet
+            _bcct.Update(bcct);
+            //tính ngày công, ngày phép
+            double tongngaycong = _bcct.tongNgayCong(_idkcct, _idnv);
+            double tongngayphep = _bcct.tongNgayPhep(_idkcct, _idnv);
+            kcct.NGAYPHEP = tongngayphep;
+            kcct.TONGNGAYCONG = tongngaycong;
+            _kcct.Update(kcct);
+
 
             frmBCCT.loadBangCong();
            // MessageBox.Show(_valueChamCong+ "--"+ _valueTGNghi);
@@ -74,7 +140,7 @@ namespace GUI.CHAMCONG
 
         private void cldNgayCong_DateSelected(object sender, DateRangeEventArgs e)
         {
-           _cNgay = cldNgayCong.SelectionRange.Start.Day;
+            _cNgay = cldNgayCong.SelectionRange.Start.Day;
         }
     }
 }
