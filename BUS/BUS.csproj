@@ -61,6 +61,7 @@
     <Compile Include="DTO\PhuCap_DTO.cs" />
     <Compile Include="DTO\TangCa_DTO.cs" />
     <Compile Include="DTO\ThoiViec_DTO.cs" />
+    <Compile Include="DTO\UngLuong_DTO.cs" />
     <Compile Include="HopDongLD.cs" />
     <Compile Include="KhenThuong_KyLuat.cs" />
     <Compile Include="KyCong.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TonGiao.cs" />
     <Compile Include="TrinhDo.cs" />
+    <Compile Include="UngLuong.cs" />
     <Compile Include="XuLy.cs" />
   </ItemGroup>
   <ItemGroup>

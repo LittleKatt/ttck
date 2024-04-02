@@ -45,9 +45,9 @@ namespace DAO
         public virtual DbSet<TONGIAO> TONGIAOs { get; set; }
         public virtual DbSet<THOIVIEC> THOIVIECs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
-        public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
         public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
         public virtual DbSet<TANGCA> TANGCAs { get; set; }
         public virtual DbSet<CONFIG> CONFIGs { get; set; }
+        public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
     }
 }

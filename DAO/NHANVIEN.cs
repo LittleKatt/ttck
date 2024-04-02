@@ -24,9 +24,9 @@ namespace DAO
             this.KHENTHUONG_KYLUAT = new HashSet<KHENTHUONG_KYLUAT>();
             this.NANGLUONGs = new HashSet<NANGLUONG>();
             this.THOIVIECs = new HashSet<THOIVIEC>();
-            this.UNGLUONGs = new HashSet<UNGLUONG>();
             this.PHUCAPs = new HashSet<PHUCAP>();
             this.TANGCAs = new HashSet<TANGCA>();
+            this.UNGLUONGs = new HashSet<UNGLUONG>();
         }
     
         public int IDNV { get; set; }
@@ -66,10 +66,10 @@ namespace DAO
         public virtual ICollection<THOIVIEC> THOIVIECs { get; set; }
         public virtual TRINHDO TRINHDO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UNGLUONG> UNGLUONGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHUCAP> PHUCAPs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TANGCA> TANGCAs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UNGLUONG> UNGLUONGs { get; set; }
     }
 }
