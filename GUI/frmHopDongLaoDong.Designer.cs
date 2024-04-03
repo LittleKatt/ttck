@@ -45,6 +45,8 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.spLuongCoBan = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.cbbThoiHan = new System.Windows.Forms.ComboBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.slkNhanVien = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -71,6 +73,7 @@
             this.NGAYKETTHUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THOIHAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LUONGCOBAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HESOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LANKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDNV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,14 +86,13 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.spLuongCoBan = new DevExpress.XtraEditors.SpinEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.LUONGCOBAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DELETED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spLuongCoBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slkNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spHeSL.Properties)).BeginInit();
@@ -98,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spLuongCoBan.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -285,6 +286,35 @@
             this.splitContainer1.SplitterDistance = 229;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 18;
+            // 
+            // spLuongCoBan
+            // 
+            this.spLuongCoBan.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spLuongCoBan.Location = new System.Drawing.Point(589, 142);
+            this.spLuongCoBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.spLuongCoBan.MenuManager = this.barManager1;
+            this.spLuongCoBan.Name = "spLuongCoBan";
+            this.spLuongCoBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.spLuongCoBan.Properties.Appearance.Options.UseFont = true;
+            this.spLuongCoBan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spLuongCoBan.Size = new System.Drawing.Size(167, 22);
+            this.spLuongCoBan.TabIndex = 40;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(473, 145);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(88, 17);
+            this.labelControl6.TabIndex = 39;
+            this.labelControl6.Text = "Lương Cơ Bản";
             // 
             // cbbThoiHan
             // 
@@ -543,6 +573,7 @@
             // gvDanhSach
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.DELETED_BY,
             this.SOHD,
             this.NGAYBATDAU,
             this.NGAYKETTHUC,
@@ -569,7 +600,7 @@
             this.SOHD.MinWidth = 103;
             this.SOHD.Name = "SOHD";
             this.SOHD.Visible = true;
-            this.SOHD.VisibleIndex = 0;
+            this.SOHD.VisibleIndex = 1;
             this.SOHD.Width = 103;
             // 
             // NGAYBATDAU
@@ -582,7 +613,7 @@
             this.NGAYBATDAU.MinWidth = 103;
             this.NGAYBATDAU.Name = "NGAYBATDAU";
             this.NGAYBATDAU.Visible = true;
-            this.NGAYBATDAU.VisibleIndex = 1;
+            this.NGAYBATDAU.VisibleIndex = 2;
             this.NGAYBATDAU.Width = 103;
             // 
             // NGAYKETTHUC
@@ -595,7 +626,7 @@
             this.NGAYKETTHUC.MinWidth = 103;
             this.NGAYKETTHUC.Name = "NGAYKETTHUC";
             this.NGAYKETTHUC.Visible = true;
-            this.NGAYKETTHUC.VisibleIndex = 2;
+            this.NGAYKETTHUC.VisibleIndex = 3;
             this.NGAYKETTHUC.Width = 103;
             // 
             // NGAYKY
@@ -608,7 +639,7 @@
             this.NGAYKY.MinWidth = 103;
             this.NGAYKY.Name = "NGAYKY";
             this.NGAYKY.Visible = true;
-            this.NGAYKY.VisibleIndex = 3;
+            this.NGAYKY.VisibleIndex = 4;
             this.NGAYKY.Width = 103;
             // 
             // THOIHAN
@@ -621,8 +652,21 @@
             this.THOIHAN.MinWidth = 103;
             this.THOIHAN.Name = "THOIHAN";
             this.THOIHAN.Visible = true;
-            this.THOIHAN.VisibleIndex = 4;
+            this.THOIHAN.VisibleIndex = 5;
             this.THOIHAN.Width = 103;
+            // 
+            // LUONGCOBAN
+            // 
+            this.LUONGCOBAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LUONGCOBAN.AppearanceHeader.Options.UseFont = true;
+            this.LUONGCOBAN.Caption = "LƯƠNG CƠ BẢN";
+            this.LUONGCOBAN.FieldName = "LUONGCOBAN";
+            this.LUONGCOBAN.MaxWidth = 120;
+            this.LUONGCOBAN.MinWidth = 120;
+            this.LUONGCOBAN.Name = "LUONGCOBAN";
+            this.LUONGCOBAN.Visible = true;
+            this.LUONGCOBAN.VisibleIndex = 6;
+            this.LUONGCOBAN.Width = 120;
             // 
             // HESOLUONG
             // 
@@ -634,7 +678,7 @@
             this.HESOLUONG.MinWidth = 43;
             this.HESOLUONG.Name = "HESOLUONG";
             this.HESOLUONG.Visible = true;
-            this.HESOLUONG.VisibleIndex = 6;
+            this.HESOLUONG.VisibleIndex = 7;
             this.HESOLUONG.Width = 43;
             // 
             // LANKY
@@ -647,7 +691,7 @@
             this.LANKY.MinWidth = 86;
             this.LANKY.Name = "LANKY";
             this.LANKY.Visible = true;
-            this.LANKY.VisibleIndex = 7;
+            this.LANKY.VisibleIndex = 8;
             this.LANKY.Width = 86;
             // 
             // IDNV
@@ -668,7 +712,7 @@
             this.HOTEN.MinWidth = 171;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.Visible = true;
-            this.HOTEN.VisibleIndex = 8;
+            this.HOTEN.VisibleIndex = 9;
             this.HOTEN.Width = 171;
             // 
             // barDockControl1
@@ -743,47 +787,15 @@
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControl8.Size = new System.Drawing.Size(1036, 0);
             // 
-            // spLuongCoBan
+            // DELETED_BY
             // 
-            this.spLuongCoBan.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spLuongCoBan.Location = new System.Drawing.Point(589, 142);
-            this.spLuongCoBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.spLuongCoBan.MenuManager = this.barManager1;
-            this.spLuongCoBan.Name = "spLuongCoBan";
-            this.spLuongCoBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.spLuongCoBan.Properties.Appearance.Options.UseFont = true;
-            this.spLuongCoBan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spLuongCoBan.Size = new System.Drawing.Size(167, 22);
-            this.spLuongCoBan.TabIndex = 40;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(473, 145);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(88, 17);
-            this.labelControl6.TabIndex = 39;
-            this.labelControl6.Text = "Lương Cơ Bản";
-            // 
-            // LUONGCOBAN
-            // 
-            this.LUONGCOBAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.LUONGCOBAN.AppearanceHeader.Options.UseFont = true;
-            this.LUONGCOBAN.Caption = "LƯƠNG CƠ BẢN";
-            this.LUONGCOBAN.FieldName = "LUONGCOBAN";
-            this.LUONGCOBAN.MaxWidth = 120;
-            this.LUONGCOBAN.MinWidth = 120;
-            this.LUONGCOBAN.Name = "LUONGCOBAN";
-            this.LUONGCOBAN.Visible = true;
-            this.LUONGCOBAN.VisibleIndex = 5;
-            this.LUONGCOBAN.Width = 120;
+            this.DELETED_BY.FieldName = "DELETED_BY";
+            this.DELETED_BY.MaxWidth = 30;
+            this.DELETED_BY.MinWidth = 30;
+            this.DELETED_BY.Name = "DELETED_BY";
+            this.DELETED_BY.Visible = true;
+            this.DELETED_BY.VisibleIndex = 0;
+            this.DELETED_BY.Width = 30;
             // 
             // frmHopDongLaoDong
             // 
@@ -813,6 +825,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spLuongCoBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slkNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spHeSL.Properties)).EndInit();
@@ -820,7 +833,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spLuongCoBan.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -884,5 +896,6 @@
         private DevExpress.XtraEditors.SpinEdit spLuongCoBan;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraGrid.Columns.GridColumn LUONGCOBAN;
+        private DevExpress.XtraGrid.Columns.GridColumn DELETED_BY;
     }
 }

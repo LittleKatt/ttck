@@ -143,7 +143,7 @@ namespace GUI
                 int so = int.Parse(maxsohd.Substring(0, 4)) + 1;
 
                 HOPDONG hd = new HOPDONG();
-                hd.SOHD = so.ToString("0000") + @"/" + DateTime.Now.Year.ToString() + "/HĐLĐ";
+                hd.SOHD = so.ToString("0000") + @"/" + DateTime.Now.Year.ToString() + @"/HĐLĐ";
                 hd.NGAYBATDAU = dtNgayBD.Value;
                 hd.NGAYKETTHUC = dtNgayKT.Value;
                 hd.NGAYKY = dtNgayKy.Value;
