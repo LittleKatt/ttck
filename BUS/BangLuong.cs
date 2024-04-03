@@ -11,7 +11,7 @@ namespace BUS
     {
         QLNSEntities db = new QLNSEntities();
 
-        public BANGLUONG getItem(int idnv, int idkcct)
+        public BANGLUONG getItem(int idkcct ,int idnv )
         {
 
             return db.BANGLUONGs.FirstOrDefault(x => x.IDKCCT == idkcct && x.IDNV == idnv);
@@ -36,14 +36,15 @@ namespace BUS
                     else
                         hesoluong = Convert.ToDouble(hd.HESOLUONG);
 
-                    var luongmotngaycong = hd.LUONGCOBAN * hesoluong /Convert.ToDouble(kcct.NGAYCONG);
+                    //Luong trên ngày
+                    var luongmotngaycong = hd.LUONGCOBAN * hesoluong / kcct.NGAYCONG;
 
                     //Tính lương ngày thường 
                     luongngaythuong = Convert.ToDouble(kcct.TONGNGAYCONG * luongmotngaycong);
                     luongphep = Convert.ToDouble(kcct.NGAYPHEP * luongmotngaycong*0.3);
                     luongchunhat = Convert.ToDouble(kcct.CONGCHUNHAT * luongmotngaycong * 2);
                     luongngayle = Convert.ToDouble(kcct.CONGNGAYLE * luongmotngaycong * 3);
-                    luongtangca = Convert.ToDouble(db.TANGCAs.Where(x => (x.NAM*100 + x.THANG) == idkcct && x.IDNV == item.IDNV).Sum(x => x.SOTIEN));
+                    luongtangca = Convert.ToDouble(db.TANGCAs.Where(x => x.IDNV == item.IDNV).Sum(x => x.SOTIEN));
                     phucap = Convert.ToDouble(db.PHUCAPs.Where(x => x.IDNV == item.IDNV).Sum(x => x.SOTIEN));
                     ungluong = Convert.ToDouble(db.UNGLUONGs.Where(x => x.IDNV == item.IDNV && (x.NAM*100 + x.THANG) == idkcct).Sum(x => x.SOTIEN));
                     
