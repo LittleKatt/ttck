@@ -58,6 +58,10 @@ namespace BUS
         {
             return db.BANGCONGCHITIETs.Where(x => x.IDKCCT == idkcct && x.IDNV == idnv && x.NGAYPHEP != null).Sum(p => p.NGAYPHEP.Value);
         }
+        public double tongNgayCongChuNhat(int idkcct, int idnv)
+        {
+            return db.BANGCONGCHITIETs.Where(x => x.IDKCCT == idkcct && x.IDNV == idnv && x.CONGCHUNHAT != null).Sum(p => p.CONGCHUNHAT.Value);
+        }
 
         public double tongNgayCong(int idkcct, int idnv)
         {

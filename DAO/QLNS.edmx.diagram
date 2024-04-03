@@ -52,6 +52,7 @@
         <EntityTypeShape EntityType="QLNSModel.CONFIG" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="QLNSModel.UNGLUONG" Width="1.5" PointX="5.25" PointY="44.125" />
         <AssociationConnector Association="QLNSModel.FK_UNGLUONG_NHANVIEN" />
+        <EntityTypeShape EntityType="QLNSModel.BANGLUONG" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

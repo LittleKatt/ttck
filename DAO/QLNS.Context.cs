@@ -49,5 +49,6 @@ namespace DAO
         public virtual DbSet<TANGCA> TANGCAs { get; set; }
         public virtual DbSet<CONFIG> CONFIGs { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
+        public virtual DbSet<BANGLUONG> BANGLUONGs { get; set; }
     }
 }

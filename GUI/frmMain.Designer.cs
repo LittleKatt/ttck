@@ -101,6 +101,7 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -132,14 +133,16 @@
             this.btnNangLuong,
             this.btnConfig});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ribbonControl1.MaxItemId = 29;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpHeThong,
             this.rbpNhanSu,
             this.rbpChamCong,
             this.rbpBaoBieu});
-            this.ribbonControl1.Size = new System.Drawing.Size(998, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1164, 193);
             // 
             // btnDanToc
             // 
@@ -280,6 +283,7 @@
             this.btnBangLuong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBangLuong.ImageOptions.SvgImage")));
             this.btnBangLuong.Name = "btnBangLuong";
             this.btnBangLuong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnBangLuong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangLuong_ItemClick);
             // 
             // btnDoiMK
             // 
@@ -472,38 +476,42 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("60e33cad-65c5-46c3-ad29-bdf9d24ae5f8");
-            this.dockPanel1.Location = new System.Drawing.Point(752, 158);
+            this.dockPanel1.Location = new System.Drawing.Point(877, 193);
+            this.dockPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(246, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(246, 336);
+            this.dockPanel1.Size = new System.Drawing.Size(287, 415);
             this.dockPanel1.Text = "Thông báo";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.groupControl2);
             this.dockPanel1_Container.Controls.Add(this.groupControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 26);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(6, 32);
+            this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(239, 307);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(277, 379);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.lstNangLuong);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl2.Location = new System.Drawing.Point(0, 144);
+            this.groupControl2.Location = new System.Drawing.Point(0, 177);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(239, 163);
+            this.groupControl2.Size = new System.Drawing.Size(277, 201);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Nâng lương";
             // 
             // lstNangLuong
             // 
             this.lstNangLuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstNangLuong.ItemHeight = 62;
-            this.lstNangLuong.Location = new System.Drawing.Point(2, 23);
+            this.lstNangLuong.ItemHeight = 76;
+            this.lstNangLuong.Location = new System.Drawing.Point(2, 28);
+            this.lstNangLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstNangLuong.Name = "lstNangLuong";
-            this.lstNangLuong.Size = new System.Drawing.Size(235, 138);
+            this.lstNangLuong.Size = new System.Drawing.Size(273, 171);
             this.lstNangLuong.TabIndex = 0;
             itemTemplateBase1.Columns.Add(tableColumnDefinition1);
             templatedItemElement1.FieldName = "HOTEN";
@@ -529,18 +537,20 @@
             this.groupControl1.Controls.Add(this.lstSinhNhat);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(239, 144);
+            this.groupControl1.Size = new System.Drawing.Size(277, 177);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Sinh nhật trong tháng";
             // 
             // lstSinhNhat
             // 
             this.lstSinhNhat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstSinhNhat.ItemHeight = 52;
-            this.lstSinhNhat.Location = new System.Drawing.Point(2, 23);
+            this.lstSinhNhat.ItemHeight = 64;
+            this.lstSinhNhat.Location = new System.Drawing.Point(2, 28);
+            this.lstSinhNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstSinhNhat.Name = "lstSinhNhat";
-            this.lstSinhNhat.Size = new System.Drawing.Size(235, 119);
+            this.lstSinhNhat.Size = new System.Drawing.Size(273, 147);
             this.lstSinhNhat.TabIndex = 0;
             itemTemplateBase2.Columns.Add(tableColumnDefinition2);
             templatedItemElement3.FieldName = "HOTEN";
@@ -563,12 +573,13 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 494);
+            this.ClientSize = new System.Drawing.Size(1164, 608);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Quản Lý Nhân Sự Tiền Lương";

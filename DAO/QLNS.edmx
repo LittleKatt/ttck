@@ -43,6 +43,31 @@
           <Property Name="IDNV" Type="int" />
           <Property Name="IDLC" Type="int" />
         </EntityType>
+        <EntityType Name="BANGLUONG">
+          <Key>
+            <PropertyRef Name="IDBL" />
+          </Key>
+          <Property Name="IDBL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDKCCT" Type="int" />
+          <Property Name="IDNV" Type="int" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYCONG" Type="int" />
+          <Property Name="NGAYPHEP" Type="float" />
+          <Property Name="KHONGPHEP" Type="float" />
+          <Property Name="NGAYLE" Type="float" />
+          <Property Name="NGAYCHUNHAT" Type="float" />
+          <Property Name="NGAYTHUONG" Type="float" />
+          <Property Name="TANGCA" Type="float" />
+          <Property Name="PHUCAP" Type="float" />
+          <Property Name="UNGLUONG" Type="float" />
+          <Property Name="THUCLANH" Type="float" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="BAOHIEM">
           <Key>
             <PropertyRef Name="IDBH" />
@@ -664,6 +689,7 @@
         <EntityContainer Name="QLNSModelStoreContainer">
           <EntitySet Name="BANGCONGCHITIET" EntityType="Self.BANGCONGCHITIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BANGCHAMCONG" EntityType="Self.BANGCHAMCONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BANGLUONG" EntityType="Self.BANGLUONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BAOHIEM" EntityType="Self.BAOHIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BOPHAN" EntityType="Self.BOPHAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONFIG" EntityType="Self.CONFIG" Schema="dbo" store:Type="Tables" />
@@ -900,6 +926,7 @@
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="UNGLUONG" EntitySet="UNGLUONGs" />
           </AssociationSet>
+          <EntitySet Name="BANGLUONGs" EntityType="QLNSModel.BANGLUONG" />
           </EntityContainer>
         <EntityType Name="BANGCONGCHITIET">
           <Key>
@@ -1603,6 +1630,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="BANGLUONG">
+          <Key>
+            <PropertyRef Name="IDBL" />
+          </Key>
+          <Property Name="IDBL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKCCT" Type="Int32" />
+          <Property Name="IDNV" Type="Int32" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYCONG" Type="Int32" />
+          <Property Name="NGAYPHEP" Type="Double" />
+          <Property Name="KHONGPHEP" Type="Double" />
+          <Property Name="NGAYLE" Type="Double" />
+          <Property Name="NGAYCHUNHAT" Type="Double" />
+          <Property Name="NGAYTHUONG" Type="Double" />
+          <Property Name="TANGCA" Type="Double" />
+          <Property Name="PHUCAP" Type="Double" />
+          <Property Name="UNGLUONG" Type="Double" />
+          <Property Name="THUCLANH" Type="Double" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2009,6 +2061,32 @@
                 <ScalarProperty Name="THANG" ColumnName="THANG" />
                 <ScalarProperty Name="NAM" ColumnName="NAM" />
                 <ScalarProperty Name="IDUL" ColumnName="IDUL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BANGLUONGs">
+            <EntityTypeMapping TypeName="QLNSModel.BANGLUONG">
+              <MappingFragment StoreEntitySet="BANGLUONG">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="THUCLANH" ColumnName="THUCLANH" />
+                <ScalarProperty Name="UNGLUONG" ColumnName="UNGLUONG" />
+                <ScalarProperty Name="PHUCAP" ColumnName="PHUCAP" />
+                <ScalarProperty Name="TANGCA" ColumnName="TANGCA" />
+                <ScalarProperty Name="NGAYTHUONG" ColumnName="NGAYTHUONG" />
+                <ScalarProperty Name="NGAYCHUNHAT" ColumnName="NGAYCHUNHAT" />
+                <ScalarProperty Name="NGAYLE" ColumnName="NGAYLE" />
+                <ScalarProperty Name="KHONGPHEP" ColumnName="KHONGPHEP" />
+                <ScalarProperty Name="NGAYPHEP" ColumnName="NGAYPHEP" />
+                <ScalarProperty Name="NGAYCONG" ColumnName="NGAYCONG" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+                <ScalarProperty Name="IDKCCT" ColumnName="IDKCCT" />
+                <ScalarProperty Name="IDBL" ColumnName="IDBL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

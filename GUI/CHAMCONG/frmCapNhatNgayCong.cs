@@ -68,64 +68,85 @@ namespace GUI.CHAMCONG
 
 
             BANGCONGCHITIET bcct = _bcct.getItem(_idnv, _idkcct, cldNgayCong.SelectionStart.Day);
-            bcct.KYHIEU = _valueChamCong;
-            switch (_valueChamCong)
+
+            if (cldNgayCong.SelectionStart.DayOfWeek == DayOfWeek.Sunday)
             {
-                case "P":
-                    if (_valueTGNghi == "NN")
-                    {
-                        bcct.NGAYPHEP = 1;
-                        bcct.NGAYCONG = 0;
-                    }
-                    else
-                    {
-                        bcct.NGAYPHEP = 0.5;
-                        bcct.NGAYCONG = 0.5;
-                    }
-                    break;
-                case "CT":
-                    if (_valueTGNghi == "NN")
-                    {
-                        bcct.NGAYCONG = 1;
-                    }
-                    else
-                    {
-                        bcct.NGAYPHEP = 0.5;
-                        bcct.NGAYCONG = 0.5;
-                    }
-                    break;
-                case "VR":
-                    if (_valueTGNghi == "NN")
-                    {
-                        bcct.NGAYPHEP = 1;
-                        bcct.NGAYCONG = 0;
-                    }
-                    else
-                    {
-                        bcct.NGAYPHEP = 0.5;
-                        bcct.NGAYCONG = 0.5;
-                    }
-                    break;
-                case "V":
-                    if (_valueTGNghi == "NN")
-                    {
-                        bcct.NGAYCONG = 0;
-                    }
-                    else
-                    {
-                        bcct.NGAYCONG = 0.5;
-                    }
-                    break;
-                default:
-                    break;
+                if (_valueTGNghi == "NN")
+                {
+                    bcct.CONGCHUNHAT = 1;
+                    bcct.NGAYCONG = 0;
+                }
+                else
+                {
+                    bcct.CONGCHUNHAT = 0.5;
+                    bcct.NGAYCONG = 0;
+                }
             }
+            else
+            {
+
+                bcct.KYHIEU = _valueChamCong;
+                switch (_valueChamCong)
+                {
+                    case "P":
+                        if (_valueTGNghi == "NN")
+                        {
+                            bcct.NGAYPHEP = 1;
+                            bcct.NGAYCONG = 0;
+                        }
+                        else
+                        {
+                            bcct.NGAYPHEP = 0.5;
+                            bcct.NGAYCONG = 0.5;
+                        }
+                        break;
+                    case "CT":
+                        if (_valueTGNghi == "NN")
+                        {
+                            bcct.NGAYCONG = 1;
+                        }
+                        else
+                        {
+                            bcct.NGAYPHEP = 0.5;
+                            bcct.NGAYCONG = 0.5;
+                        }
+                        break;
+                    case "VR":
+                        if (_valueTGNghi == "NN")
+                        {
+                            bcct.NGAYPHEP = 1;
+                            bcct.NGAYCONG = 0;
+                        }
+                        else
+                        {
+                            bcct.NGAYPHEP = 0.5;
+                            bcct.NGAYCONG = 0.5;
+                        }
+                        break;
+                    case "V":
+                        if (_valueTGNghi == "NN")
+                        {
+                            bcct.NGAYCONG = 0;
+                        }
+                        else
+                        {
+                            bcct.NGAYCONG = 0.5;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
             //update bảng bangcongchitiet
             _bcct.Update(bcct);
             //tính ngày công, ngày phép
             double tongngaycong = _bcct.tongNgayCong(_idkcct, _idnv);
             double tongngayphep = _bcct.tongNgayPhep(_idkcct, _idnv);
+            double congchunhat = _bcct.tongNgayCongChuNhat(_idkcct, _idnv);
             kcct.NGAYPHEP = tongngayphep;
             kcct.TONGNGAYCONG = tongngaycong;
+            kcct.CONGCHUNHAT = congchunhat;
             _kcct.Update(kcct);
 
 
