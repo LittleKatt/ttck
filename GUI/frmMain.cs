@@ -175,5 +175,10 @@ namespace GUI
         {
             openForm(typeof(frmBangLuong));
         }
+
+        private void btnBangCongCT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

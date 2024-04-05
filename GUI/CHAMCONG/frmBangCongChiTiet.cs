@@ -4,7 +4,9 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Mask;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraReports.UI;
 using DevExpress.XtraSplashScreen;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,7 +113,9 @@ namespace GUI.CHAMCONG
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            List<KYCONGCHITIET> lst = _kcct.getList(_idkcct);
+            rptBangCongTongHop rpt = new rptBangCongTongHop(lst, _idkcct.ToString());
+            rpt.ShowPreviewDialog();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
