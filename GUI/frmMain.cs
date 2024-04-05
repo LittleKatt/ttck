@@ -1,5 +1,6 @@
 ﻿using BUS;
 using GUI.CHAMCONG;
+using GUI.Reports;
 using GUI.TINHLUONG;
 using System;
 using System.Collections.Generic;
@@ -178,7 +179,8 @@ namespace GUI
 
         private void btnBangCongCT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmBangCongCT frm = new frmBangCongCT();
+            frm.ShowDialog();
         }
     }
 }

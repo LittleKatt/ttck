@@ -15,6 +15,11 @@ namespace BUS
 
             return db.BANGCONGCHITIETs.FirstOrDefault(x => x.IDKCCT == idkcct && x.IDNV == idnv && x.NGAY.Value.Day == ngay);
         }
+        public List<BANGCONGCHITIET> getBangCongCT(int idkcct, int idnv)
+        {
+
+            return db.BANGCONGCHITIETs.Where(x => x.IDKCCT == idkcct && x.IDNV == idnv).ToList();
+        }
         public BANGCONGCHITIET Add(BANGCONGCHITIET bcct)
         {
             try
