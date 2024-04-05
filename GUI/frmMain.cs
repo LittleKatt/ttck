@@ -182,5 +182,54 @@ namespace GUI
             frmBangCongCT frm = new frmBangCongCT();
             frm.ShowDialog();
         }
+
+        private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnDoiMK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+
+
+
+        HamXuLy hxl = new HamXuLy();
+        private void btnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FolderBrowserDialog saoluuFolder = new FolderBrowserDialog();
+            saoluuFolder.Description = "Chọn thư mục lưu trữ";
+            if (saoluuFolder.ShowDialog() == DialogResult.OK)
+            {
+                string sDuongDan = saoluuFolder.SelectedPath;
+                if (hxl.SaoLuu(sDuongDan) == true)
+                    MessageBox.Show("Đã sao lưu dữ liệu vào " + sDuongDan);
+                else
+                    MessageBox.Show("Thao tác không thành công");
+            }
+        }
+
+        private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenFileDialog phuchoiFile = new OpenFileDialog();
+            phuchoiFile.Filter = "*.bak|*.bak";
+            phuchoiFile.Title = "Chọn tập tin phục hồi (.bak)";
+            if (phuchoiFile.ShowDialog() == DialogResult.OK &&
+           phuchoiFile.CheckFileExists == true)
+            {
+                string sDuongDan = phuchoiFile.FileName;
+                if (hxl.PhucHoiDuLieu(sDuongDan) == true)
+                    MessageBox.Show("Thành công");
+                else
+                    MessageBox.Show("Thất bại");
+            }
+        }
     }
 }

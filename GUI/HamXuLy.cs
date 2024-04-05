@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -110,6 +111,70 @@ namespace GUI
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             dongKetNoi();
+        }
+
+
+
+
+
+
+
+
+        public static SqlCommand sqlCom;
+
+        public void ThucThi(string sql)
+        {
+            try
+            {
+                taoKetNoi();
+                sqlCom = new SqlCommand(sql, con);
+                sqlCom.ExecuteNonQuery();
+                dongKetNoi();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } 
+            
+        }
+
+        public bool SaoLuu(string sDuongDan)
+        {
+            try
+            {
+
+                string sTen = @"\QLNS(" + DateTime.Now.Day.ToString() + "_" +
+                  DateTime.Now.Month.ToString() + "_" +
+                  DateTime.Now.Year.ToString() + "_" +
+                  DateTime.Now.Hour.ToString() + "_" +
+                  DateTime.Now.Minute.ToString() + ").bak";
+                string sql = "BACKUP DATABASE QLNS TO DISK = N'" + sDuongDan +
+               sTen + "'";
+                ThucThi(sql);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+        public bool PhucHoiDuLieu(string sDuongDan)
+        {
+
+            string sql = @"
+               RESTORE DATABASE QLNS
+                FROM DISK = N'" + sDuongDan + "'" + "WITH REPLACE, RECOVERY";
+            SqlConnection.ClearAllPools();
+
+            try
+            {
+                ThucThi(sql);
+
+                return true;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            return false;
         }
     }
 }
