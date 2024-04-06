@@ -27,8 +27,10 @@ namespace DAO
     
         public virtual DbSet<BANGCONGCHITIET> BANGCONGCHITIETs { get; set; }
         public virtual DbSet<BANGCHAMCONG> BANGCHAMCONGs { get; set; }
+        public virtual DbSet<BANGLUONG> BANGLUONGs { get; set; }
         public virtual DbSet<BAOHIEM> BAOHIEMs { get; set; }
         public virtual DbSet<BOPHAN> BOPHANs { get; set; }
+        public virtual DbSet<CONFIG> CONFIGs { get; set; }
         public virtual DbSet<CHUCVU> CHUCVUs { get; set; }
         public virtual DbSet<DANTOC> DANTOCs { get; set; }
         public virtual DbSet<DIEUCHUYEN> DIEUCHUYENs { get; set; }
@@ -42,13 +44,11 @@ namespace DAO
         public virtual DbSet<NANGLUONG> NANGLUONGs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHONGBAN> PHONGBANs { get; set; }
+        public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
+        public virtual DbSet<TANGCA> TANGCAs { get; set; }
         public virtual DbSet<TONGIAO> TONGIAOs { get; set; }
         public virtual DbSet<THOIVIEC> THOIVIECs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
-        public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
-        public virtual DbSet<TANGCA> TANGCAs { get; set; }
-        public virtual DbSet<CONFIG> CONFIGs { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
-        public virtual DbSet<BANGLUONG> BANGLUONGs { get; set; }
     }
 }

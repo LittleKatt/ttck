@@ -12,6 +12,7 @@ using BUS;
 using GUI.Reports;
 using DevExpress.XtraReports.UI;
 using DAO;
+using DevExpress.XtraSplashScreen;
 namespace GUI.TINHLUONG
 {
     public partial class frmBangLuong : DevExpress.XtraEditors.XtraForm
@@ -32,9 +33,19 @@ namespace GUI.TINHLUONG
 
         private void btnTinhLuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            _bangluong.TinhLuongNhanVien(int.Parse(cbbNam.Text)*100+ int.Parse(cbbThang.Text));
+           
+            if (_bangluong.KTTinhLuong(int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text)))
+            {
+                MessageBox.Show("Bảng lương tháng đã được phát sinh!", "Thông báo");
+               
+                return;
+            }
             
-            loadData();
+           else 
+            {
+                _bangluong.TinhLuongNhanVien(int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text));
+                loadData();
+            }
         }
         void loadData()
         {

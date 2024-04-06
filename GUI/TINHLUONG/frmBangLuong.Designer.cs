@@ -550,12 +550,12 @@
             this.THUCLANH.DisplayFormat.FormatString = "n0";
             this.THUCLANH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.THUCLANH.FieldName = "THUCLANH";
-            this.THUCLANH.MaxWidth = 86;
-            this.THUCLANH.MinWidth = 86;
+            this.THUCLANH.MaxWidth = 100;
+            this.THUCLANH.MinWidth = 100;
             this.THUCLANH.Name = "THUCLANH";
             this.THUCLANH.Visible = true;
             this.THUCLANH.VisibleIndex = 10;
-            this.THUCLANH.Width = 86;
+            this.THUCLANH.Width = 100;
             // 
             // barDockControl1
             // 

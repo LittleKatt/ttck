@@ -44,7 +44,7 @@ namespace BUS
                     luongphep = Convert.ToDouble(kcct.NGAYPHEP * luongmotngaycong*0.3);
                     luongchunhat = Convert.ToDouble(kcct.CONGCHUNHAT * luongmotngaycong * 2);
                     luongngayle = Convert.ToDouble(kcct.CONGNGAYLE * luongmotngaycong * 3);
-                    luongtangca = Convert.ToDouble(db.TANGCAs.Where(x => x.IDNV == item.IDNV).Sum(x => x.SOTIEN));
+                    luongtangca = Convert.ToDouble(db.TANGCAs.Where(x => x.IDNV == item.IDNV && (x.NAM * 100 + x.THANG) == idkcct).Sum(x => x.SOTIEN));
                     phucap = Convert.ToDouble(db.PHUCAPs.Where(x => x.IDNV == item.IDNV).Sum(x => x.SOTIEN));
                     ungluong = Convert.ToDouble(db.UNGLUONGs.Where(x => x.IDNV == item.IDNV && (x.NAM*100 + x.THANG) == idkcct).Sum(x => x.SOTIEN));
                     
@@ -118,7 +118,24 @@ namespace BUS
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
+        public bool KTTinhLuong(int idkc)
+        {
+            var bl = db.BANGLUONGs.FirstOrDefault(x => x.IDKCCT == idkc);
+            if (bl == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (bl.IDKCCT == idkc)
+                    return true;
+                else
+                    return false; 
+            
+            }
 
-        
+        }
+
+
     }
 }
