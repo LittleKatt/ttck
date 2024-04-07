@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DAO;
+using GUI.Reports;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -23,7 +25,7 @@ namespace GUI
         BoPhan _bophan;
         bool _them;
         int _id;
-
+        List<BOPHAN> _lstBoPhan; 
         private void frmBoPhan_Load(object sender, EventArgs e)
         {
             _them = false;
@@ -49,6 +51,7 @@ namespace GUI
         {
             gcDanhSach.DataSource = _bophan.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstBoPhan = _bophan.getList();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -88,7 +91,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptBoPhan rpt = new rptBoPhan(_lstBoPhan);
+            rpt.ShowPreview();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

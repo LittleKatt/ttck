@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
 using BUS;
+using GUI.Reports;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -23,6 +25,7 @@ namespace GUI
         ChucVu _chucvu;
         bool _them;
         int _id;
+        List<CHUCVU> _lstChucVu; 
         private void frmChucVu_Load(object sender, EventArgs e)
         {
             _them = false;
@@ -48,6 +51,8 @@ namespace GUI
         {
             gcDanhSach.DataSource = _chucvu.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
+
+            _lstChucVu = _chucvu.getList();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -87,7 +92,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            rptChucVu rpt = new rptChucVu(_lstChucVu);
+            rpt.ShowPreview();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

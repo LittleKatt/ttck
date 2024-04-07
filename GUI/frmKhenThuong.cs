@@ -2,6 +2,8 @@
 using BUS.DTO;
 using DAO;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +26,7 @@ namespace GUI
         string _soqd;
         KhenThuong_KyLuat _ktkl;
         NhanVien _nhanvien;
+        List<KTKL_DTO> _lstKTKL;
         private void frmKhenThuong_Load(object sender, EventArgs e)
         {
             _ktkl = new KhenThuong_KyLuat();
@@ -75,6 +78,7 @@ namespace GUI
         {
             gcDanhSach.DataSource = _ktkl.getListFull(1);
             gvDanhSach.OptionsBehavior.Editable = false;
+            
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -120,7 +124,9 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            _lstKTKL = _ktkl.getListFull(1);
+            rptKhenThuong rpt = new rptKhenThuong(_lstKTKL);
+            rpt.ShowPreviewDialog();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

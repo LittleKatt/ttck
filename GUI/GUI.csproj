@@ -224,6 +224,24 @@
     <Compile Include="Reports\rptBangLuong.Designer.cs">
       <DependentUpon>rptBangLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptBoPhan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptBoPhan.Designer.cs">
+      <DependentUpon>rptBoPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptChucVu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptChucVu.Designer.cs">
+      <DependentUpon>rptChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptDanToc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDanToc.Designer.cs">
+      <DependentUpon>rptDanToc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\rptDSNV.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -235,6 +253,30 @@
     </Compile>
     <Compile Include="Reports\rptHDLD.Designer.cs">
       <DependentUpon>rptHDLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptKhenThuong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptKhenThuong.Designer.cs">
+      <DependentUpon>rptKhenThuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptPhongBan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPhongBan.Designer.cs">
+      <DependentUpon>rptPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptTonGiao.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTonGiao.Designer.cs">
+      <DependentUpon>rptTonGiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptTrinhDo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTrinhDo.Designer.cs">
+      <DependentUpon>rptTrinhDo.cs</DependentUpon>
     </Compile>
     <Compile Include="TINHLUONG\frmBangLuong.cs">
       <SubType>Form</SubType>
@@ -343,11 +385,32 @@
     <EmbeddedResource Include="Reports\rptBangLuong.resx">
       <DependentUpon>rptBangLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptBoPhan.resx">
+      <DependentUpon>rptBoPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptChucVu.resx">
+      <DependentUpon>rptChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDanToc.resx">
+      <DependentUpon>rptDanToc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptDSNV.resx">
       <DependentUpon>rptDSNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptHDLD.resx">
       <DependentUpon>rptHDLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptKhenThuong.resx">
+      <DependentUpon>rptKhenThuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPhongBan.resx">
+      <DependentUpon>rptPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTonGiao.resx">
+      <DependentUpon>rptTonGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTrinhDo.resx">
+      <DependentUpon>rptTrinhDo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TINHLUONG\frmBangLuong.resx">
       <DependentUpon>frmBangLuong.cs</DependentUpon>

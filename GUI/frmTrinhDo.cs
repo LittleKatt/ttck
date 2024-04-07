@@ -1,6 +1,8 @@
 ﻿using BUS;
 using DAO;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +25,7 @@ namespace GUI
         TrinhDo _trinhdo;
         bool _them;
         int _id;
-
+        List<TRINHDO> _lstTrinhDo;
         private void frmTrinhDo_Load(object sender, EventArgs e)
         {
             _them = false;
@@ -48,6 +50,7 @@ namespace GUI
         {
             gcDanhSach.DataSource = _trinhdo.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstTrinhDo = _trinhdo.getList();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -87,7 +90,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptTrinhDo rpt = new rptTrinhDo(_lstTrinhDo);
+            rpt.ShowPreview();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

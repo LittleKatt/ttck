@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using GUI.Reports;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -21,6 +23,7 @@ namespace GUI
         }
 
         TonGiao _tongiao;
+        List<TONGIAO> _lstTonGiao;
         bool _them;
         int _id;
         private void frmTonGiao_Load(object sender, EventArgs e)
@@ -47,6 +50,7 @@ namespace GUI
         {
             gcDanhSach.DataSource = _tongiao.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstTonGiao = _tongiao.getList();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -87,6 +91,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            rptTonGiao rpt = new rptTonGiao(_lstTonGiao);
+            rpt.ShowPreview();
 
         }
 

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
 using BUS;
+using GUI.Reports;
+using BUS.DTO;
+using DevExpress.XtraReports.UI;
 
 namespace GUI
 {
@@ -23,6 +26,7 @@ namespace GUI
         DanToc _dantoc;
         bool _them;
         int _id;
+        List<DANTOC> _lstDanToc;
 
         private void frmDanToc_Load(object sender, EventArgs e)
         {
@@ -49,6 +53,7 @@ namespace GUI
         {
             gcDanhSach.DataSource = _dantoc.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstDanToc = _dantoc.getList();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -89,7 +94,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptDanToc rpt = new rptDanToc(_lstDanToc);
+            rpt.ShowPreview();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -104,6 +110,7 @@ namespace GUI
                 DANTOC dt = new DANTOC();
                 dt.TENDT = txtTen.Text;
                 _dantoc.Add(dt);
+
             }
             else
             {

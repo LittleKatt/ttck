@@ -58,6 +58,7 @@ namespace GUI.TINHLUONG
             spSoTien.Enabled = !kt;
             cbbPhuCap.Enabled = !kt;
             slkNhanVien.Enabled = !kt;
+            
 
         }
 
@@ -136,6 +137,7 @@ namespace GUI.TINHLUONG
                 pc.IDPC = int.Parse(cbbPhuCap.SelectedValue.ToString());
                 pc.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
                 pc.SOTIEN = double.Parse(spSoTien.EditValue.ToString());
+               
                 pc.NOIDUNG = txtNoiDung.Text;
                 pc.NGAY = DateTime.Now;
                 pc.CREATED_BY = 1;
@@ -148,6 +150,7 @@ namespace GUI.TINHLUONG
                 pc.IDPC = int.Parse(cbbPhuCap.SelectedValue.ToString());
                 pc.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
                 pc.SOTIEN = double.Parse(spSoTien.EditValue.ToString());
+               
                 pc.NOIDUNG = txtNoiDung.Text;
                 pc.NGAY = DateTime.Now;
                 pc.UPDATED_BY = 1;
@@ -160,11 +163,14 @@ namespace GUI.TINHLUONG
         {
             if (gvDanhSach.RowCount > 0)
             {
+                
                 _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("ID").ToString());
+               
                 txtNoiDung.Text = gvDanhSach.GetFocusedRowCellValue("NOIDUNG").ToString();
                 spSoTien.EditValue = gvDanhSach.GetFocusedRowCellValue("SOTIEN");
                 slkNhanVien.EditValue = gvDanhSach.GetFocusedRowCellValue("IDNV");
                 cbbPhuCap.SelectedValue = gvDanhSach.GetFocusedRowCellValue("IDPC");
+                
 
             }
         }
