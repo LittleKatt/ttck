@@ -46,6 +46,9 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txtBrowse = new DevExpress.XtraEditors.SimpleButton();
+            this.txtPath = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
@@ -57,6 +60,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -221,6 +225,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtBrowse);
+            this.splitContainer1.Panel1.Controls.Add(this.txtPath);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel1.Controls.Add(this.txtTen);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl1);
             // 
@@ -228,8 +235,39 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcDanhSach);
             this.splitContainer1.Size = new System.Drawing.Size(823, 457);
-            this.splitContainer1.SplitterDistance = 85;
+            this.splitContainer1.SplitterDistance = 134;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // txtBrowse
+            // 
+            this.txtBrowse.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtBrowse.Appearance.Options.UseFont = true;
+            this.txtBrowse.Location = new System.Drawing.Point(655, 72);
+            this.txtBrowse.Name = "txtBrowse";
+            this.txtBrowse.Size = new System.Drawing.Size(94, 29);
+            this.txtBrowse.TabIndex = 4;
+            this.txtBrowse.Text = "Nhập";
+            this.txtBrowse.Click += new System.EventHandler(this.txtBrowse_Click);
+            // 
+            // txtPath
+            // 
+            this.txtPath.Location = new System.Drawing.Point(169, 72);
+            this.txtPath.MenuManager = this.barManager1;
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtPath.Properties.Appearance.Options.UseFont = true;
+            this.txtPath.Size = new System.Drawing.Size(454, 28);
+            this.txtPath.TabIndex = 3;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(106, 75);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(44, 21);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Path: ";
             // 
             // txtTen
             // 
@@ -258,7 +296,7 @@
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.MenuManager = this.barManager1;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(823, 368);
+            this.gcDanhSach.Size = new System.Drawing.Size(823, 319);
             this.gcDanhSach.TabIndex = 0;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -288,6 +326,8 @@
             // 
             // TENDT
             // 
+            this.TENDT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TENDT.AppearanceHeader.Options.UseFont = true;
             this.TENDT.Caption = "Tên";
             this.TENDT.FieldName = "TENDT";
             this.TENDT.MaxWidth = 200;
@@ -316,6 +356,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
@@ -348,5 +389,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn TENDT;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SimpleButton txtBrowse;
+        private DevExpress.XtraEditors.TextEdit txtPath;
     }
 }

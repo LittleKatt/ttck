@@ -13,6 +13,7 @@ using BUS;
 using GUI.Reports;
 using BUS.DTO;
 using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Excel;
 
 namespace GUI
 {
@@ -128,6 +129,27 @@ namespace GUI
                 txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENDT").ToString();
             }
             
+        }
+
+        private void txtBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select File";
+            openFileDialog.Filter = "Excel(*.xlsx)|*.xlsx";
+            if (openFileDialog.ShowDialog()==DialogResult.OK)
+            {
+                txtPath.Text = openFileDialog.FileName; 
+                ExcelDataSource ex = new ExcelDataSource();
+                ex.FileName = txtPath.Text;
+                ExcelWorksheetSettings sheetSettings = new ExcelWorksheetSettings("dtoc", "A1:B20");
+                ex.SourceOptions = new ExcelSourceOptions(sheetSettings);
+                ex.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B20"};
+                ex.SourceOptions.SkipEmptyRows = false;
+                ex.SourceOptions.UseFirstRowAsHeader = true;
+                ex.Fill();
+                gcDanhSach.DataSource = ex;
+
+            }
         }
     }
 }
