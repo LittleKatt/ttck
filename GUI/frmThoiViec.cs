@@ -1,6 +1,9 @@
 ﻿using BUS;
+using BUS.DTO;
 using DAO;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +27,7 @@ namespace GUI
         string _soqd;
         ThoiViec _nvtv;
         NhanVien _nhanvien;
-
+        List<ThoiViec_DTO> _lstThoiViec;
 
         private void frmThoiViec_Load(object sender, EventArgs e)
         {
@@ -78,6 +81,7 @@ namespace GUI
         {
             gcDanhSach.DataSource = _nvtv.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstThoiViec = _nvtv.getListFull();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -123,7 +127,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptThoiViec rpt = new rptThoiViec(_lstThoiViec);
+            rpt.ShowPreviewDialog();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -187,7 +192,7 @@ namespace GUI
             dtNgayNghi.Value = dtNgayNopDon.Value.AddDays(30);
         }
 
-       
+
 
         //private void gvDanhSach_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         //{

@@ -526,7 +526,7 @@
             // 
             // SOTIEN
             // 
-            this.SOTIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.SOTIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.SOTIEN.AppearanceHeader.Options.UseFont = true;
             this.SOTIEN.Caption = "SỐ TIỀN";
             this.SOTIEN.DisplayFormat.FormatString = "n0";

@@ -1,6 +1,9 @@
 ﻿using BUS;
+using BUS.DTO;
 using DAO;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +30,7 @@ namespace GUI
         PhongBan _phongban;
         BoPhan _bophan;
         ChucVu _chucvu;
+        List<DieuChuyen_DTO> _lstDieuChuyen;
         private void frmDieuChuyen_Load(object sender, EventArgs e)
         {
             _dc = new DieuChuyen();
@@ -83,6 +87,7 @@ namespace GUI
         {
             gcDanhSach.DataSource = _dc.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstDieuChuyen = _dc.getListFull();
         }
 
         void LoadCombobox()
@@ -141,7 +146,9 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            
+            rptDieuChuyen rpt = new rptDieuChuyen(_lstDieuChuyen);
+            rpt.ShowPreviewDialog();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

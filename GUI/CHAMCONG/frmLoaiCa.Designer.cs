@@ -345,6 +345,8 @@
             // 
             // TENLOAICA
             // 
+            this.TENLOAICA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TENLOAICA.AppearanceHeader.Options.UseFont = true;
             this.TENLOAICA.Caption = "TÊN LOẠI CA";
             this.TENLOAICA.FieldName = "TENLOAICA";
             this.TENLOAICA.MaxWidth = 150;

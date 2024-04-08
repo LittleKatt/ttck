@@ -1,6 +1,9 @@
 ﻿using BUS;
+using BUS.DTO;
 using DAO;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +29,7 @@ namespace GUI.TINHLUONG
         Sys_Config _config; 
         bool _them;
         int _id; 
-
+        List<TangCa_DTO> _lstTangCa;
         private void frmTangCa_Load(object sender, EventArgs e)
         {
             _them = false;
@@ -71,6 +74,7 @@ namespace GUI.TINHLUONG
         {
             gcDanhSach.DataSource = _tangca.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstTangCa = _tangca.getListFull();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -113,7 +117,8 @@ namespace GUI.TINHLUONG
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptTangCa rpt = new rptTangCa(_lstTangCa);
+            rpt.ShowPreview();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

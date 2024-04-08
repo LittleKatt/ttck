@@ -250,6 +250,12 @@
     <Compile Include="Reports\rptDanToc.Designer.cs">
       <DependentUpon>rptDanToc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptDieuChuyen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDieuChuyen.Designer.cs">
+      <DependentUpon>rptDieuChuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\rptDSNV.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -268,11 +274,47 @@
     <Compile Include="Reports\rptKhenThuong.Designer.cs">
       <DependentUpon>rptKhenThuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptLoaiCa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptLoaiCa.Designer.cs">
+      <DependentUpon>rptLoaiCa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptLoaiCong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptLoaiCong.Designer.cs">
+      <DependentUpon>rptLoaiCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptNangLuong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptNangLuong.Designer.cs">
+      <DependentUpon>rptNangLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\rptPhongBan.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptPhongBan.Designer.cs">
       <DependentUpon>rptPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptPhuCap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPhuCap.Designer.cs">
+      <DependentUpon>rptPhuCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptTangCa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTangCa.Designer.cs">
+      <DependentUpon>rptTangCa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptThoiViec.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptThoiViec.Designer.cs">
+      <DependentUpon>rptThoiViec.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\rptTonGiao.cs">
       <SubType>Component</SubType>
@@ -285,6 +327,12 @@
     </Compile>
     <Compile Include="Reports\rptTrinhDo.Designer.cs">
       <DependentUpon>rptTrinhDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptUngLuong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptUngLuong.Designer.cs">
+      <DependentUpon>rptUngLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="TINHLUONG\frmBangLuong.cs">
       <SubType>Form</SubType>
@@ -402,6 +450,9 @@
     <EmbeddedResource Include="Reports\rptDanToc.resx">
       <DependentUpon>rptDanToc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDieuChuyen.resx">
+      <DependentUpon>rptDieuChuyen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptDSNV.resx">
       <DependentUpon>rptDSNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -411,14 +462,35 @@
     <EmbeddedResource Include="Reports\rptKhenThuong.resx">
       <DependentUpon>rptKhenThuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptLoaiCa.resx">
+      <DependentUpon>rptLoaiCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptLoaiCong.resx">
+      <DependentUpon>rptLoaiCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptNangLuong.resx">
+      <DependentUpon>rptNangLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptPhongBan.resx">
       <DependentUpon>rptPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPhuCap.resx">
+      <DependentUpon>rptPhuCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTangCa.resx">
+      <DependentUpon>rptTangCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptThoiViec.resx">
+      <DependentUpon>rptThoiViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTonGiao.resx">
       <DependentUpon>rptTonGiao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTrinhDo.resx">
       <DependentUpon>rptTrinhDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptUngLuong.resx">
+      <DependentUpon>rptUngLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TINHLUONG\frmBangLuong.resx">
       <DependentUpon>frmBangLuong.cs</DependentUpon>

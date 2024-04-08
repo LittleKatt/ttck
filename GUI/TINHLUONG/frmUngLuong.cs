@@ -1,6 +1,9 @@
 ﻿using BUS;
+using BUS.DTO;
 using DAO;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +25,8 @@ namespace GUI.TINHLUONG
         bool _them;
         int _id;
         NhanVien _nhanvien;
-        UngLuong _ungluong; 
+        UngLuong _ungluong;
+        List<UngLuong_DTO> _lstUngLuong;
         private void frmUngLuong_Load(object sender, EventArgs e)
         {
             _them = false;
@@ -59,6 +63,8 @@ namespace GUI.TINHLUONG
         {
             gcDanhSach.DataSource = _ungluong.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstUngLuong = _ungluong.getListFull();
+
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -101,6 +107,8 @@ namespace GUI.TINHLUONG
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            rptUngLuong rpt = new rptUngLuong(_lstUngLuong);
+            rpt.ShowPreview();
 
         }
 

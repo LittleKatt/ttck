@@ -1,6 +1,8 @@
 ﻿using BUS;
 using DAO;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +24,7 @@ namespace GUI.CHAMCONG
         LoaiCong _loaicong;
         bool _them;
         int _id;
+        List<LOAICONG> _lstLoaiCong;
         private void frmLoaiCong_Load(object sender, EventArgs e)
         {
             _them = false;
@@ -45,6 +48,7 @@ namespace GUI.CHAMCONG
         {
             gcDanhSach.DataSource = _loaicong.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstLoaiCong = _loaicong.getList();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -85,7 +89,8 @@ namespace GUI.CHAMCONG
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptLoaiCong rpt = new rptLoaiCong(_lstLoaiCong);
+            rpt.ShowPreview();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

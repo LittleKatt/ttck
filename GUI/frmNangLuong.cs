@@ -1,6 +1,9 @@
 ﻿using BUS;
+using BUS.DTO;
 using DAO;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using GUI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +26,8 @@ namespace GUI
         string _soqd;
         NangLuong _nvnl;
         HopDongLD  _hopdong;
-        NhanVien _nv; 
+        NhanVien _nv;
+        List<NangLuong_DTO> _lstNangLuong;
         private void frmNangLuong_Load(object sender, EventArgs e)
         {
             _nvnl = new NangLuong();
@@ -71,6 +75,8 @@ namespace GUI
         {
             gcDanhSach.DataSource = _nvnl.getListFull();
             gvDanhSach.OptionsBehavior.Editable = false;
+            _lstNangLuong = _nvnl.getListFull();
+
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -118,7 +124,8 @@ namespace GUI
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptNangLuong rpt = new rptNangLuong(_lstNangLuong);
+            rpt.ShowPreviewDialog();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
