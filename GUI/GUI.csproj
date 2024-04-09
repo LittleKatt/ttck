@@ -151,6 +151,12 @@
     <Compile Include="frmKhenThuong.Designer.cs">
       <DependentUpon>frmKhenThuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKyLuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKyLuat.Designer.cs">
+      <DependentUpon>frmKyLuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,12 @@
     <Compile Include="Reports\rptUngLuong.Designer.cs">
       <DependentUpon>rptUngLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptKyLuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptKyLuat.Designer.cs">
+      <DependentUpon>rptKyLuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="TINHLUONG\frmBangLuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKhenThuong.resx">
       <DependentUpon>frmKhenThuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKyLuat.resx">
+      <DependentUpon>frmKyLuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -491,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptUngLuong.resx">
       <DependentUpon>rptUngLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptKyLuat.resx">
+      <DependentUpon>rptKyLuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TINHLUONG\frmBangLuong.resx">
       <DependentUpon>frmBangLuong.cs</DependentUpon>

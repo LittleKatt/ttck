@@ -103,7 +103,7 @@ namespace GUI
 
         private void btnKyLuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //openForm(typeof(frmKyLuat));
+            openForm(typeof(frmKyLuat));
         }
 
         private void btnDieuChuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -154,7 +154,7 @@ namespace GUI
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnPhuCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

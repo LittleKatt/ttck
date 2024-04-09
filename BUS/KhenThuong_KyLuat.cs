@@ -29,8 +29,8 @@ namespace BUS
             {
                 kt = new KTKL_DTO();
                 kt.SOQD = item.SOQD;
-                //kt.NGAYBATDAU = item.NGAYBATDAU.Value.ToString("dd/MM/yyyy");
-                //kt.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                kt.TUNGAY = item.TUNGAY;
+                kt.DENNGAY = item.DENNGAY;
                 kt.NGAYKY = item.NGAYKY.Value;
                 kt.LOAI = item.LOAI;
                 kt.LYDO = item.LYDO;
@@ -69,7 +69,7 @@ namespace BUS
             try
             {
                 KHENTHUONG_KYLUAT _kt = db.KHENTHUONG_KYLUAT.FirstOrDefault(x=>x.SOQD == kt.SOQD);
-                //_kt.NGAY = kt.NGAY;
+                _kt.NGAYKY = kt.NGAYKY;
                 _kt.TUNGAY = kt.TUNGAY;
                 _kt.DENNGAY = kt.DENNGAY;
                 _kt.LYDO = kt.LYDO;
