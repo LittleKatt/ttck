@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DevExpress.XtraSplashScreen;
 using GUI.CHAMCONG;
 using GUI.Reports;
 using GUI.TINHLUONG;
@@ -20,7 +21,18 @@ namespace GUI
             InitializeComponent();
         }
         NhanVien _nhanvien;
-        HopDongLD _hopdong; 
+        HopDongLD _hopdong;
+
+        OverlayWindowOptions options = new OverlayWindowOptions(
+            backColor: Color.Black,
+            opacity: 0.5,
+            fadeIn: false,
+            fadeOut: false
+        );
+        IOverlaySplashScreenHandle ShowProgressPanel(Control control, OverlayWindowOptions option)
+        {
+            return SplashScreenManager.ShowOverlayForm(control, option);
+        }
         void openForm(Type typeForm)
         {
             foreach (var frm in MdiChildren) 
@@ -48,9 +60,14 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            HamXuLy.handle = ShowProgressPanel(this, options);
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
+
             ribbonControl1.SelectedPage = rbpNhanSu;
             _nhanvien = new NhanVien();
             _hopdong = new HopDongLD();
+            
             loadSinhNhat();
             loadNangLuong();
         }

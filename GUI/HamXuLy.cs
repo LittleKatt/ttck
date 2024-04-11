@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DAO;
+using DevExpress.XtraReports.Data;
+using DevExpress.XtraSplashScreen;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -113,11 +116,7 @@ namespace GUI
             dongKetNoi();
         }
 
-
-
-
-
-
+        public static IOverlaySplashScreenHandle handle = null ;
 
 
         public static SqlCommand sqlCom;

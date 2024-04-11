@@ -80,6 +80,7 @@
     <Compile Include="TonGiao.cs" />
     <Compile Include="TrinhDo.cs" />
     <Compile Include="UngLuong.cs" />
+    <Compile Include="Users.cs" />
     <Compile Include="XuLy.cs" />
   </ItemGroup>
   <ItemGroup>

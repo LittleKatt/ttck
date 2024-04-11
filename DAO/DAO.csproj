@@ -141,6 +141,9 @@
     <Compile Include="UNGLUONG.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="USER.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="QLNS.edmx">

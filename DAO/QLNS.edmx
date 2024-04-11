@@ -410,6 +410,14 @@
           <Property Name="DELETED_BY" Type="int" />
           <Property Name="DELETED_DATE" Type="datetime" />
         </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="IDUSER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="MATKHAU" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK_BANGCHAMCONG_LOAICONG1">
           <End Role="LOAICONG" Type="Self.LOAICONG" Multiplicity="0..1" />
           <End Role="BANGCHAMCONG" Type="Self.BANGCHAMCONG" Multiplicity="*" />
@@ -712,6 +720,7 @@
           <EntitySet Name="THOIVIEC" EntityType="Self.THOIVIEC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TRINHDO" EntityType="Self.TRINHDO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UNGLUONG" EntityType="Self.UNGLUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_BANGCHAMCONG_LOAICONG1" Association="Self.FK_BANGCHAMCONG_LOAICONG1">
             <End Role="LOAICONG" EntitySet="LOAICONG" />
             <End Role="BANGCHAMCONG" EntitySet="BANGCHAMCONG" />
@@ -927,6 +936,7 @@
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="UNGLUONG" EntitySet="UNGLUONGs" />
           </AssociationSet>
+          <EntitySet Name="USERs" EntityType="QLNSModel.USER" />
         </EntityContainer>
         <EntityType Name="BANGCONGCHITIET">
           <Key>
@@ -1655,6 +1665,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="IDUSER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TAIKHOAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MATKHAU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2087,6 +2105,15 @@
                 <ScalarProperty Name="THANG" ColumnName="THANG" />
                 <ScalarProperty Name="NAM" ColumnName="NAM" />
                 <ScalarProperty Name="IDUL" ColumnName="IDUL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERs">
+            <EntityTypeMapping TypeName="QLNSModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+                <ScalarProperty Name="TAIKHOAN" ColumnName="TAIKHOAN" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

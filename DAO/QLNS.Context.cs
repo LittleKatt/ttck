@@ -50,5 +50,6 @@ namespace DAO
         public virtual DbSet<THOIVIEC> THOIVIECs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
+        public virtual DbSet<USER> USERs { get; set; }
     }
 }
