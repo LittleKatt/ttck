@@ -18,6 +18,7 @@
           <Property Name="GIOVAO" Type="nvarchar" MaxLength="50" />
           <Property Name="GIORA" Type="nvarchar" MaxLength="50" />
           <Property Name="NGAYPHEP" Type="float" />
+          <Property Name="NGHIKHONGPHEP" Type="float" />
           <Property Name="NGAYCONG" Type="float" />
           <Property Name="CONGNGAYLE" Type="float" />
           <Property Name="CONGCHUNHAT" Type="float" />
@@ -819,7 +820,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="QLNSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="QLNSEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BANGCONGCHITIETs" EntityType="QLNSModel.BANGCONGCHITIET" />
           <EntitySet Name="BANGCHAMCONGs" EntityType="QLNSModel.BANGCHAMCONG" />
           <EntitySet Name="BANGLUONGs" EntityType="QLNSModel.BANGLUONG" />
           <EntitySet Name="BAOHIEMs" EntityType="QLNSModel.BAOHIEM" />
@@ -937,30 +937,8 @@
             <End Role="UNGLUONG" EntitySet="UNGLUONGs" />
           </AssociationSet>
           <EntitySet Name="USERs" EntityType="QLNSModel.USER" />
+          <EntitySet Name="BANGCONGCHITIETs" EntityType="QLNSModel.BANGCONGCHITIET" />
         </EntityContainer>
-        <EntityType Name="BANGCONGCHITIET">
-          <Key>
-            <PropertyRef Name="IDBCCT" />
-          </Key>
-          <Property Name="IDBCCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDKCCT" Type="Int32" />
-          <Property Name="IDNV" Type="Int32" />
-          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NGAY" Type="DateTime" Precision="3" />
-          <Property Name="THU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GIOVAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GIORA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NGAYPHEP" Type="Double" />
-          <Property Name="NGAYCONG" Type="Double" />
-          <Property Name="CONGNGAYLE" Type="Double" />
-          <Property Name="CONGCHUNHAT" Type="Double" />
-          <Property Name="KYHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="UPDATED_BY" Type="Int32" />
-          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="BANGCHAMCONG">
           <Key>
             <PropertyRef Name="IDCC" />
@@ -1673,36 +1651,36 @@
           <Property Name="TAIKHOAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MATKHAU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="BANGCONGCHITIET">
+          <Key>
+            <PropertyRef Name="IDBCCT" />
+          </Key>
+          <Property Name="IDBCCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKCCT" Type="Int32" />
+          <Property Name="IDNV" Type="Int32" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="THU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIOVAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIORA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYPHEP" Type="Double" />
+          <Property Name="NGHIKHONGPHEP" Type="Double" />
+          <Property Name="NGAYCONG" Type="Double" />
+          <Property Name="CONGNGAYLE" Type="Double" />
+          <Property Name="CONGCHUNHAT" Type="Double" />
+          <Property Name="KYHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QLNSModelStoreContainer" CdmEntityContainer="QLNSEntities">
-          <EntitySetMapping Name="BANGCONGCHITIETs">
-            <EntityTypeMapping TypeName="QLNSModel.BANGCONGCHITIET">
-              <MappingFragment StoreEntitySet="BANGCONGCHITIET">
-                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
-                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
-                <ScalarProperty Name="KYHIEU" ColumnName="KYHIEU" />
-                <ScalarProperty Name="CONGCHUNHAT" ColumnName="CONGCHUNHAT" />
-                <ScalarProperty Name="CONGNGAYLE" ColumnName="CONGNGAYLE" />
-                <ScalarProperty Name="NGAYCONG" ColumnName="NGAYCONG" />
-                <ScalarProperty Name="NGAYPHEP" ColumnName="NGAYPHEP" />
-                <ScalarProperty Name="GIORA" ColumnName="GIORA" />
-                <ScalarProperty Name="GIOVAO" ColumnName="GIOVAO" />
-                <ScalarProperty Name="THU" ColumnName="THU" />
-                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
-                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
-                <ScalarProperty Name="IDNV" ColumnName="IDNV" />
-                <ScalarProperty Name="IDKCCT" ColumnName="IDKCCT" />
-                <ScalarProperty Name="IDBCCT" ColumnName="IDBCCT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BANGCHAMCONGs">
             <EntityTypeMapping TypeName="QLNSModel.BANGCHAMCONG">
               <MappingFragment StoreEntitySet="BANGCHAMCONG">
@@ -2114,6 +2092,31 @@
                 <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
                 <ScalarProperty Name="TAIKHOAN" ColumnName="TAIKHOAN" />
                 <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BANGCONGCHITIETs">
+            <EntityTypeMapping TypeName="QLNSModel.BANGCONGCHITIET">
+              <MappingFragment StoreEntitySet="BANGCONGCHITIET">
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="KYHIEU" ColumnName="KYHIEU" />
+                <ScalarProperty Name="CONGCHUNHAT" ColumnName="CONGCHUNHAT" />
+                <ScalarProperty Name="CONGNGAYLE" ColumnName="CONGNGAYLE" />
+                <ScalarProperty Name="NGAYCONG" ColumnName="NGAYCONG" />
+                <ScalarProperty Name="NGHIKHONGPHEP" ColumnName="NGHIKHONGPHEP" />
+                <ScalarProperty Name="NGAYPHEP" ColumnName="NGAYPHEP" />
+                <ScalarProperty Name="GIORA" ColumnName="GIORA" />
+                <ScalarProperty Name="GIOVAO" ColumnName="GIOVAO" />
+                <ScalarProperty Name="THU" ColumnName="THU" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+                <ScalarProperty Name="IDKCCT" ColumnName="IDKCCT" />
+                <ScalarProperty Name="IDBCCT" ColumnName="IDBCCT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

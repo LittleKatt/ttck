@@ -69,21 +69,21 @@ namespace GUI.CHAMCONG
 
             BANGCONGCHITIET bcct = _bcct.getItem(_idnv, _idkcct, cldNgayCong.SelectionStart.Day);
 
-            if (cldNgayCong.SelectionStart.DayOfWeek == DayOfWeek.Sunday)
-            {
-                if (_valueTGNghi == "NN")
-                {
-                    bcct.CONGCHUNHAT = 1;
-                    bcct.NGAYCONG = 0;
-                }
-                else
-                {
-                    bcct.CONGCHUNHAT = 0.5;
-                    bcct.NGAYCONG = 0;
-                }
-            }
-            else
-            {
+            //if (cldNgayCong.SelectionStart.DayOfWeek == DayOfWeek.Sunday)
+            //{
+            //    if (_valueTGNghi == "NN")
+            //    {
+            //        bcct.CONGCHUNHAT = 1;
+            //        bcct.NGAYCONG = 0;
+            //    }
+            //    else
+            //    {
+            //        bcct.CONGCHUNHAT = 0.5;
+            //        bcct.NGAYCONG = 0;
+            //    }
+            //}
+            //else
+            //{
 
                 bcct.KYHIEU = _valueChamCong;
                 switch (_valueChamCong)
@@ -127,16 +127,18 @@ namespace GUI.CHAMCONG
                         if (_valueTGNghi == "NN")
                         {
                             bcct.NGAYCONG = 0;
+                            bcct.NGHIKHONGPHEP = 1; 
                         }
                         else
                         {
                             bcct.NGAYCONG = 0.5;
+                            bcct.NGHIKHONGPHEP = 0.5; 
                         }
                         break;
                     default:
                         break;
                 }
-            }
+            //}
 
             //update bảng bangcongchitiet
             _bcct.Update(bcct);
@@ -144,9 +146,11 @@ namespace GUI.CHAMCONG
             double tongngaycong = _bcct.tongNgayCong(_idkcct, _idnv);
             double tongngayphep = _bcct.tongNgayPhep(_idkcct, _idnv);
             double congchunhat = _bcct.tongNgayCongChuNhat(_idkcct, _idnv);
+            double tongnghiphep = _bcct.tongKhongPhep(_idkcct, _idnv);
             kcct.NGAYPHEP = tongngayphep;
             kcct.TONGNGAYCONG = tongngaycong;
             kcct.CONGCHUNHAT = congchunhat;
+            kcct.NGHIKHONGPHEP = tongnghiphep;
             _kcct.Update(kcct);
 
 

@@ -43,6 +43,7 @@ namespace BUS
                 bcnv.GIOVAO = bcct.GIOVAO;
                 bcnv.GIORA = bcct.GIORA;
                 bcnv.NGAYPHEP = bcct.NGAYPHEP;
+                bcnv.NGHIKHONGPHEP = bcct.NGHIKHONGPHEP;
                 bcnv.NGAYCONG = bcct.NGAYCONG;
                 bcnv.GHICHU = bcct.GHICHU;
                 bcnv.CONGCHUNHAT = bcct.CONGCHUNHAT;
@@ -72,6 +73,11 @@ namespace BUS
         {
             return db.BANGCONGCHITIETs.Where(x => x.IDKCCT == idkcct && x.IDNV == idnv && x.NGAYCONG != null).Sum(p => p.NGAYCONG.Value);
         }
+        public double tongKhongPhep(int idkcct, int idnv)
+        {
+            return db.BANGCONGCHITIETs.Where(x => x.IDKCCT == idkcct && x.IDNV == idnv && x.NGAYCONG != null).Sum(p => p.NGHIKHONGPHEP.Value);
+        }
+
 
     }
 }

@@ -75,6 +75,7 @@ namespace GUI.CHAMCONG
                     bcct.NGAY = DateTime.Parse(cbbNam.Text + " - " + cbbThang.Text + " - " + i.ToString());
                     bcct.THU = HamXuLy.layThuTrongTuan(int.Parse(cbbNam.Text), int.Parse(cbbThang.Text), i);
                     bcct.NGAYPHEP = 0;
+                    bcct.NGHIKHONGPHEP = 0; 
                     bcct.CONGNGAYLE = 0; 
                     bcct.CONGCHUNHAT = 0 ;
                     if (bcct.THU == "Chủ nhật")
@@ -217,11 +218,11 @@ namespace GUI.CHAMCONG
                         column = gvBangCongChiTiet.Columns[fieldName];
                         column.Caption = "T.Bảy " + Environment.NewLine + i;
                         column.OptionsColumn.AllowEdit = true;
-                        column.AppearanceHeader.ForeColor = Color.Red;
-                        column.AppearanceHeader.BackColor = Color.Violet;
-                        column.AppearanceHeader.BackColor2 = Color.Violet;
+                        column.AppearanceHeader.ForeColor = Color.Blue;
+                        column.AppearanceHeader.BackColor = Color.Transparent;
+                        column.AppearanceHeader.BackColor2 = Color.Transparent;
                         column.AppearanceCell.ForeColor = Color.Black;
-                        column.AppearanceCell.BackColor = Color.Khaki;
+                        column.AppearanceCell.BackColor = Color.Transparent;
                         column.OptionsColumn.AllowFocus = true;
                         //column.AppearanceHeader.Font = new Font("Tahoma", 8, FontStyle.Regular);
                         //column.Width = 30;
@@ -230,11 +231,11 @@ namespace GUI.CHAMCONG
                         column = gvBangCongChiTiet.Columns[fieldName];
                         column.Caption = "CN " + Environment.NewLine + i;
                         column.OptionsColumn.AllowEdit = false;
-                        column.AppearanceHeader.ForeColor = Color.Red;
-                        column.AppearanceHeader.BackColor = Color.GreenYellow;
-                        column.AppearanceHeader.BackColor2 = Color.GreenYellow;
+                        column.AppearanceHeader.ForeColor = Color.Blue;
+                        column.AppearanceHeader.BackColor = Color.Transparent;
+                        column.AppearanceHeader.BackColor2 = Color.Transparent;
                         column.AppearanceCell.ForeColor = Color.Black;
-                        column.AppearanceCell.BackColor = Color.Orange;
+                        column.AppearanceCell.BackColor = Color.Transparent;
                         //column.AppearanceHeader.Font = new Font("Tahoma", 8, FontStyle.Regular);
                         //column.Width = 30;
                         //column.OptionsColumn.AllowFocus = false;
@@ -305,7 +306,7 @@ namespace GUI.CHAMCONG
                 }
                 if (e.CellValue.ToString()=="VR")
                 {
-                    e.Appearance.BackColor = Color.DarkGreen;
+                    e.Appearance.BackColor = Color.CadetBlue;
                     e.Appearance.ForeColor = Color.White;
                 }
                 if (e.CellValue.ToString() == "P")
@@ -315,7 +316,7 @@ namespace GUI.CHAMCONG
                 }
                 if (e.CellValue.ToString() == "V")
                 {
-                    e.Appearance.BackColor = Color.IndianRed;
+                    e.Appearance.BackColor = Color.MediumBlue;
                     e.Appearance.ForeColor = Color.White;
                 }
             }
