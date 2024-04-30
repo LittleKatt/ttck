@@ -17,8 +17,6 @@ namespace DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHANVIEN()
         {
-            this.BANGCHAMCONGs = new HashSet<BANGCHAMCONG>();
-            this.BAOHIEMs = new HashSet<BAOHIEM>();
             this.DIEUCHUYENs = new HashSet<DIEUCHUYEN>();
             this.HOPDONGs = new HashSet<HOPDONG>();
             this.KHENTHUONG_KYLUAT = new HashSet<KHENTHUONG_KYLUAT>();
@@ -45,10 +43,6 @@ namespace DAO
         public Nullable<int> IDTG { get; set; }
         public Nullable<bool> DATHOIVIEC { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BANGCHAMCONG> BANGCHAMCONGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BAOHIEM> BAOHIEMs { get; set; }
         public virtual BOPHAN BOPHAN { get; set; }
         public virtual CHUCVU CHUCVU { get; set; }
         public virtual DANTOC DANTOC { get; set; }

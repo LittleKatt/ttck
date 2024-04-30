@@ -68,6 +68,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.DELETED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SOHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYBATDAU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYKETTHUC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,7 +87,6 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.DELETED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -304,6 +304,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spLuongCoBan.Size = new System.Drawing.Size(167, 22);
             this.spLuongCoBan.TabIndex = 40;
+            this.spLuongCoBan.EditValueChanged += new System.EventHandler(this.spLuongCoBan_EditValueChanged);
             // 
             // labelControl6
             // 
@@ -411,6 +412,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spHeSL.Size = new System.Drawing.Size(167, 22);
             this.spHeSL.TabIndex = 33;
+            this.spHeSL.EditValueChanged += new System.EventHandler(this.spHeSL_EditValueChanged);
             // 
             // labelControl9
             // 
@@ -442,6 +444,7 @@
             this.spLanKy.Properties.MaskSettings.Set("mask", "N00");
             this.spLanKy.Size = new System.Drawing.Size(167, 22);
             this.spLanKy.TabIndex = 31;
+            this.spLanKy.EditValueChanged += new System.EventHandler(this.spLanKy_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -589,6 +592,16 @@
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
             this.gvDanhSach.Click += new System.EventHandler(this.gvDanhSach_Click);
+            // 
+            // DELETED_BY
+            // 
+            this.DELETED_BY.FieldName = "DELETED_BY";
+            this.DELETED_BY.MaxWidth = 30;
+            this.DELETED_BY.MinWidth = 30;
+            this.DELETED_BY.Name = "DELETED_BY";
+            this.DELETED_BY.Visible = true;
+            this.DELETED_BY.VisibleIndex = 0;
+            this.DELETED_BY.Width = 30;
             // 
             // SOHD
             // 
@@ -786,16 +799,6 @@
             this.barDockControl8.Manager = this.barManager1;
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControl8.Size = new System.Drawing.Size(1036, 0);
-            // 
-            // DELETED_BY
-            // 
-            this.DELETED_BY.FieldName = "DELETED_BY";
-            this.DELETED_BY.MaxWidth = 30;
-            this.DELETED_BY.MinWidth = 30;
-            this.DELETED_BY.Name = "DELETED_BY";
-            this.DELETED_BY.Visible = true;
-            this.DELETED_BY.VisibleIndex = 0;
-            this.DELETED_BY.Width = 30;
             // 
             // frmHopDongLaoDong
             // 

@@ -47,7 +47,7 @@ namespace BUS
                 bcnv.NGAYCONG = bcct.NGAYCONG;
                 bcnv.GHICHU = bcct.GHICHU;
                 bcnv.CONGCHUNHAT = bcct.CONGCHUNHAT;
-                bcnv.CONGNGAYLE = bcct.CONGNGAYLE;
+                //bcnv.CONGNGAYLE = bcct.CONGNGAYLE;
                 bcnv.UPDATED_BY = bcct.UPDATED_BY;
                 bcnv.UPDATED_DATE = bcct.UPDATED_DATE;
                 db.SaveChanges();

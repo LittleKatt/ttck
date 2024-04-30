@@ -134,8 +134,9 @@ namespace BUS
         public void Delete (string sohd, int idnv)
         {
             var _hd = db.HOPDONGs.FirstOrDefault(x => x.SOHD == sohd);
-            _hd.DELETED_BY = idnv;
-            _hd.DELETED_DATE = DateTime.Now;
+            db.HOPDONGs.Remove(_hd);
+            //_hd.DELETED_BY = idnv;
+           // _hd.DELETED_DATE = DateTime.Now;
             db.SaveChanges();
         }
         public string MaxSoHopDong()

@@ -57,8 +57,9 @@ namespace BUS
             try
             {
                 var _lc = db.LOAICONGs.FirstOrDefault(x => x.IDLC == id);
-                _lc.DELETED_BY = iduser;
-                _lc.DELETED_DATE = DateTime.Now;
+                db.LOAICONGs.Remove(_lc);
+                //_lc.DELETED_BY = iduser;
+                //_lc.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
 
             }

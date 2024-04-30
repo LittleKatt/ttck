@@ -88,6 +88,19 @@ namespace GUI.CHAMCONG
                 bcct.KYHIEU = _valueChamCong;
                 switch (_valueChamCong)
                 {
+                    case "CCN":
+                        if (_valueTGNghi == "NN")
+                        {
+                            bcct.CONGCHUNHAT = 1;
+                            bcct.NGAYCONG = 1; 
+                        }
+                        else
+                        {
+                            bcct.CONGCHUNHAT = 0.5;
+                            bcct.NGAYCONG = 0.5;
+                        }
+                        break;
+
                     case "P":
                         if (_valueTGNghi == "NN")
                         {
@@ -104,11 +117,13 @@ namespace GUI.CHAMCONG
                         if (_valueTGNghi == "NN")
                         {
                             bcct.NGAYCONG = 1;
+                            
                         }
                         else
                         {
                             bcct.NGAYPHEP = 0.5;
                             bcct.NGAYCONG = 0.5;
+                       
                         }
                         break;
                     case "VR":

@@ -45,9 +45,6 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.cbbNewCV = new System.Windows.Forms.ComboBox();
             this.cbbNewBP = new System.Windows.Forms.ComboBox();
@@ -103,6 +100,9 @@
             this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl15 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl16 = new DevExpress.XtraBars.BarDockControl();
+            this.txtPBCu = new DevExpress.XtraEditors.TextEdit();
+            this.txtBPCu = new DevExpress.XtraEditors.TextEdit();
+            this.txtCVCu = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -115,6 +115,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoQD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPBCu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBPCu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCVCu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -275,9 +278,9 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox3);
+            this.splitContainer1.Panel1.Controls.Add(this.txtCVCu);
+            this.splitContainer1.Panel1.Controls.Add(this.txtBPCu);
+            this.splitContainer1.Panel1.Controls.Add(this.txtPBCu);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl5);
             this.splitContainer1.Panel1.Controls.Add(this.cbbNewCV);
             this.splitContainer1.Panel1.Controls.Add(this.cbbNewBP);
@@ -302,41 +305,11 @@
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 48;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(525, 64);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 24);
-            this.comboBox1.TabIndex = 46;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(309, 64);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(185, 24);
-            this.comboBox2.TabIndex = 45;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(128, 64);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(165, 24);
-            this.comboBox3.TabIndex = 44;
-            // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(22, 64);
+            this.labelControl5.Location = new System.Drawing.Point(22, 62);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(71, 17);
@@ -347,7 +320,7 @@
             // 
             this.cbbNewCV.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbbNewCV.FormattingEnabled = true;
-            this.cbbNewCV.Location = new System.Drawing.Point(525, 93);
+            this.cbbNewCV.Location = new System.Drawing.Point(686, 94);
             this.cbbNewCV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbNewCV.Name = "cbbNewCV";
             this.cbbNewCV.Size = new System.Drawing.Size(169, 24);
@@ -357,27 +330,27 @@
             // 
             this.cbbNewBP.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbbNewBP.FormattingEnabled = true;
-            this.cbbNewBP.Location = new System.Drawing.Point(309, 93);
+            this.cbbNewBP.Location = new System.Drawing.Point(405, 94);
             this.cbbNewBP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbNewBP.Name = "cbbNewBP";
-            this.cbbNewBP.Size = new System.Drawing.Size(185, 24);
+            this.cbbNewBP.Size = new System.Drawing.Size(222, 24);
             this.cbbNewBP.TabIndex = 41;
             // 
             // cbbNewPB
             // 
             this.cbbNewPB.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbbNewPB.FormattingEnabled = true;
-            this.cbbNewPB.Location = new System.Drawing.Point(128, 93);
+            this.cbbNewPB.Location = new System.Drawing.Point(128, 94);
             this.cbbNewPB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbNewPB.Name = "cbbNewPB";
-            this.cbbNewPB.Size = new System.Drawing.Size(165, 24);
+            this.cbbNewPB.Size = new System.Drawing.Size(191, 24);
             this.cbbNewPB.TabIndex = 40;
             // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(22, 93);
+            this.labelControl4.Location = new System.Drawing.Point(22, 98);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(80, 17);
@@ -386,7 +359,7 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(350, 137);
+            this.txtGhiChu.Location = new System.Drawing.Point(405, 134);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGhiChu.MenuManager = this.barManager1;
             this.txtGhiChu.Name = "txtGhiChu";
@@ -399,7 +372,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(286, 140);
+            this.labelControl3.Location = new System.Drawing.Point(345, 137);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(44, 16);
@@ -408,20 +381,20 @@
             // 
             // txtLyDo
             // 
-            this.txtLyDo.Location = new System.Drawing.Point(86, 134);
+            this.txtLyDo.Location = new System.Drawing.Point(128, 134);
             this.txtLyDo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLyDo.MenuManager = this.barManager1;
             this.txtLyDo.Name = "txtLyDo";
             this.txtLyDo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtLyDo.Properties.Appearance.Options.UseFont = true;
-            this.txtLyDo.Size = new System.Drawing.Size(168, 22);
+            this.txtLyDo.Size = new System.Drawing.Size(191, 22);
             this.txtLyDo.TabIndex = 36;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(22, 136);
+            this.labelControl2.Location = new System.Drawing.Point(22, 137);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(36, 16);
@@ -431,7 +404,7 @@
             // slkNhanVien
             // 
             this.slkNhanVien.EditValue = "Nhân viên";
-            this.slkNhanVien.Location = new System.Drawing.Point(381, 24);
+            this.slkNhanVien.Location = new System.Drawing.Point(405, 19);
             this.slkNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.slkNhanVien.MenuManager = this.barManager1;
             this.slkNhanVien.Name = "slkNhanVien";
@@ -440,8 +413,9 @@
             this.slkNhanVien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.slkNhanVien.Properties.PopupView = this.searchLookUpEdit1View;
-            this.slkNhanVien.Size = new System.Drawing.Size(243, 22);
+            this.slkNhanVien.Size = new System.Drawing.Size(222, 22);
             this.slkNhanVien.TabIndex = 34;
+            this.slkNhanVien.EditValueChanged += new System.EventHandler(this.slkNhanVien_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
@@ -484,7 +458,7 @@
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(675, 30);
+            this.labelControl12.Location = new System.Drawing.Point(633, 22);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(45, 16);
@@ -496,7 +470,7 @@
             this.dtNgayKy.CustomFormat = "dd/MM/yyyy";
             this.dtNgayKy.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtNgayKy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayKy.Location = new System.Drawing.Point(747, 27);
+            this.dtNgayKy.Location = new System.Drawing.Point(686, 18);
             this.dtNgayKy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgayKy.Name = "dtNgayKy";
             this.dtNgayKy.Size = new System.Drawing.Size(169, 24);
@@ -506,7 +480,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(291, 28);
+            this.labelControl8.Location = new System.Drawing.Point(331, 22);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(58, 16);
@@ -515,7 +489,7 @@
             // 
             // txtSoQD
             // 
-            this.txtSoQD.Location = new System.Drawing.Point(86, 27);
+            this.txtSoQD.Location = new System.Drawing.Point(128, 19);
             this.txtSoQD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoQD.MenuManager = this.barManager1;
             this.txtSoQD.Name = "txtSoQD";
@@ -529,7 +503,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(22, 29);
+            this.labelControl1.Location = new System.Drawing.Point(22, 22);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(40, 17);
@@ -941,6 +915,37 @@
             this.barDockControl16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControl16.Size = new System.Drawing.Size(1370, 0);
             // 
+            // txtPBCu
+            // 
+            this.txtPBCu.Location = new System.Drawing.Point(128, 59);
+            this.txtPBCu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPBCu.MenuManager = this.barManager1;
+            this.txtPBCu.Name = "txtPBCu";
+            this.txtPBCu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtPBCu.Properties.Appearance.Options.UseFont = true;
+            this.txtPBCu.Size = new System.Drawing.Size(191, 22);
+            this.txtPBCu.TabIndex = 47;
+            // 
+            // txtBPCu
+            // 
+            this.txtBPCu.Location = new System.Drawing.Point(405, 59);
+            this.txtBPCu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBPCu.Name = "txtBPCu";
+            this.txtBPCu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtBPCu.Properties.Appearance.Options.UseFont = true;
+            this.txtBPCu.Size = new System.Drawing.Size(222, 22);
+            this.txtBPCu.TabIndex = 47;
+            // 
+            // txtCVCu
+            // 
+            this.txtCVCu.Location = new System.Drawing.Point(686, 59);
+            this.txtCVCu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCVCu.Name = "txtCVCu";
+            this.txtCVCu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtCVCu.Properties.Appearance.Options.UseFont = true;
+            this.txtCVCu.Size = new System.Drawing.Size(169, 22);
+            this.txtCVCu.TabIndex = 47;
+            // 
             // frmDieuChuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -984,6 +989,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoQD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPBCu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBPCu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCVCu.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1060,9 +1068,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn GHICHU;
         private DevExpress.XtraGrid.Columns.GridColumn IDCV2;
         private DevExpress.XtraGrid.Columns.GridColumn TENBP2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit txtCVCu;
+        private DevExpress.XtraEditors.TextEdit txtBPCu;
+        private DevExpress.XtraEditors.TextEdit txtPBCu;
     }
 }

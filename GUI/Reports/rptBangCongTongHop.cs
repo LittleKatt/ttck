@@ -67,7 +67,7 @@ namespace GUI.Reports
             NGAYCONG.DataBindings.Add("Text", DataSource, "NGAYCONG");
             VANG.DataBindings.Add("Text", DataSource, "NGHIKHONGPHEP");
             PHEP.DataBindings.Add("Text", DataSource, "NGAYPHEP");
-            LE.DataBindings.Add("Text", DataSource, "CONGNGAYLE");
+            //LE.DataBindings.Add("Text", DataSource, "CONGNGAYLE");
             CN.DataBindings.Add("Text", DataSource, "CONGCHUNHAT");
             TONG.DataBindings.Add("Text", DataSource, "TONGNGAYCONG");
 

@@ -248,5 +248,11 @@ namespace GUI
                     MessageBox.Show("Thất bại");
             }
         }
+
+        private void btnTKLUONG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmThongKeLuong frm = new frmThongKeLuong();
+            frm.ShowDialog();
+        }
     }
 }

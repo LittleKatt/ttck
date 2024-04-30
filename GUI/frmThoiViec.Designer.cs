@@ -351,7 +351,7 @@
             // 
             // slkNhanVien
             // 
-            this.slkNhanVien.EditValue = "";
+            this.slkNhanVien.EditValue = "....";
             this.slkNhanVien.Location = new System.Drawing.Point(140, 74);
             this.slkNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.slkNhanVien.MenuManager = this.barManager1;
@@ -381,11 +381,11 @@
             this.COLIDNV.AppearanceHeader.Options.UseFont = true;
             this.COLIDNV.Caption = "IDNV";
             this.COLIDNV.FieldName = "IDNV";
-            this.COLIDNV.MinWidth = 17;
+            this.COLIDNV.MaxWidth = 20;
             this.COLIDNV.Name = "COLIDNV";
             this.COLIDNV.Visible = true;
             this.COLIDNV.VisibleIndex = 0;
-            this.COLIDNV.Width = 64;
+            this.COLIDNV.Width = 20;
             // 
             // COLHOTEN
             // 
@@ -393,11 +393,12 @@
             this.COLHOTEN.AppearanceHeader.Options.UseFont = true;
             this.COLHOTEN.Caption = "HỌ TÊN";
             this.COLHOTEN.FieldName = "HOTEN";
-            this.COLHOTEN.MinWidth = 17;
+            this.COLHOTEN.MaxWidth = 150;
+            this.COLHOTEN.MinWidth = 150;
             this.COLHOTEN.Name = "COLHOTEN";
             this.COLHOTEN.Visible = true;
             this.COLHOTEN.VisibleIndex = 1;
-            this.COLHOTEN.Width = 64;
+            this.COLHOTEN.Width = 150;
             // 
             // labelControl12
             // 
@@ -550,7 +551,7 @@
             // 
             // NGAYNGHI
             // 
-            this.NGAYNGHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.NGAYNGHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.NGAYNGHI.AppearanceHeader.Options.UseFont = true;
             this.NGAYNGHI.Caption = "NGÀY NGHỈ";
             this.NGAYNGHI.FieldName = "NGAYNGHI";

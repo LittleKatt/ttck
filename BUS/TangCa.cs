@@ -99,8 +99,9 @@ namespace BUS
             try
             {
                 var _tc = db.TANGCAs.FirstOrDefault(x => x.IDTC == id);
-                _tc.DELETED_BY = iduser;
-                _tc.DELETED_DATE = DateTime.Now;
+                //_tc.DELETED_BY = iduser;
+                //_tc.DELETED_DATE = DateTime.Now;
+                db.TANGCAs.Remove(_tc);
                 db.SaveChanges();
 
             }

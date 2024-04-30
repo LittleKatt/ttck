@@ -151,11 +151,23 @@ namespace GUI
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;
+            if (!string.IsNullOrEmpty(txtHoTen.Text) && dtNgaySinh.Value != null && !string.IsNullOrEmpty(txtDienThoai.Text) && 
+                !string.IsNullOrEmpty(txtCCCD.Text) && !string.IsNullOrEmpty(txtDiaChi.Text) && ptbHinhAnh.Image 
+                != null && cbbPhongBan.SelectedValue != null && cbbBoPhan.SelectedValue != null && cbbChucVu.SelectedValue 
+                != null && cbbTrinhDo.SelectedValue != null && cbbDanToc.SelectedValue != null && cbbTonGiao.SelectedValue != null)
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+                splitContainer1.Panel1Collapsed = true;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông Báo "); // Hiển thị thông báo
+
+            }
+
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -265,6 +277,78 @@ namespace GUI
             {
                 ptbHinhAnh.Image = Image.FromFile(openFile.FileName);
                 ptbHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự không phải là điều khiển và là ký tự số
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn việc nhập
+                MessageBox.Show("Họ và tên nhân viên phải là ký tự chữ", "Thông Báo "); // Hiển thị thông báo
+            }
+            else if (txtHoTen.Text.Length > 50)
+            {
+                MessageBox.Show("Họ và tên nhân viên không được vượt quá 50 ký tự", "Thông Báo ");
+                txtHoTen.Text = txtHoTen.Text.Substring(0, 50);
+                // Đặt con trỏ văn bản (caret) tại cuối chuỗi
+                txtHoTen.SelectionStart = txtHoTen.Text.Length;
+                // Ngăn chặn xử lý ký tự tiếp theo
+                e.Handled = true;
+               
+            }
+
+        }
+
+        private void txtDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự không phải là điều khiển và không phải là ký tự
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn việc nhập
+                MessageBox.Show("Số điện thoại không được chứa ký tự chữ", "Thông Báo"); // Hiển thị thông báo
+            }
+            if (txtDienThoai.Text.Length >= 10)
+            {
+                txtDienThoai.Text = txtDienThoai.Text.Substring(0, 10);
+                // Đặt con trỏ văn bản (caret) tại cuối chuỗi
+                txtDienThoai.SelectionStart = txtDienThoai.Text.Length;
+                // Ngăn chặn xử lý ký tự tiếp theo
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự không phải là điều khiển và không phải là ký tự
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn việc nhập
+                MessageBox.Show("Căn cước công dân không được chứa ký tự chữ", "Thông Báo"); // Hiển thị thông báo
+            }
+            if (txtCCCD.Text.Length >= 12)
+            {
+                txtCCCD.Text = txtCCCD.Text.Substring(0, 12);
+                // Đặt con trỏ văn bản (caret) tại cuối chuỗi
+                txtCCCD.SelectionStart = txtCCCD.Text.Length;
+                // Ngăn chặn xử lý ký tự tiếp theo
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtDiaChi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtDiaChi.Text.Length > 70)
+            {
+                MessageBox.Show("Địa chỉ không vượt quá 70 ký tự", "Thông Báo"); // Hiển thị thông báo
+                txtDiaChi.Text = txtDiaChi.Text.Substring(0, 70);
+                // Đặt con trỏ văn bản (caret) tại cuối chuỗi
+                txtDiaChi.Focus();
+                // Ngăn chặn xử lý ký tự tiếp theo
+                e.Handled = true;
             }
         }
     }

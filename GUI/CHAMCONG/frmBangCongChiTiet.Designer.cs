@@ -98,7 +98,6 @@
             this.NGAYCONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.NGHIKHONGPHEP = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.NGAYPHEP = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.CONGNGAYLE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CONGCHUNHAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.TONGNGAYCONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -522,7 +521,6 @@
             this.NGAYCONG,
             this.NGHIKHONGPHEP,
             this.NGAYPHEP,
-            this.CONGNGAYLE,
             this.CONGCHUNHAT,
             this.TONGNGAYCONG});
             this.gvBangCongChiTiet.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -624,12 +622,11 @@
             this.CHITIETNGAYCONG.Columns.Add(this.NGAYCONG);
             this.CHITIETNGAYCONG.Columns.Add(this.NGHIKHONGPHEP);
             this.CHITIETNGAYCONG.Columns.Add(this.NGAYPHEP);
-            this.CHITIETNGAYCONG.Columns.Add(this.CONGNGAYLE);
             this.CHITIETNGAYCONG.Columns.Add(this.CONGCHUNHAT);
             this.CHITIETNGAYCONG.Columns.Add(this.TONGNGAYCONG);
             this.CHITIETNGAYCONG.Name = "CHITIETNGAYCONG";
             this.CHITIETNGAYCONG.VisibleIndex = 1;
-            this.CHITIETNGAYCONG.Width = 2410;
+            this.CHITIETNGAYCONG.Width = 2324;
             // 
             // colD1
             // 
@@ -1129,17 +1126,6 @@
             this.NGAYPHEP.Visible = true;
             this.NGAYPHEP.Width = 86;
             // 
-            // CONGNGAYLE
-            // 
-            this.CONGNGAYLE.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.CONGNGAYLE.AppearanceHeader.Options.UseFont = true;
-            this.CONGNGAYLE.Caption = "CÔNG LỄ";
-            this.CONGNGAYLE.FieldName = "CONGNGAYLE";
-            this.CONGNGAYLE.MinWidth = 86;
-            this.CONGNGAYLE.Name = "CONGNGAYLE";
-            this.CONGNGAYLE.Visible = true;
-            this.CONGNGAYLE.Width = 86;
-            // 
             // CONGCHUNHAT
             // 
             this.CONGCHUNHAT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
@@ -1492,7 +1478,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn NGAYCONG;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn NGHIKHONGPHEP;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn NGAYPHEP;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CONGNGAYLE;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CONGCHUNHAT;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn TONGNGAYCONG;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand THONGTINNHANVIEN;

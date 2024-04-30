@@ -107,11 +107,26 @@ namespace GUI
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;
+            if (string.IsNullOrEmpty(txtLyDo.Text) ||
+                string.IsNullOrEmpty(txtNoiDung.Text) ||
+                dtNgayBD.Value == null ||
+                dtNgayKT.Value == null ||
+                dtNgayKy.Value == null ||
+                string.IsNullOrEmpty(slkNhanVien.Text))
+            {
+                // Hiển thị thông báo lỗi yêu cầu nhập đầy đủ thông tin
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông Báo");
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+                splitContainer1.Panel1Collapsed = true;
+            } 
+                
+           
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

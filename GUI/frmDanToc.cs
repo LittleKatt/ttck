@@ -37,7 +37,7 @@ namespace GUI
             LoadData();
         }
 
-        void ShowHide (bool kt)
+        void ShowHide(bool kt)
         {
             btnLuu.Enabled = !kt;
             btnHuy.Enabled = !kt;
@@ -50,7 +50,7 @@ namespace GUI
         }
 
 
-        void LoadData ()
+        void LoadData()
         {
             gcDanhSach.DataSource = _dantoc.getList();
             gvDanhSach.OptionsBehavior.Editable = false;
@@ -59,8 +59,10 @@ namespace GUI
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowHide(false);
-            _them = true;   
+            _them = true;
             txtTen.Text = string.Empty;
+          
+
         }
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -71,20 +73,22 @@ namespace GUI
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)==DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc chắn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _dantoc.Delete(_id);
                 LoadData();
-            }    
-            
+            }
+
         }
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+          
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+             
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -118,38 +122,37 @@ namespace GUI
                 var dt = _dantoc.getItem(_id);
                 dt.TENDT = txtTen.Text;
                 _dantoc.Update(dt);
-            }    
+            }
         }
 
         private void gvDanhSach_Click(object sender, EventArgs e)
         {
-            if(gvDanhSach.RowCount > 0)
+            if (gvDanhSach.RowCount > 0)
             {
                 _id = int.Parse(gvDanhSach.GetFocusedRowCellValue("ID").ToString());
                 txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENDT").ToString();
             }
-            
+
         }
 
-        private void txtBrowse_Click(object sender, EventArgs e)
+        private void txtTen_KeyPress(object sender, KeyPressEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select File";
-            openFileDialog.Filter = "Excel(*.xlsx)|*.xlsx";
-            if (openFileDialog.ShowDialog()==DialogResult.OK)
+            // Kiểm tra nếu ký tự không phải là điều khiển và là ký tự số
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
             {
-                txtPath.Text = openFileDialog.FileName; 
-                ExcelDataSource ex = new ExcelDataSource();
-                ex.FileName = txtPath.Text;
-                ExcelWorksheetSettings sheetSettings = new ExcelWorksheetSettings("dtoc", "A1:B20");
-                ex.SourceOptions = new ExcelSourceOptions(sheetSettings);
-                ex.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B20"};
-                ex.SourceOptions.SkipEmptyRows = false;
-                ex.SourceOptions.UseFirstRowAsHeader = true;
-                ex.Fill();
-                gcDanhSach.DataSource = ex;
-
+                e.Handled = true; // Ngăn chặn việc nhập
+                MessageBox.Show("Tên dân tộc phải là ký tự chữ ", "Thông Báo "); // Hiển thị thông báo
             }
+            else if (txtTen.Text.Length >= 50)
+            {
+                MessageBox.Show("Tên dân tộc không được vượt quá 50 ký tự", "Thông Báo");
+                txtTen.Text = txtTen.Text.Substring(0, 50);
+                // Đặt con trỏ văn bản (caret) tại cuối chuỗi
+                txtTen.SelectionStart = txtTen.Text.Length;
+                // Ngăn chặn xử lý ký tự tiếp theo
+                e.Handled = true;
+            }
+
         }
     }
 }

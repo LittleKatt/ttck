@@ -76,11 +76,11 @@ namespace GUI.CHAMCONG
                     bcct.THU = HamXuLy.layThuTrongTuan(int.Parse(cbbNam.Text), int.Parse(cbbThang.Text), i);
                     bcct.NGAYPHEP = 0;
                     bcct.NGHIKHONGPHEP = 0; 
-                    bcct.CONGNGAYLE = 0; 
+                    //bcct.CONGNGAYLE = 0; 
                     bcct.CONGCHUNHAT = 0 ;
                     if (bcct.THU == "Chủ nhật")
                     {
-                        bcct.KYHIEU = "CN";
+                        bcct.KYHIEU = "";
                         bcct.NGAYCONG = 0;
                     }    
                     else
@@ -317,6 +317,11 @@ namespace GUI.CHAMCONG
                 if (e.CellValue.ToString() == "V")
                 {
                     e.Appearance.BackColor = Color.MediumBlue;
+                    e.Appearance.ForeColor = Color.White;
+                }
+                if (e.CellValue.ToString() == "CCN")
+                {
+                    e.Appearance.BackColor = Color.LightSteelBlue;
                     e.Appearance.ForeColor = Color.White;
                 }
             }

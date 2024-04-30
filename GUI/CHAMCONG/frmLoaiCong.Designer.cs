@@ -264,6 +264,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spHeSo.Size = new System.Drawing.Size(100, 22);
             this.spHeSo.TabIndex = 2;
+            this.spHeSo.EditValueChanged += new System.EventHandler(this.spHeSo_EditValueChanged);
             // 
             // txtLoaiCong
             // 
@@ -275,6 +276,7 @@
             this.txtLoaiCong.Properties.Appearance.Options.UseFont = true;
             this.txtLoaiCong.Size = new System.Drawing.Size(189, 22);
             this.txtLoaiCong.TabIndex = 1;
+            this.txtLoaiCong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoaiCong_KeyPress);
             // 
             // labelControl2
             // 

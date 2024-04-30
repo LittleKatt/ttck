@@ -14,6 +14,7 @@ using GUI.Reports;
 using BUS.DTO;
 using System.IO;
 using DevExpress.XtraReports.UI;
+using DevExpress.CodeParser;
 
 namespace GUI
 {
@@ -109,11 +110,25 @@ namespace GUI
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;
+            if (string.IsNullOrEmpty(spLanKy.Text) ||
+               string.IsNullOrEmpty(spHeSL.Text) || 
+               string.IsNullOrEmpty(spLuongCoBan.Text) ||
+               dtNgayBD.Value == null ||
+               dtNgayKT.Value == null ||
+               dtNgayKy.Value == null ||
+               slkNhanVien.EditValue == null)  
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông Báo "); // Hiển thị thông báo
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+                splitContainer1.Panel1Collapsed = true;
+            }    
+            
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -212,6 +227,38 @@ namespace GUI
             else
             {
                 dtNgayKT.Value = dtNgayBD.Value.AddMonths(24);
+            }
+        }
+
+        private void spLuongCoBan_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spLuongCoBan.Value < 1)
+            {
+                MessageBox.Show("Lương cơ bản phải lớn hơn 1", "Thông Báo");
+                spLuongCoBan.Value = 1; // Đặt lại giá trị thành 1
+            }
+        }
+
+        private void spHeSL_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spHeSL.Value < 1)
+            {
+                MessageBox.Show("Hệ số lương phải lớn hơn 0", "Thông Báo");
+                spHeSL.Value = 1; // Đặt lại giá trị thành 1
+            }
+            else if (spHeSL.Value > 12)
+            {
+                MessageBox.Show("Hệ số lương không vượt quá 12", "Thông Báo");
+                spHeSL.Value = 1;
+            }    
+        }
+
+        private void spLanKy_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spLanKy.Value < 1)
+            {
+                MessageBox.Show("Lần ký phải lớn hơn 0", "Thông Báo");
+                spLanKy.Value = 1;
             }
         }
     }

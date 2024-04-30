@@ -260,6 +260,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spHeSo.Size = new System.Drawing.Size(100, 22);
             this.spHeSo.TabIndex = 2;
+            this.spHeSo.EditValueChanged += new System.EventHandler(this.spHeSo_EditValueChanged);
             // 
             // txtLoaiCa
             // 
@@ -271,6 +272,7 @@
             this.txtLoaiCa.Properties.Appearance.Options.UseFont = true;
             this.txtLoaiCa.Size = new System.Drawing.Size(189, 22);
             this.txtLoaiCa.TabIndex = 1;
+            this.txtLoaiCa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoaiCa_KeyPress);
             // 
             // labelControl2
             // 
@@ -334,14 +336,14 @@
             // 
             this.IDLCA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.IDLCA.AppearanceHeader.Options.UseFont = true;
-            this.IDLCA.Caption = "ID LOẠI CA";
+            this.IDLCA.Caption = "ID";
             this.IDLCA.FieldName = "IDLCA";
-            this.IDLCA.MaxWidth = 80;
-            this.IDLCA.MinWidth = 80;
+            this.IDLCA.MaxWidth = 30;
+            this.IDLCA.MinWidth = 30;
             this.IDLCA.Name = "IDLCA";
             this.IDLCA.Visible = true;
             this.IDLCA.VisibleIndex = 1;
-            this.IDLCA.Width = 80;
+            this.IDLCA.Width = 30;
             // 
             // TENLOAICA
             // 

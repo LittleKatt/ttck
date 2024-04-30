@@ -14,12 +14,6 @@ namespace DAO
     
     public partial class LOAICONG
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAICONG()
-        {
-            this.BANGCHAMCONGs = new HashSet<BANGCHAMCONG>();
-        }
-    
         public int IDLC { get; set; }
         public string TENLC { get; set; }
         public Nullable<double> HESO { get; set; }
@@ -29,8 +23,5 @@ namespace DAO
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
         public Nullable<int> DELETED_BY { get; set; }
         public Nullable<System.DateTime> DELETED_DATE { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BANGCHAMCONG> BANGCHAMCONGs { get; set; }
     }
 }

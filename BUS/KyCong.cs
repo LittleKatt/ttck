@@ -61,9 +61,10 @@ namespace BUS
             try
             {
                 var _kc = db.KYCONGs.FirstOrDefault(x => x.IDKCCT == idkcct);
-                
+
                 _kc.DELETED_BY = iduser;
                 _kc.DELETED_DATE = DateTime.Now;
+                //db.KYCONGs.Remove(_kc);
                 db.SaveChanges();
             }
 

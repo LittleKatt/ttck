@@ -77,10 +77,18 @@ namespace GUI
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+            if (txtTen.Text.Length >= 50)
+            {
+                MessageBox.Show("Tên tôn giáo không được vượt quá 50 ký tự", "Thông Báo");
+                txtTen.Clear();
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+            }
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -125,6 +133,17 @@ namespace GUI
                 txtTen.Text = gvDanhSach.GetFocusedRowCellValue("TENTG").ToString();
             }
             
+        }
+
+        private void txtTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            // Kiểm tra nếu ký tự không phải là điều khiển và là ký tự số
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn việc nhập
+                MessageBox.Show("Tên tôn giáo phải là chữ ", "Thông Báo "); // Hiển thị thông báo
+            }
         }
     }
 }

@@ -77,10 +77,21 @@ namespace GUI.CHAMCONG
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+            
+            if (string.IsNullOrEmpty(txtLoaiCa.Text) || string.IsNullOrEmpty(spHeSo.Text))
+            {
+                
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông Báo");
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+            }
+
+            
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -132,6 +143,37 @@ namespace GUI.CHAMCONG
             }
         }
 
-       
+        private void spHeSo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spHeSo.Value < 1)
+            {
+                MessageBox.Show("Hệ số lương phải lớn hơn 0", "Thông Báo");
+                spHeSo.Value = 1; // Đặt lại giá trị thành 1
+            }
+            else if (spHeSo.Value > 12)
+            {
+                MessageBox.Show("Hệ số lương không vượt quá 12", "Thông Báo");
+                spHeSo.Value = 1;
+            }
+        }
+
+        private void txtLoaiCa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự không phải là điều khiển và là ký tự số
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn việc nhập
+                MessageBox.Show("Loại ca phải là ký tự chữ", "Thông Báo "); // Hiển thị thông báo
+            }
+            else if (txtLoaiCa.Text.Length > 50)
+            {
+                MessageBox.Show("Loại ca không được vượt quá 50 ký tự", "Thông Báo ");
+                txtLoaiCa.Text = txtLoaiCa.Text.Substring(0, 50);
+                // Đặt con trỏ văn bản (caret) tại cuối chuỗi
+                txtLoaiCa.SelectionStart = txtLoaiCa.Text.Length;
+                // Ngăn chặn xử lý ký tự tiếp theo
+                e.Handled = true;
+            }
+        }
     }
 }

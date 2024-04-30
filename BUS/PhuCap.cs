@@ -98,8 +98,9 @@ namespace BUS
             try
             {
                 var _pc = db.PHUCAPs.FirstOrDefault(x => x.ID == id);
-                _pc.DELETED_BY = iduser;
-                _pc.DELETED_DATE = DateTime.Now;
+                //_pc.DELETED_BY = iduser;
+                //_pc.DELETED_DATE = DateTime.Now;
+                db.PHUCAPs.Remove(_pc);
                 db.SaveChanges();
 
             }

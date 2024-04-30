@@ -88,8 +88,9 @@ namespace BUS
             try
             {
                 var _tv = db.THOIVIECs.FirstOrDefault(x => x.SOQD == soqd);
-                _tv.DELETED_BY = iduser;
-                _tv.DELETED_DATE = DateTime.Now;
+                db.THOIVIECs.Remove(_tv);
+                //_tv.DELETED_BY = iduser;
+                //_tv.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
                 
             }

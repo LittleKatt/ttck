@@ -50,16 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BANGCHAMCONG.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
     <Compile Include="BANGCONGCHITIET.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="BANGLUONG.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BAOHIEM.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="BOPHAN.cs">

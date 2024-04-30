@@ -75,10 +75,19 @@ namespace GUI.CHAMCONG
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+            if (string.IsNullOrEmpty(txtLoaiCong.Text) || string.IsNullOrEmpty(spHeSo.Text))
+            {
+
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông Báo");
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+            }    
+                
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -127,6 +136,39 @@ namespace GUI.CHAMCONG
                 txtLoaiCong.Text = gvDanhSach.GetFocusedRowCellValue("TENLC").ToString();
                 spHeSo.Text = gvDanhSach.GetFocusedRowCellValue("HESO").ToString();
 
+            }
+        }
+
+        private void spHeSo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spHeSo.Value < 1)
+            {
+                MessageBox.Show("Hệ số lương phải lớn hơn 0", "Thông Báo");
+                spHeSo.Value = 1; // Đặt lại giá trị thành 1
+            }
+            else if (spHeSo.Value > 12)
+            {
+                MessageBox.Show("Hệ số lương không vượt quá 12", "Thông Báo");
+                spHeSo.Value = 1;
+            }
+        }
+
+        private void txtLoaiCong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự không phải là điều khiển và là ký tự số
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn việc nhập
+                MessageBox.Show("Loại công phải là ký tự chữ", "Thông Báo "); // Hiển thị thông báo
+            }
+            else if (txtLoaiCong.Text.Length > 50)
+            {
+                MessageBox.Show("Loại công không được vượt quá 50 ký tự", "Thông Báo ");
+                txtLoaiCong.Text = txtLoaiCong.Text.Substring(0, 50);
+                // Đặt con trỏ văn bản (caret) tại cuối chuỗi
+                txtLoaiCong.SelectionStart = txtLoaiCong.Text.Length;
+                // Ngăn chặn xử lý ký tự tiếp theo
+                e.Handled = true;
             }
         }
     }

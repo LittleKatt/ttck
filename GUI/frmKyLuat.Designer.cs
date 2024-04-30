@@ -287,7 +287,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(369, 72);
+            this.labelControl5.Location = new System.Drawing.Point(340, 68);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(91, 17);
@@ -299,7 +299,7 @@
             this.dtNgayKT.CustomFormat = "dd/MM/yyyy";
             this.dtNgayKT.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayKT.Location = new System.Drawing.Point(476, 66);
+            this.dtNgayKT.Location = new System.Drawing.Point(447, 62);
             this.dtNgayKT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgayKT.Name = "dtNgayKT";
             this.dtNgayKT.Size = new System.Drawing.Size(169, 24);
@@ -309,7 +309,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(82, 72);
+            this.labelControl4.Location = new System.Drawing.Point(53, 68);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(85, 17);
@@ -321,7 +321,7 @@
             this.dtNgayBD.CustomFormat = "dd/MM/yyyy";
             this.dtNgayBD.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayBD.Location = new System.Drawing.Point(173, 68);
+            this.dtNgayBD.Location = new System.Drawing.Point(144, 64);
             this.dtNgayBD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgayBD.Name = "dtNgayBD";
             this.dtNgayBD.Size = new System.Drawing.Size(169, 24);
@@ -329,7 +329,7 @@
             // 
             // txtNoiDung
             // 
-            this.txtNoiDung.Location = new System.Drawing.Point(162, 156);
+            this.txtNoiDung.Location = new System.Drawing.Point(144, 151);
             this.txtNoiDung.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNoiDung.MenuManager = this.barManager1;
             this.txtNoiDung.Name = "txtNoiDung";
@@ -342,7 +342,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(82, 158);
+            this.labelControl3.Location = new System.Drawing.Point(53, 154);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(55, 17);
@@ -351,7 +351,7 @@
             // 
             // txtLyDo
             // 
-            this.txtLyDo.Location = new System.Drawing.Point(162, 114);
+            this.txtLyDo.Location = new System.Drawing.Point(144, 107);
             this.txtLyDo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLyDo.MenuManager = this.barManager1;
             this.txtLyDo.Name = "txtLyDo";
@@ -364,7 +364,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(82, 117);
+            this.labelControl2.Location = new System.Drawing.Point(53, 113);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(36, 16);
@@ -373,7 +373,7 @@
             // 
             // slkNhanVien
             // 
-            this.slkNhanVien.Location = new System.Drawing.Point(459, 27);
+            this.slkNhanVien.Location = new System.Drawing.Point(447, 23);
             this.slkNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.slkNhanVien.MenuManager = this.barManager1;
             this.slkNhanVien.Name = "slkNhanVien";
@@ -426,7 +426,7 @@
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(675, 30);
+            this.labelControl12.Location = new System.Drawing.Point(646, 26);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(45, 16);
@@ -438,7 +438,7 @@
             this.dtNgayKy.CustomFormat = "dd/MM/yyyy";
             this.dtNgayKy.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtNgayKy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayKy.Location = new System.Drawing.Point(747, 27);
+            this.dtNgayKy.Location = new System.Drawing.Point(718, 23);
             this.dtNgayKy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgayKy.Name = "dtNgayKy";
             this.dtNgayKy.Size = new System.Drawing.Size(169, 24);
@@ -448,7 +448,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(369, 30);
+            this.labelControl8.Location = new System.Drawing.Point(340, 26);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(58, 16);
@@ -457,7 +457,7 @@
             // 
             // txtSoQD
             // 
-            this.txtSoQD.Location = new System.Drawing.Point(162, 27);
+            this.txtSoQD.Location = new System.Drawing.Point(144, 23);
             this.txtSoQD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoQD.MenuManager = this.barManager1;
             this.txtSoQD.Name = "txtSoQD";
@@ -471,7 +471,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(82, 29);
+            this.labelControl1.Location = new System.Drawing.Point(53, 25);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(40, 17);
@@ -558,7 +558,7 @@
             // 
             // TUNGAY
             // 
-            this.TUNGAY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.TUNGAY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.TUNGAY.AppearanceHeader.Options.UseFont = true;
             this.TUNGAY.Caption = "NGÀY BẮT ĐẦU";
             this.TUNGAY.FieldName = "TUNGAY";
@@ -571,7 +571,7 @@
             // 
             // DENNGAY
             // 
-            this.DENNGAY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.DENNGAY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.DENNGAY.AppearanceHeader.Options.UseFont = true;
             this.DENNGAY.Caption = "NGÀY KẾT THÚC";
             this.DENNGAY.FieldName = "DENNGAY";

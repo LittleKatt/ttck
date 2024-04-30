@@ -94,8 +94,9 @@ namespace BUS
             try
             {
                 var _ul = db.UNGLUONGs.FirstOrDefault(n => n.IDUL == id);
-                _ul.DELETED_BY = UserID;
-                _ul.DELETED_DATE = DateTime.Now;
+                //_ul.DELETED_BY = UserID;
+                //_ul.DELETED_DATE = DateTime.Now;
+                db.UNGLUONGs.Remove(_ul);
                 db.SaveChanges();
 
             }

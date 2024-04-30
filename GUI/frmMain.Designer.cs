@@ -70,6 +70,8 @@
             this.btnBangCongCT = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTKLUONG = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.rbpHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpNhanSu = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -137,10 +139,12 @@
             this.btnConfig,
             this.btnBangCongCT,
             this.btnDangNhap,
-            this.btnDangXuat});
+            this.btnDangXuat,
+            this.btnTKLUONG,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ribbonControl1.MaxItemId = 32;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 412;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -400,6 +404,20 @@
             this.btnDangXuat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
+            // btnTKLUONG
+            // 
+            this.btnTKLUONG.Caption = "Thống kê lương";
+            this.btnTKLUONG.Id = 32;
+            this.btnTKLUONG.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTKLUONG.ImageOptions.SvgImage")));
+            this.btnTKLUONG.Name = "btnTKLUONG";
+            this.btnTKLUONG.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKLUONG_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 33;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // rbpHeThong
             // 
             this.rbpHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -414,7 +432,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDoiMK, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnSaoLuu, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPhucHoi, true);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnConfig, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnThoat, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Hệ thống";
@@ -479,8 +496,9 @@
             // 
             // ribbonPageGroup5
             // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnTKLUONG);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Thống kê lương";
             // 
             // documentManager1
             // 
@@ -514,10 +532,10 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("60e33cad-65c5-46c3-ad29-bdf9d24ae5f8");
-            this.dockPanel1.Location = new System.Drawing.Point(787, 158);
+            this.dockPanel1.Location = new System.Drawing.Point(812, 158);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(246, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(211, 336);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(186, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(186, 336);
             this.dockPanel1.Text = "Thông báo";
             // 
             // dockPanel1_Container
@@ -526,7 +544,7 @@
             this.dockPanel1_Container.Controls.Add(this.groupControl1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(204, 307);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(179, 307);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // groupControl2
@@ -535,7 +553,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(0, 144);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(204, 163);
+            this.groupControl2.Size = new System.Drawing.Size(179, 163);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Nâng lương";
             // 
@@ -545,7 +563,7 @@
             this.lstNangLuong.ItemHeight = 62;
             this.lstNangLuong.Location = new System.Drawing.Point(2, 23);
             this.lstNangLuong.Name = "lstNangLuong";
-            this.lstNangLuong.Size = new System.Drawing.Size(200, 138);
+            this.lstNangLuong.Size = new System.Drawing.Size(175, 138);
             this.lstNangLuong.TabIndex = 0;
             itemTemplateBase1.Columns.Add(tableColumnDefinition1);
             templatedItemElement1.FieldName = "HOTEN";
@@ -572,7 +590,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(204, 144);
+            this.groupControl1.Size = new System.Drawing.Size(179, 144);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Sinh nhật trong tháng";
             // 
@@ -582,7 +600,7 @@
             this.lstSinhNhat.ItemHeight = 52;
             this.lstSinhNhat.Location = new System.Drawing.Point(2, 23);
             this.lstSinhNhat.Name = "lstSinhNhat";
-            this.lstSinhNhat.Size = new System.Drawing.Size(200, 119);
+            this.lstSinhNhat.Size = new System.Drawing.Size(175, 119);
             this.lstSinhNhat.TabIndex = 0;
             itemTemplateBase2.Columns.Add(tableColumnDefinition2);
             templatedItemElement3.FieldName = "HOTEN";
@@ -684,6 +702,8 @@
         private DevExpress.XtraBars.BarButtonItem btnBangCongCT;
         private DevExpress.XtraBars.BarButtonItem btnDangNhap;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
+        private DevExpress.XtraBars.BarButtonItem btnTKLUONG;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
 

@@ -55,6 +55,7 @@ namespace GUI
             dtNgayLenLuong.Enabled = !kt;
             slkHopDong.Enabled = !kt;
             gcDanhSach.Enabled = kt;
+            txtNhanVien.Enabled = kt;
         }
         private void _reset()
         {
@@ -108,11 +109,24 @@ namespace GUI
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;
+            if (slkHopDong.EditValue == null ||
+               string.IsNullOrEmpty(spHSLMoi.Text) ||
+               dtNgayKy.Value == null ||
+               dtNgayLenLuong.Value == null ||
+               string.IsNullOrEmpty(txtGhiChu.Text) )
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông Báo "); // Hiển thị thông báo
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+                splitContainer1.Panel1Collapsed = true;
+            } 
+                
+            
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -194,8 +208,22 @@ namespace GUI
             var hd = _hopdong.getItemFull(slkHopDong.EditValue.ToString());
             if (hd.Count != 0)
             {
-                txtNhanVien.Text = hd[0].IDNV +" " + hd[0].HOTEN;
+                txtNhanVien.Text = hd[0].IDNV +" - " + hd[0].HOTEN;
                 spHSLCu.EditValue = hd[0].HESOLUONG;
+            }
+        }
+
+        private void spHSLMoi_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spHSLMoi.Value < 1)
+            {
+                MessageBox.Show("Hệ số lương phải lớn hơn 0", "Thông Báo");
+                spHSLMoi.Value = 1; // Đặt lại giá trị thành 1
+            }
+            else if (spHSLMoi.Value > 12)
+            {
+                MessageBox.Show("Hệ số lương không vượt quá 12", "Thông Báo");
+                spHSLMoi.Value = 1;
             }
         }
     }

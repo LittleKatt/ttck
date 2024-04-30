@@ -109,8 +109,9 @@ namespace BUS
             try
             {
                 var _dc = db.DIEUCHUYENs.FirstOrDefault(x => x.SOQD == soqd);
-                _dc.DELETED_BY = iduser;
-                _dc.DELETE_DATE = DateTime.Now;
+                db.DIEUCHUYENs.Remove(_dc);
+                //_dc.DELETED_BY = iduser;
+                //_dc.DELETE_DATE = DateTime.Now;
                 db.SaveChanges();
             }
             catch (Exception ex)

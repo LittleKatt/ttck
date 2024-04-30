@@ -43,22 +43,22 @@ namespace BUS
                     luongngaythuong = Convert.ToDouble(kcct.TONGNGAYCONG * luongmotngaycong);
                     luongphep = Convert.ToDouble(kcct.NGAYPHEP * luongmotngaycong*0.3);
                     luongchunhat = Convert.ToDouble(kcct.CONGCHUNHAT * luongmotngaycong * 2);
-                    luongngayle = Convert.ToDouble(kcct.CONGNGAYLE * luongmotngaycong * 3);
+                    //luongngayle = Convert.ToDouble(kcct.CONGNGAYLE * luongmotngaycong * 3);
                     luongtangca = Convert.ToDouble(db.TANGCAs.Where(x => x.IDNV == item.IDNV && (x.NAM * 100 + x.THANG) == idkcct).Sum(x => x.SOTIEN));
                     phucap = Convert.ToDouble(db.PHUCAPs.Where(x => x.IDNV == item.IDNV).Sum(x => x.SOTIEN));
                     ungluong = Convert.ToDouble(db.UNGLUONGs.Where(x => x.IDNV == item.IDNV && (x.NAM*100 + x.THANG) == idkcct).Sum(x => x.SOTIEN));
                     
                     //Thực lãnh
-                    thuclanh = luongngaythuong + luongphep + luongngayle + luongchunhat + luongtangca + phucap - ungluong;
+                    thuclanh = luongngaythuong + luongphep + luongchunhat + luongtangca + phucap - ungluong;
 
                     BANGLUONG bl = new BANGLUONG();
                     bl.IDKCCT = idkcct;
                     bl.IDNV = item.IDNV;
                     bl.HOTEN = item.HOTEN;
-                    bl.NGAYCONG = int.Parse(kcct.NGAYCONG.ToString());
+                    bl.NGAYCONG = int.Parse(kcct.NGAYCONG.ToString()); 
                     bl.NGAYPHEP = luongphep;
                     bl.NGAYCHUNHAT = luongchunhat;
-                    bl.NGAYLE = luongngayle;
+                    //bl.NGAYLE = luongngayle;
                     bl.NGAYTHUONG = luongngaythuong;
 
                     bl.PHUCAP = phucap;
@@ -101,7 +101,7 @@ namespace BUS
                 _bl.KHONGPHEP = bl.KHONGPHEP;
                 _bl.NGAYCONG = bl.NGAYCONG;
                 _bl.NGAYCHUNHAT = bl.NGAYCHUNHAT;
-                _bl.NGAYLE = bl.NGAYLE;
+                //_bl.NGAYLE = bl.NGAYLE;
                 _bl.NGAYTHUONG = bl.NGAYTHUONG;
                 _bl.TANGCA = bl.TANGCA;
                 _bl.PHUCAP = bl.PHUCAP;

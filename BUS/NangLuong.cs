@@ -89,8 +89,9 @@ namespace BUS
             try
             {
                 var _tv = db.NANGLUONGs.FirstOrDefault(x => x.SOQD == soqd);
-                _tv.DELETED_BY = iduser;
-                _tv.DELETED_DATE = DateTime.Now;
+                db.NANGLUONGs.Remove(_tv);
+                //_tv.DELETED_BY = iduser;
+                //_tv.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
 
             }

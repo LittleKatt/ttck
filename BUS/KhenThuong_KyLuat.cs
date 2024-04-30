@@ -93,8 +93,9 @@ namespace BUS
             try
             {
                 KHENTHUONG_KYLUAT _kt = db.KHENTHUONG_KYLUAT.FirstOrDefault(x => x.SOQD == soqd);
-                _kt.DELETED_BY = idnv;
-                _kt.DELETED_DATE = DateTime.Now;
+                db.KHENTHUONG_KYLUAT.Remove(_kt);
+                //_kt.DELETED_BY = idnv;
+                //_kt.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
             }
             catch (Exception ex)

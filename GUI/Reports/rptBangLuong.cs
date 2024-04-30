@@ -30,7 +30,7 @@ namespace GUI.Reports
             lblHOTEN.DataBindings.Add("Text", DataSource, "HOTEN");
             lblNGAYCONG.DataBindings.Add("Text", DataSource, "NGAYCONG");
             lblNGAYPHEP.DataBindings.Add("Text", DataSource, "NGAYPHEP");
-            lblNGAYLE.DataBindings.Add("Text", DataSource, "NGAYLE");
+            //lblNGAYLE.DataBindings.Add("Text", DataSource, "NGAYLE");
             lblCONGCHUNHAT.DataBindings.Add("Text", DataSource, "NGAYCHUNHAT");
             lblTANGCA.DataBindings.Add("Text", DataSource, "TANGCA");
             lblPHUCAP.DataBindings.Add("Text", DataSource, "PHUCAP");

@@ -46,9 +46,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtBrowse = new DevExpress.XtraEditors.SimpleButton();
-            this.txtPath = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
@@ -60,7 +57,6 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
@@ -183,31 +179,35 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(823, 30);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(705, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 487);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 392);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(823, 20);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(705, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 457);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 368);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(823, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(705, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 457);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 368);
             // 
             // bar1
             // 
@@ -219,84 +219,57 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.txtBrowse);
-            this.splitContainer1.Panel1.Controls.Add(this.txtPath);
-            this.splitContainer1.Panel1.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel1.Controls.Add(this.txtTen);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcDanhSach);
-            this.splitContainer1.Size = new System.Drawing.Size(823, 457);
-            this.splitContainer1.SplitterDistance = 134;
+            this.splitContainer1.Size = new System.Drawing.Size(705, 368);
+            this.splitContainer1.SplitterDistance = 65;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 4;
-            // 
-            // txtBrowse
-            // 
-            this.txtBrowse.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtBrowse.Appearance.Options.UseFont = true;
-            this.txtBrowse.Location = new System.Drawing.Point(655, 72);
-            this.txtBrowse.Name = "txtBrowse";
-            this.txtBrowse.Size = new System.Drawing.Size(94, 29);
-            this.txtBrowse.TabIndex = 4;
-            this.txtBrowse.Text = "Nhập";
-            this.txtBrowse.Click += new System.EventHandler(this.txtBrowse_Click);
-            // 
-            // txtPath
-            // 
-            this.txtPath.Location = new System.Drawing.Point(169, 72);
-            this.txtPath.MenuManager = this.barManager1;
-            this.txtPath.Name = "txtPath";
-            this.txtPath.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtPath.Properties.Appearance.Options.UseFont = true;
-            this.txtPath.Size = new System.Drawing.Size(454, 28);
-            this.txtPath.TabIndex = 3;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(106, 75);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(44, 21);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Path: ";
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(169, 30);
+            this.txtTen.Location = new System.Drawing.Point(107, 22);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTen.MenuManager = this.barManager1;
             this.txtTen.Name = "txtTen";
             this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtTen.Properties.Appearance.Options.UseFont = true;
-            this.txtTen.Size = new System.Drawing.Size(220, 28);
+            this.txtTen.Size = new System.Drawing.Size(189, 22);
             this.txtTen.TabIndex = 1;
+            this.txtTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTen_KeyPress);
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(106, 33);
+            this.labelControl1.Location = new System.Drawing.Point(27, 25);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(28, 21);
+            this.labelControl1.Size = new System.Drawing.Size(74, 17);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Tên";
+            this.labelControl1.Text = "Tên dân tộc";
             // 
             // gcDanhSach
             // 
             this.gcDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcDanhSach.Location = new System.Drawing.Point(0, 0);
             this.gcDanhSach.MainView = this.gvDanhSach;
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcDanhSach.MenuManager = this.barManager1;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(823, 319);
+            this.gcDanhSach.Size = new System.Drawing.Size(705, 300);
             this.gcDanhSach.TabIndex = 0;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -306,6 +279,7 @@
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.TENDT});
+            this.gvDanhSach.DetailHeight = 284;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
             this.gvDanhSach.OptionsView.ShowGroupPanel = false;
@@ -317,12 +291,12 @@
             this.ID.AppearanceHeader.Options.UseFont = true;
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
-            this.ID.MaxWidth = 30;
-            this.ID.MinWidth = 30;
+            this.ID.MaxWidth = 26;
+            this.ID.MinWidth = 26;
             this.ID.Name = "ID";
             this.ID.Visible = true;
             this.ID.VisibleIndex = 0;
-            this.ID.Width = 30;
+            this.ID.Width = 26;
             // 
             // TENDT
             // 
@@ -330,23 +304,24 @@
             this.TENDT.AppearanceHeader.Options.UseFont = true;
             this.TENDT.Caption = "Tên";
             this.TENDT.FieldName = "TENDT";
-            this.TENDT.MaxWidth = 200;
-            this.TENDT.MinWidth = 200;
+            this.TENDT.MaxWidth = 171;
+            this.TENDT.MinWidth = 171;
             this.TENDT.Name = "TENDT";
             this.TENDT.Visible = true;
             this.TENDT.VisibleIndex = 1;
-            this.TENDT.Width = 200;
+            this.TENDT.Width = 171;
             // 
             // frmDanToc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 507);
+            this.ClientSize = new System.Drawing.Size(705, 412);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDanToc";
             this.Text = "Dân Tộc";
             this.Load += new System.EventHandler(this.frmDanToc_Load);
@@ -356,7 +331,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
@@ -389,8 +363,5 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn TENDT;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton txtBrowse;
-        private DevExpress.XtraEditors.TextEdit txtPath;
     }
 }

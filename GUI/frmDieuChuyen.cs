@@ -63,6 +63,9 @@ namespace GUI
             cbbNewBP.Enabled = !kt;
             cbbNewCV.Enabled = !kt;
             gcDanhSach.Enabled = kt;
+            txtBPCu.Enabled = kt;
+            txtCVCu.Enabled = kt;
+            txtPBCu.Enabled = kt;
         }
 
         private void _reset()
@@ -130,11 +133,27 @@ namespace GUI
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;
+            if (string.IsNullOrEmpty(txtLyDo.Text) ||
+                string.IsNullOrEmpty(txtGhiChu.Text) ||
+                dtNgayKy.Value == null ||
+                string.IsNullOrEmpty(slkNhanVien.Text) ||
+                string.IsNullOrEmpty(cbbNewBP.Text) ||
+                string.IsNullOrEmpty(cbbNewCV.Text) ||
+                string.IsNullOrEmpty(cbbNewPB.Text))
+            {
+                
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông Báo");
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+                splitContainer1.Panel1Collapsed = true;
+            } 
+                
+            
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -215,6 +234,17 @@ namespace GUI
                 cbbNewPB.SelectedValue = dc.IDPB2;
                 cbbNewBP.SelectedValue = dc.IDBP2;
                 cbbNewCV.SelectedValue = dc.IDCV2;
+            }
+        }
+
+        private void slkNhanVien_EditValueChanged(object sender, EventArgs e)
+        {
+            var nvnl = _nhanvien.getItemFull(int.Parse(slkNhanVien.EditValue.ToString()));
+            if (nvnl.IDNV != 0 )
+            {
+                txtBPCu.Text = nvnl.TENBP;
+                txtPBCu.Text = nvnl.TENPB;
+                txtCVCu.Text = nvnl.TENCV;
             }
         }
     }

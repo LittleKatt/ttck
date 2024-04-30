@@ -34,10 +34,10 @@ namespace BUS
 					switch (newDate.DayOfWeek.ToString())
 					{
 						case "Sunday":
-							listDay.Add("CN");
+							listDay.Add("");
 							break;
 						//case "Saturday":
-						//	listDay.Add("T7");
+						//	listDay.Add("");
 						//	break;
 						default:
 							listDay.Add("X");
@@ -139,7 +139,7 @@ namespace BUS
 			kycongchitiet.D30 = kcct.D30;
 			kycongchitiet.D31 = kcct.D31;
 			kycongchitiet.NGAYPHEP = kcct.NGAYPHEP;
-            kycongchitiet.CONGNGAYLE= kcct.CONGNGAYLE;
+            //kycongchitiet.CONGNGAYLE= kcct.CONGNGAYLE;
             kycongchitiet.CONGCHUNHAT = kcct.CONGCHUNHAT;
             kycongchitiet.NGHIKHONGPHEP = kcct.NGHIKHONGPHEP;
             kycongchitiet.TONGNGAYCONG = kcct.TONGNGAYCONG;
