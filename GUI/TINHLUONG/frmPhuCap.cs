@@ -111,10 +111,19 @@ namespace GUI.TINHLUONG
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+            if (string.IsNullOrEmpty(txtNoiDung.Text) || string.IsNullOrEmpty(spSoTien.Text) || slkNhanVien.EditValue == null || cbbPhuCap.Text == null)
+            {
+
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông Báo");
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+            }
+               
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -177,6 +186,15 @@ namespace GUI.TINHLUONG
                 cbbPhuCap.SelectedValue = gvDanhSach.GetFocusedRowCellValue("IDPC");
                 
 
+            }
+        }
+
+        private void spSoTien_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spSoTien.Value < 1)
+            {
+                MessageBox.Show("Tiền phụ cấp phải lớn hơn 0", "Thông Báo");
+                spSoTien.Value = 1; // Đặt lại giá trị thành 1
             }
         }
     }

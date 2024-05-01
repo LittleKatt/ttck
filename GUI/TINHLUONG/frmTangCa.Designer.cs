@@ -396,6 +396,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spSoGio.Size = new System.Drawing.Size(100, 22);
             this.spSoGio.TabIndex = 2;
+            this.spSoGio.EditValueChanged += new System.EventHandler(this.spSoGio_EditValueChanged_1);
             // 
             // labelControl2
             // 

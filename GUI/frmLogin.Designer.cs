@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.CkbLuuMatKhau = new System.Windows.Forms.CheckBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,9 +67,39 @@
             this.panel2.Size = new System.Drawing.Size(320, 171);
             this.panel2.TabIndex = 2;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnThoat.Appearance.Options.UseBackColor = true;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
+            this.btnThoat.Location = new System.Drawing.Point(194, 121);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(108, 39);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnDangNhap.Appearance.Options.UseBackColor = true;
+            this.btnDangNhap.AppearancePressed.BackColor = System.Drawing.Color.White;
+            this.btnDangNhap.AppearancePressed.ForeColor = System.Drawing.Color.White;
+            this.btnDangNhap.AppearancePressed.Options.UseBackColor = true;
+            this.btnDangNhap.AppearancePressed.Options.UseForeColor = true;
+            this.btnDangNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangNhap.ImageOptions.SvgImage")));
+            this.btnDangNhap.Location = new System.Drawing.Point(23, 121);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(108, 39);
+            this.btnDangNhap.TabIndex = 5;
+            this.btnDangNhap.Text = "Đăng Nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click_1);
+            // 
             // CkbLuuMatKhau
             // 
             this.CkbLuuMatKhau.AutoSize = true;
+            this.CkbLuuMatKhau.Checked = true;
+            this.CkbLuuMatKhau.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CkbLuuMatKhau.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CkbLuuMatKhau.Location = new System.Drawing.Point(129, 84);
             this.CkbLuuMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -119,34 +149,6 @@
             this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Đăng Nhập:";
-            // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnDangNhap.Appearance.Options.UseBackColor = true;
-            this.btnDangNhap.AppearancePressed.BackColor = System.Drawing.Color.White;
-            this.btnDangNhap.AppearancePressed.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.AppearancePressed.Options.UseBackColor = true;
-            this.btnDangNhap.AppearancePressed.Options.UseForeColor = true;
-            this.btnDangNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangNhap.ImageOptions.SvgImage")));
-            this.btnDangNhap.Location = new System.Drawing.Point(23, 121);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(108, 39);
-            this.btnDangNhap.TabIndex = 5;
-            this.btnDangNhap.Text = "Đăng Nhập";
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click_1);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnThoat.Appearance.Options.UseBackColor = true;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
-            this.btnThoat.Location = new System.Drawing.Point(194, 121);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(108, 39);
-            this.btnThoat.TabIndex = 5;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmLogin
             // 

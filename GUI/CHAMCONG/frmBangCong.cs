@@ -31,6 +31,7 @@ namespace GUI.CHAMCONG
             cbbNam.Text = DateTime.Now.Year.ToString();
             cbbThang.Text = DateTime.Now.Month.ToString();
         }
+
         void ShowHide(bool kt)
         {
             btnLuu.Enabled = !kt;
@@ -39,9 +40,7 @@ namespace GUI.CHAMCONG
             btnSua.Enabled = kt;
             btnXoa.Enabled = kt;
             btnDong.Enabled = kt;
-            btnIn.Enabled = kt;
-            
-           
+            btnIn.Enabled = kt;     
         }
         void LoadData()
         {
@@ -73,10 +72,21 @@ namespace GUI.CHAMCONG
         }
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+            // Kiểm tra và hiển thị thông báo lỗi nếu cần
+            if (string.IsNullOrEmpty(cbbNam.Text) || string.IsNullOrEmpty(cbbThang.Text))
+            {
+                
+                MessageBox.Show("Vui lòng chọn đầy đủ năm và tháng!", "Thông Báo");
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+            }
+
+           
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -372,6 +372,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spSoTien.Size = new System.Drawing.Size(100, 22);
             this.spSoTien.TabIndex = 2;
+            this.spSoTien.EditValueChanged += new System.EventHandler(this.spSoTien_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -490,7 +491,7 @@
             // 
             this.GHICHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.GHICHU.AppearanceHeader.Options.UseFont = true;
-            this.GHICHU.Caption = "GHI CHÚ";
+            this.GHICHU.Caption = "NỘI DUNG";
             this.GHICHU.FieldName = "GHICHU";
             this.GHICHU.MaxWidth = 200;
             this.GHICHU.MinWidth = 100;

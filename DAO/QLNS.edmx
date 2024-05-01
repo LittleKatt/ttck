@@ -848,7 +848,7 @@
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="UNGLUONG" EntitySet="UNGLUONGs" />
           </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
         <EntityType Name="BANGCONGCHITIET">
           <Key>
             <PropertyRef Name="IDBCCT" />
@@ -1934,7 +1934,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          </EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

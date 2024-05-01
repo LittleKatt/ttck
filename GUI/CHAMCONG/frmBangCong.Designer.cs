@@ -56,6 +56,7 @@
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DELETED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDKCCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KHOA = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,7 +79,6 @@
             this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl15 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl16 = new DevExpress.XtraBars.BarDockControl();
-            this.IDKCCT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -128,7 +128,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLuu, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHuy, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXemBangCong, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnIn, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDong, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -334,7 +333,7 @@
             "2027",
             "2028",
             "2029",
-            "2039"});
+            "2030"});
             this.cbbNam.Location = new System.Drawing.Point(117, 25);
             this.cbbNam.Name = "cbbNam";
             this.cbbNam.Size = new System.Drawing.Size(121, 21);
@@ -401,6 +400,19 @@
             this.DELETED_BY.Visible = true;
             this.DELETED_BY.VisibleIndex = 0;
             this.DELETED_BY.Width = 20;
+            // 
+            // IDKCCT
+            // 
+            this.IDKCCT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.IDKCCT.AppearanceHeader.Options.UseFont = true;
+            this.IDKCCT.Caption = "IDKCCT";
+            this.IDKCCT.FieldName = "IDKCCT";
+            this.IDKCCT.MaxWidth = 80;
+            this.IDKCCT.MinWidth = 80;
+            this.IDKCCT.Name = "IDKCCT";
+            this.IDKCCT.Visible = true;
+            this.IDKCCT.VisibleIndex = 1;
+            this.IDKCCT.Width = 80;
             // 
             // NAM
             // 
@@ -623,19 +635,6 @@
             this.barDockControl16.Manager = this.barManager1;
             this.barDockControl16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barDockControl16.Size = new System.Drawing.Size(833, 0);
-            // 
-            // IDKCCT
-            // 
-            this.IDKCCT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.IDKCCT.AppearanceHeader.Options.UseFont = true;
-            this.IDKCCT.Caption = "IDKCCT";
-            this.IDKCCT.FieldName = "IDKCCT";
-            this.IDKCCT.MaxWidth = 80;
-            this.IDKCCT.MinWidth = 80;
-            this.IDKCCT.Name = "IDKCCT";
-            this.IDKCCT.Visible = true;
-            this.IDKCCT.VisibleIndex = 1;
-            this.IDKCCT.Width = 80;
             // 
             // frmBangCong
             // 

@@ -220,12 +220,6 @@
     <Compile Include="Reports\frmBangCongCT.Designer.cs">
       <DependentUpon>frmBangCongCT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\frmThongKeLuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\frmThongKeLuong.Designer.cs">
-      <DependentUpon>frmThongKeLuong.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\rptBangCongChiTiet.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -452,9 +446,6 @@
     </Compile>
     <EmbeddedResource Include="Reports\frmBangCongCT.resx">
       <DependentUpon>frmBangCongCT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmThongKeLuong.resx">
-      <DependentUpon>frmThongKeLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptBangCongChiTiet.resx">
       <DependentUpon>rptBangCongChiTiet.cs</DependentUpon>

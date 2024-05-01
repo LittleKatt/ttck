@@ -78,7 +78,7 @@ namespace GUI.CHAMCONG
             if (string.IsNullOrEmpty(txtLoaiCong.Text) || string.IsNullOrEmpty(spHeSo.Text))
             {
 
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông Báo");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông Báo");
             }
             else
             {

@@ -103,10 +103,24 @@ namespace GUI.TINHLUONG
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+            // Kiểm tra và hiển thị thông báo lỗi nếu cần
+            if (string.IsNullOrEmpty(txtNoiDung.Text) ||
+                string.IsNullOrEmpty(spSoGio.Text) ||
+                slkNhanVien.EditValue == null ||
+                cbbLoaiCa.SelectedItem == null)
+            {
+                // Hiển thị thông báo lỗi yêu cầu nhập đầy đủ thông tin
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông Báo");
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+            }
+
+         
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -176,6 +190,16 @@ namespace GUI.TINHLUONG
                 slkNhanVien.EditValue = gvDanhSach.GetFocusedRowCellValue("IDNV");
                 cbbLoaiCa.SelectedValue = gvDanhSach.GetFocusedRowCellValue("IDLCA");
 
+            }
+        }
+
+       
+        private void spSoGio_EditValueChanged_1(object sender, EventArgs e)
+        {
+            if (spSoGio.Value < 1)
+            {
+                MessageBox.Show("Số giờ tăng ca phải lớn hơn 0", "Thông Báo");
+                spSoGio.Value = 1; // Đặt lại giá trị thành 1
             }
         }
     }

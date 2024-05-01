@@ -249,10 +249,6 @@ namespace GUI
             }
         }
 
-        private void btnTKLUONG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmThongKeLuong frm = new frmThongKeLuong();
-            frm.ShowDialog();
-        }
+       
     }
 }

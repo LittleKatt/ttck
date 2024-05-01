@@ -93,10 +93,21 @@ namespace GUI.TINHLUONG
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            LoadData();
-            _them = false;
-            ShowHide(true);
+            if (string.IsNullOrEmpty(txtNoiDung.Text) ||
+                string.IsNullOrEmpty(spSoTien.Text) ||
+                slkNhanVien.EditValue == null )
+            {
+                // Hiển thị thông báo lỗi yêu cầu nhập đầy đủ thông tin
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông Báo");
+            }
+            else
+            {
+                SaveData();
+                LoadData();
+                _them = false;
+                ShowHide(true);
+            }    
+            
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -154,8 +165,15 @@ namespace GUI.TINHLUONG
                 txtNoiDung.Text = gvDanhSach.GetFocusedRowCellValue("GHICHU").ToString();
                 spSoTien.EditValue = gvDanhSach.GetFocusedRowCellValue("SOTIEN");
                 slkNhanVien.EditValue = gvDanhSach.GetFocusedRowCellValue("IDNV");
-           
+            }
+        }
 
+        private void spSoTien_EditValueChanged(object sender, EventArgs e)
+        {
+            if (spSoTien.Value < 1)
+            {
+                MessageBox.Show("Số tiền ứng lương lớn hơn 0", "Thông Báo");
+                spSoTien.Value = 1; // Đặt lại giá trị thành 1
             }
         }
     }

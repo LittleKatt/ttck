@@ -79,8 +79,6 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpChamCong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rbpBaoBieu = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
@@ -150,8 +148,7 @@
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpHeThong,
             this.rbpNhanSu,
-            this.rbpChamCong,
-            this.rbpBaoBieu});
+            this.rbpChamCong});
             this.ribbonControl1.Size = new System.Drawing.Size(998, 158);
             // 
             // btnDanToc
@@ -410,7 +407,7 @@
             this.btnTKLUONG.Id = 32;
             this.btnTKLUONG.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTKLUONG.ImageOptions.SvgImage")));
             this.btnTKLUONG.Name = "btnTKLUONG";
-            this.btnTKLUONG.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKLUONG_ItemClick);
+          
             // 
             // barButtonItem1
             // 
@@ -486,19 +483,6 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnBangLuong, true);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Quản Lý Chấm Công";
-            // 
-            // rbpBaoBieu
-            // 
-            this.rbpBaoBieu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
-            this.rbpBaoBieu.Name = "rbpBaoBieu";
-            this.rbpBaoBieu.Text = "Báo - Biểu";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnTKLUONG);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Thống kê lương";
             // 
             // documentManager1
             // 
@@ -667,8 +651,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage rbpChamCong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnPhongBan;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rbpBaoBieu;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnHopDong;
         private DevExpress.XtraBars.BarButtonItem btnKhenThuong;
         private DevExpress.XtraBars.BarButtonItem btnDieuChuyen;

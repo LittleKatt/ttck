@@ -25,7 +25,7 @@ namespace GUI.Reports
 
         void LoadData()
         {
-            lblDELETED_BY.DataBindings.Add("Text", _lstLoaiCa, "DELETED_BY");
+           
             lblIDLC.DataBindings.Add("Text", _lstLoaiCa, "IDLCA");
             lblTENLC.DataBindings.Add("Text", _lstLoaiCa, "TENLOAICA");
             lblHESO.DataBindings.Add("Text", _lstLoaiCa, "HESO");

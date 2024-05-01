@@ -84,18 +84,23 @@
             // 
             // TopMargin
             // 
+            this.TopMargin.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.TopMargin.HeightF = 56.66667F;
             this.TopMargin.Name = "TopMargin";
+            this.TopMargin.StylePriority.UseFont = false;
             // 
             // BottomMargin
             // 
+            this.BottomMargin.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.BottomMargin.HeightF = 97.5F;
             this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.StylePriority.UseFont = false;
             // 
             // xrTable3
             // 
             this.xrTable3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTable3.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -103,6 +108,7 @@
             this.xrTableRow3});
             this.xrTable3.SizeF = new System.Drawing.SizeF(650F, 25F);
             this.xrTable3.StylePriority.UseBorders = false;
+            this.xrTable3.StylePriority.UseFont = false;
             this.xrTable3.StylePriority.UseTextAlignment = false;
             this.xrTable3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
@@ -116,12 +122,14 @@
             this.xrTableCell18,
             this.xrTableCell19,
             this.xrTableCell20});
+            this.xrTableRow3.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTableRow3.Name = "xrTableRow3";
+            this.xrTableRow3.StylePriority.UseFont = false;
             this.xrTableRow3.Weight = 1D;
             // 
             // xrTableCell14
             // 
-            this.xrTableCell14.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTableCell14.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.StylePriority.UseFont = false;
@@ -132,8 +140,10 @@
             // 
             this.xrTableCell15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([NGAYPHEP])")});
+            this.xrTableCell15.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
+            this.xrTableCell15.StylePriority.UseFont = false;
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell15.Summary = xrSummary1;
             this.xrTableCell15.Text = "NGAYPHEP";
@@ -144,8 +154,10 @@
             // 
             this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([CONGNGAYLE])")});
+            this.xrTableCell16.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
+            this.xrTableCell16.StylePriority.UseFont = false;
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell16.Summary = xrSummary2;
             this.xrTableCell16.Text = "NGAYLE";
@@ -156,8 +168,10 @@
             // 
             this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([CONGCHUNHAT])")});
+            this.xrTableCell17.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
+            this.xrTableCell17.StylePriority.UseFont = false;
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell17.Summary = xrSummary3;
             this.xrTableCell17.Text = "CN\r\n";
@@ -168,8 +182,10 @@
             // 
             this.xrTableCell18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([NGAYCONG])")});
+            this.xrTableCell18.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
+            this.xrTableCell18.StylePriority.UseFont = false;
             xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell18.Summary = xrSummary4;
             this.xrTableCell18.Text = "NGAYCONG";
@@ -178,27 +194,34 @@
             // 
             // xrTableCell19
             // 
+            this.xrTableCell19.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTableCell19.Multiline = true;
             this.xrTableCell19.Name = "xrTableCell19";
+            this.xrTableCell19.StylePriority.UseFont = false;
             this.xrTableCell19.Weight = 0.55384616558368371D;
             // 
             // xrTableCell20
             // 
+            this.xrTableCell20.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";
+            this.xrTableCell20.StylePriority.UseFont = false;
             this.xrTableCell20.Weight = 1.4769230886606071D;
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable1});
+            this.Detail.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
+            this.Detail.StylePriority.UseFont = false;
             // 
             // xrTable1
             // 
             this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTable1.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -206,6 +229,7 @@
             this.xrTableRow1});
             this.xrTable1.SizeF = new System.Drawing.SizeF(650F, 25F);
             this.xrTable1.StylePriority.UseBorders = false;
+            this.xrTable1.StylePriority.UseFont = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
             this.xrTable1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
@@ -222,76 +246,98 @@
             this.lblCONG,
             this.lblKYHIEU,
             this.lblGHICHU});
+            this.xrTableRow1.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.xrTableRow1.Name = "xrTableRow1";
+            this.xrTableRow1.StylePriority.UseFont = false;
             this.xrTableRow1.Weight = 1D;
             // 
             // lblNGAY
             // 
+            this.lblNGAY.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblNGAY.Multiline = true;
             this.lblNGAY.Name = "lblNGAY";
+            this.lblNGAY.StylePriority.UseFont = false;
             this.lblNGAY.Text = "NGAY";
             this.lblNGAY.Weight = 2.0307692111268336D;
             // 
             // lblTHU
             // 
+            this.lblTHU.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblTHU.Multiline = true;
             this.lblTHU.Name = "lblTHU";
+            this.lblTHU.StylePriority.UseFont = false;
             this.lblTHU.Text = "THU";
             this.lblTHU.Weight = 1.4769230896187731D;
             // 
             // lblGIOVAO
             // 
+            this.lblGIOVAO.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblGIOVAO.Multiline = true;
             this.lblGIOVAO.Name = "lblGIOVAO";
+            this.lblGIOVAO.StylePriority.UseFont = false;
             this.lblGIOVAO.Text = "GIOVAO";
             this.lblGIOVAO.Weight = 1.3846153997064945D;
             // 
             // lblGIORA
             // 
+            this.lblGIORA.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblGIORA.Multiline = true;
             this.lblGIORA.Name = "lblGIORA";
+            this.lblGIORA.StylePriority.UseFont = false;
             this.lblGIORA.Text = "GIORA";
             this.lblGIORA.Weight = 1.2923077069197197D;
             // 
             // lblPHEP
             // 
+            this.lblPHEP.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblPHEP.Multiline = true;
             this.lblPHEP.Name = "lblPHEP";
+            this.lblPHEP.StylePriority.UseFont = false;
             this.lblPHEP.Text = "NGAYPHEP";
             this.lblPHEP.Weight = 1.107692320867087D;
             // 
             // lblLE
             // 
+            this.lblLE.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblLE.Multiline = true;
             this.lblLE.Name = "lblLE";
+            this.lblLE.StylePriority.UseFont = false;
             this.lblLE.Text = "NGAYLE";
             this.lblLE.Weight = 0.83077037026781664D;
             // 
             // lblCN
             // 
+            this.lblCN.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblCN.Multiline = true;
             this.lblCN.Name = "lblCN";
+            this.lblCN.StylePriority.UseFont = false;
             this.lblCN.Text = "CN\r\n";
             this.lblCN.Weight = 0.83076811714111831D;
             // 
             // lblCONG
             // 
+            this.lblCONG.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblCONG.Multiline = true;
             this.lblCONG.Name = "lblCONG";
+            this.lblCONG.StylePriority.UseFont = false;
             this.lblCONG.Text = "NGAYCONG";
             this.lblCONG.Weight = 1.0153845923886391D;
             // 
             // lblKYHIEU
             // 
+            this.lblKYHIEU.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblKYHIEU.Multiline = true;
             this.lblKYHIEU.Name = "lblKYHIEU";
+            this.lblKYHIEU.StylePriority.UseFont = false;
             this.lblKYHIEU.Text = "KYHIEU";
             this.lblKYHIEU.Weight = 0.55384616558368371D;
             // 
             // lblGHICHU
             // 
+            this.lblGHICHU.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.lblGHICHU.Multiline = true;
             this.lblGHICHU.Name = "lblGHICHU";
+            this.lblGHICHU.StylePriority.UseFont = false;
             this.lblGHICHU.Text = "GHICHU";
             this.lblGHICHU.Weight = 1.4769230886606066D;
             // 
@@ -300,7 +346,7 @@
             this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTable2.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(3.051758E-05F, 143.3333F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -325,82 +371,104 @@
             this.xrTableCell10,
             this.xrTableCell11,
             this.xrTableCell12});
+            this.xrTableRow2.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableRow2.Name = "xrTableRow2";
+            this.xrTableRow2.StylePriority.UseFont = false;
             this.xrTableRow2.Weight = 1D;
             // 
             // xrTableCell3
             // 
+            this.xrTableCell3.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
+            this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.Text = "NGÀY";
             this.xrTableCell3.Weight = 2.0307692111268332D;
             // 
             // xrTableCell4
             // 
+            this.xrTableCell4.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
+            this.xrTableCell4.StylePriority.UseFont = false;
             this.xrTableCell4.Text = "THỨ";
             this.xrTableCell4.Weight = 1.4769230896187735D;
             // 
             // xrTableCell5
             // 
+            this.xrTableCell5.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
+            this.xrTableCell5.StylePriority.UseFont = false;
             this.xrTableCell5.Text = "VÀO";
             this.xrTableCell5.Weight = 1.3846153997064947D;
             // 
             // xrTableCell6
             // 
+            this.xrTableCell6.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
+            this.xrTableCell6.StylePriority.UseFont = false;
             this.xrTableCell6.Text = "RA";
             this.xrTableCell6.Weight = 1.2923077069197193D;
             // 
             // xrTableCell7
             // 
+            this.xrTableCell7.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
+            this.xrTableCell7.StylePriority.UseFont = false;
             this.xrTableCell7.Text = "PHÉP";
             this.xrTableCell7.Weight = 1.107692320867087D;
             // 
             // xrTableCell8
             // 
+            this.xrTableCell8.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
+            this.xrTableCell8.StylePriority.UseFont = false;
             this.xrTableCell8.Text = "LỄ";
             this.xrTableCell8.Weight = 0.83076924346492631D;
             // 
             // xrTableCell9
             // 
+            this.xrTableCell9.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
+            this.xrTableCell9.StylePriority.UseFont = false;
             this.xrTableCell9.Text = "CN";
             this.xrTableCell9.Weight = 0.83076924394400908D;
             // 
             // xrTableCell10
             // 
+            this.xrTableCell10.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
+            this.xrTableCell10.StylePriority.UseFont = false;
             this.xrTableCell10.Text = "CÔNG";
             this.xrTableCell10.Weight = 1.0153845923886382D;
             // 
             // xrTableCell11
             // 
+            this.xrTableCell11.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
+            this.xrTableCell11.StylePriority.UseFont = false;
             this.xrTableCell11.Text = "KH";
             this.xrTableCell11.Weight = 0.55384616558368382D;
             // 
             // xrTableCell12
             // 
+            this.xrTableCell12.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
+            this.xrTableCell12.StylePriority.UseFont = false;
             this.xrTableCell12.Text = "GHI CHÚ";
             this.xrTableCell12.Weight = 1.4769230886606071D;
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("", 18F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("times New Roman", 18F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -422,12 +490,14 @@
             this.xrLabel2,
             this.xrLabel1,
             this.xrTable2});
+            this.ReportHeader.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.ReportHeader.HeightF = 168.3333F;
             this.ReportHeader.Name = "ReportHeader";
+            this.ReportHeader.StylePriority.UseFont = false;
             // 
             // xrLabel4
             // 
-            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(492.5F, 61.16666F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
@@ -440,7 +510,7 @@
             // 
             // lblKyCong
             // 
-            this.lblKyCong.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblKyCong.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblKyCong.LocationFloat = new DevExpress.Utils.PointFloat(580.0001F, 61.16666F);
             this.lblKyCong.Multiline = true;
             this.lblKyCong.Name = "lblKyCong";
@@ -453,7 +523,7 @@
             // 
             // lblIDNV
             // 
-            this.lblIDNV.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblIDNV.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblIDNV.LocationFloat = new DevExpress.Utils.PointFloat(68.33334F, 61.16666F);
             this.lblIDNV.Multiline = true;
             this.lblIDNV.Name = "lblIDNV";
@@ -466,7 +536,7 @@
             // 
             // lblHOTEN
             // 
-            this.lblHOTEN.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblHOTEN.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblHOTEN.LocationFloat = new DevExpress.Utils.PointFloat(83.33334F, 84.16666F);
             this.lblHOTEN.Multiline = true;
             this.lblHOTEN.Name = "lblHOTEN";
@@ -479,7 +549,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(25.83333F, 84.16666F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -492,7 +562,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(25.83333F, 61.16666F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -507,8 +577,10 @@
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable3});
+            this.ReportFooter.Font = new DevExpress.Drawing.DXFont("times New Roman", 9.75F);
             this.ReportFooter.HeightF = 25F;
             this.ReportFooter.Name = "ReportFooter";
+            this.ReportFooter.StylePriority.UseFont = false;
             // 
             // rptBangCongChiTiet
             // 

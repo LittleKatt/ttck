@@ -33,14 +33,16 @@ namespace GUI.TINHLUONG
 
         private void btnTinhLuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
-            if (_bangluong.KTTinhLuong(int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text)))
+            if (string.IsNullOrEmpty(cbbNam.Text) || string.IsNullOrEmpty(cbbThang.Text))
+            {
+                // Hiển thị thông báo lỗi yêu cầu chọn giá trị cho cả hai control
+                MessageBox.Show("Vui lòng chọn năm và tháng!", "Thông Báo");
+            }
+            else if (_bangluong.KTTinhLuong(int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text)))
             {
                 MessageBox.Show("Bảng lương tháng đã được phát sinh!", "Thông báo");
-               
                 return;
-            }
-            
+            }             
            else 
             {
                 _bangluong.TinhLuongNhanVien(int.Parse(cbbNam.Text) * 100 + int.Parse(cbbThang.Text));
