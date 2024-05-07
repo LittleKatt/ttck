@@ -78,10 +78,10 @@ namespace GUI
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtTen.Text.Length >= 50)
+            if (string.IsNullOrEmpty(txtTen.Text))
             {
-                MessageBox.Show("Tên phòng ban không được vượt quá 50 ký tự", "Thông Báo");
-                txtTen.Clear();
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông Báo "); // Hiển thị thông báo
+                txtTen.Focus();
             }
             else
             {
@@ -143,6 +143,11 @@ namespace GUI
             {
                 e.Handled = true; // Ngăn chặn việc nhập
                 MessageBox.Show("Tên phòng ban phải là chữ ", "Thông Báo "); // Hiển thị thông báo
+            }
+            else if (txtTen.Text.Length >= 50)
+            {
+                MessageBox.Show("Tên phòng ban không được vượt quá 50 ký tự", "Thông Báo");
+                txtTen.Clear();
             }
         }
     }

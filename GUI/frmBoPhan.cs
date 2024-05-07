@@ -76,12 +76,13 @@ namespace GUI
         }
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (txtTen.Text.Length >= 50)
+        { 
+            if(string.IsNullOrEmpty(txtTen.Text))
             {
-                MessageBox.Show("Tên bộ phận không được vượt quá 50 ký tự", "Thông Báo");
-                txtTen.Clear();
-            }
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông Báo "); // Hiển thị thông báo
+                txtTen.Focus();
+            }    
+            
             else
             {
                 SaveData();
@@ -137,8 +138,13 @@ namespace GUI
 
         private void txtTen_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (txtTen.Text.Length >= 50)
+            {
+                MessageBox.Show("Tên bộ phận không được vượt quá 50 ký tự", "Thông Báo");
+                txtTen.Clear();
+            }
             // Kiểm tra nếu ký tự không phải là điều khiển và là ký tự số
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            else if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Ngăn chặn việc nhập
                 MessageBox.Show("Tên bộ phận phải là chữ ", "Thông Báo "); // Hiển thị thông báo

@@ -83,11 +83,19 @@ namespace GUI
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
+          if(string.IsNullOrEmpty(txtTen.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
+                txtTen.Focus();
+            }   
+          else
+            {
                 SaveData();
                 LoadData();
                 _them = false;
                 ShowHide(true);
+            }    
+                
              
         }
 
