@@ -633,6 +633,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="THONGKE_LUONG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDKCCT" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="QLNSModelStoreContainer">
           <EntitySet Name="BANGCONGCHITIET" EntityType="Self.BANGCONGCHITIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BANGLUONG" EntityType="Self.BANGLUONG" Schema="dbo" store:Type="Tables" />
@@ -848,6 +851,9 @@
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="UNGLUONG" EntitySet="UNGLUONGs" />
           </AssociationSet>
+          <FunctionImport Name="THONGKE_LUONG" ReturnType="Collection(QLNSModel.THONGKE_LUONG_Result)">
+            <Parameter Name="IDKCCT" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="BANGCONGCHITIET">
           <Key>
@@ -1517,6 +1523,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="THONGKE_LUONG_Result">
+          <Property Type="Int32" Name="IDKCCT" Nullable="true" />
+          <Property Type="Int32" Name="THANG" Nullable="true" />
+          <Property Type="Int32" Name="NAM" Nullable="true" />
+          <Property Type="Double" Name="TONGLUONGCHITRA" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1934,6 +1946,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="THONGKE_LUONG" FunctionName="QLNSModel.Store.THONGKE_LUONG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLNSModel.THONGKE_LUONG_Result">
+                <ScalarProperty Name="IDKCCT" ColumnName="IDKCCT" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="TONGLUONGCHITRA" ColumnName="TONGLUONGCHITRA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

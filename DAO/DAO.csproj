@@ -126,6 +126,9 @@
     <Compile Include="THOIVIEC.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="THONGKE_LUONG_Result.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="TONGIAO.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>

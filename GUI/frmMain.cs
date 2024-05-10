@@ -19,11 +19,18 @@ namespace GUI
         public frmMain()
         {
             InitializeComponent();
+
+        }
+        public frmMain(bool kiemtra)
+        {
+            InitializeComponent();
+            kt = kiemtra;
         }
         NhanVien _nhanvien;
         HopDongLD _hopdong;
-
-        OverlayWindowOptions options = new OverlayWindowOptions(
+        public static bool kt = false;
+        OverlayWindowOptions options = new OverlayWindowOptions
+        (
             backColor: Color.Black,
             opacity: 0.5,
             fadeIn: false,
@@ -33,6 +40,7 @@ namespace GUI
         {
             return SplashScreenManager.ShowOverlayForm(control, option);
         }
+       
         void openForm(Type typeForm)
         {
             foreach (var frm in MdiChildren) 
@@ -200,14 +208,14 @@ namespace GUI
             frm.ShowDialog();
         }
 
-        private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
+       
+        
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            bool kt = false;
+            frmMain menu = new frmMain(kt);
+            this.Hide();
+            menu.ShowDialog();
         }
 
         private void btnDoiMK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -249,6 +257,10 @@ namespace GUI
             }
         }
 
-       
+        private void btnThongKeLuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmTK_LuongKCCT frm = new frmTK_LuongKCCT();
+            frm.ShowDialog();
+        }
     }
 }

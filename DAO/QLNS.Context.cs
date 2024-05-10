@@ -12,6 +12,8 @@ namespace DAO
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QLNSEntities : DbContext
     {
@@ -49,5 +51,14 @@ namespace DAO
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
         public virtual DbSet<USER> USERs { get; set; }
+    
+        public virtual ObjectResult<THONGKE_LUONG_Result> THONGKE_LUONG(Nullable<int> iDKCCT)
+        {
+            var iDKCCTParameter = iDKCCT.HasValue ?
+                new ObjectParameter("IDKCCT", iDKCCT) :
+                new ObjectParameter("IDKCCT", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<THONGKE_LUONG_Result>("THONGKE_LUONG", iDKCCTParameter);
+        }
     }
 }
